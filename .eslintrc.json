@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "eol-last": "error",
+    "max-len": ["error", { "code": 120 }],
+    "object-curly-spacing": ["error", "always"],
+    "comma-dangle": ["error", "always"]
+  }
 }
