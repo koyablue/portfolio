@@ -6,7 +6,7 @@ type Props = {
 }
 
 /**
- * Main page link list item
+ * top page link list item
  *
  * @param {Props} { href, children }
  * @return {*} JSX.Element
