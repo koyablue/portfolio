@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, ReactElement } from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -24,6 +24,7 @@ import MobileMenu, { useMobileMenu } from '../components/common/mobileMenu'
 
 // components
 import LinkListItem from '../components/pages/main/top/LinkListItem'
+import MainLayout from '../components/layouts/MainLayout'
 
 // TODO: extract layout(header, mobile menu etc)
 const Home = () => {
@@ -66,54 +67,7 @@ const Home = () => {
   }, [isWindowSizeWider])
 
   return (
-    <div>
-      <header
-        className={`
-          flex items-center justify-between bg-bgColorLight w-full h-[64px] border-b border-slate-200 space-x-11 px-8
-          fixed top-0 left-0 right-0
-          md:justify-start
-          z-[1]
-          `
-        }
-      >
-        {/* TODO: logo */}
-        <div>KOYA</div>
-
-        <div className='md:flex md:justify-between md:flex-1'>
-          {/* header nav */}
-          <nav className='hidden md:flex space-x-11 text-orange-600'>
-            <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
-              Skills & Experiences
-            </div>
-            <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
-              My Work
-            </div>
-            <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
-              About
-            </div>
-          </nav>
-
-          {/* resume download button */}
-          <button className={`
-              hidden
-              md:flex items-center justify-center w-40 h-8 border-2 border-orange-600 rounded-[50px]
-              text-orange-600 font-bold
-              hover:bg-orange-600 hover:text-white duration-500 hover:shadow-black hover:shadow-md
-              active:shadow-inner active:shadow-black`
-            }
-          >
-            <p>Resume</p>
-          </button>
-
-          {/* mobile menu open/close button */}
-          <button onClick={handleMobileMenuButtonOnClick} className='md:hidden'>
-            {isMobileMenuOpen ? <GrClose /> : <GiHamburgerMenu />}
-          </button>
-          {/* mobile menu contents */}
-          {/* TODO: mobile menu anchor link */}
-          <MobileMenu isOpen={isMobileMenuOpen} setMobileMenuState={setIsMobileMenuOpen} />
-        </div>
-      </header>
+    <>
 
       {/* hero container */}
       <div className='flex items-center justify-center h-[calc(100vh_-_64px)] mt-[64px] px-5 lg:p-24'>
@@ -131,6 +85,7 @@ const Home = () => {
             `
           }
         >
+          {/* profile photo */}
           <section>
             <div className='w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] relative'>
               <Image
@@ -183,8 +138,12 @@ const Home = () => {
       <div>
         TODO: here are some contents
       </div>
-    </div>
+    </>
   )
 }
+
+Home.getLayout = (page: ReactElement) => (
+  <MainLayout>{page}</MainLayout>
+)
 
 export default Home
