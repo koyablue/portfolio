@@ -26,6 +26,7 @@ import MobileMenu, { useMobileMenu } from '../components/common/mobileMenu'
 import LinkListItem from '../components/pages/main/top/LinkListItem'
 import MainLayout from '../components/layouts/MainLayout'
 import Top from '../components/pages/main/top'
+import SkillsAndExperiences from '../components/pages/main/skillsAndExperiences'
 
 // TODO: extract layout(header, mobile menu etc)
 const Home = () => {
@@ -34,10 +35,7 @@ const Home = () => {
   return (
     <>
       <Top />
-
-      <div>
-        TODO: here are some contents
-      </div>
+      <SkillsAndExperiences />
     </>
   )
 }
