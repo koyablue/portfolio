@@ -18,6 +18,9 @@ module.exports = {
         textMainDark: '#333333',
         bgColorLight: '#f4f5f7',
         // bgColorLight: '#f5f5f5',
+      },
+      screens: {
+        lgm: '1280px',
       }
     },
   plugins: [],
