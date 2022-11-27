@@ -14,7 +14,6 @@ import { isInBrowser } from '../../../../helpers/environment'
 
 // components
 import LinkListItem from '../../../../components/pages/main/top/LinkListItem'
-import MainLayout from '../../../../components/layouts/MainLayout'
 
 /**
  * main page top section

@@ -1,7 +1,7 @@
 import SkillIconImg from '../../../../common/SkillIconImg'
 
 type Props = {
-	iconNames: string[]
+	iconNamesAndLabels: { label: string, iconName: string }[]
 }
 
 /**
@@ -10,14 +10,17 @@ type Props = {
  * @param {Props} { iconNames }
  * @return {*} JSX.Element
  */
-const SkillList = ({ iconNames }: Props) => {
+const SkillList = ({ iconNamesAndLabels }: Props) => {
 	return (
-		<ul className='flex gap-4 flex-wrap'>
+		<ul className='flex gap-4 justify-between flex-wrap'>
 			{/* there would be multiple same icon names in iconNames.
 			so use index as a part of key to make it unique. */}
-			{iconNames.map((iconName, idx) =>
-				<li key={`${iconName}${idx}`}>
-					<SkillIconImg iconName={iconName} />
+			{iconNamesAndLabels.map(({ label, iconName }, idx) =>
+				<li key={`${iconName}${idx}`} className='flex flex-col items-center'>
+					<div className='w-12 h-12 m-3'>
+						<SkillIconImg iconName={iconName} />
+					</div>
+					<p className='text-xs'>{label}</p>
 				</li>
 			)}
 		</ul>

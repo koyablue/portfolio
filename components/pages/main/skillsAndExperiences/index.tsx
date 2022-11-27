@@ -3,30 +3,30 @@ import MainWrapper from '../../../common/MainWrapper'
 import SkillsCard from './skillsCard'
 
 const SkillsAndExperiences = () => {
+
 	const frontendSkills = [
-		'react',
-		'typescript',
-		'javascript',
-		'nextjs',
-		'redux',
-		'jest',
-		'tailwind',
-		'html',
-		'css',
+		{ label: 'React', iconName: 'react' },
+		{ label: 'TypeScript', iconName: 'typescript' },
+		{ label: 'JavaScript', iconName: 'javascript' },
+		{ label: 'Next.js', iconName: 'nextjs' },
+		{ label: 'Jest', iconName: 'jest' },
+		{ label: 'Tailwind CSS', iconName: 'tailwind' },
+		{ label: 'HTML', iconName: 'html' },
+		{ label: 'CSS', iconName: 'css' },
 	]
 
 	const backendSkills = [
-		'php',
-		'laravel',
-		'mysql',
-		'linux',
-		'aws',
+		{ label: 'PHP', iconName: 'php' },
+		{ label: 'Laravel', iconName: 'laravel' },
+		{ label: 'MySQL', iconName: 'mysql' },
+		{ label: 'Linux', iconName: 'linux' },
+		{ label: 'AWS', iconName: 'aws' },
 	]
 
 	const otherSkills = [
-		'git',
-		'github',
-		'githubactions'
+		{ label: 'Git', iconName: 'git' },
+		{ label: 'GitHub', iconName: 'github' },
+		{ label: 'GitHub Actions', iconName: 'githubactions' },
 	]
 
 	return (
@@ -35,9 +35,9 @@ const SkillsAndExperiences = () => {
 
 			{/* w-full */}
 			<div className='flex justify-between gap-4'>
-				<SkillsCard title='frontend' iconNames={frontendSkills} />
-				<SkillsCard title='backend' iconNames={backendSkills} />
-				<SkillsCard title='other' iconNames={otherSkills} />
+				<SkillsCard title='Frontend' iconNamesAndLabels={frontendSkills} />
+				<SkillsCard title='Backend' iconNamesAndLabels={backendSkills} />
+				<SkillsCard title='Other' iconNamesAndLabels={otherSkills} />
 			</div>
 
 		</MainWrapper>
