@@ -21,7 +21,8 @@ const MainWrapper = ({ className = '', children }: Props) => {
 	const styleToApply = Array.isArray(className) ? styleJoin(className) : className
 
 	return (
-		<div className={`px-16 py-10 ${styleToApply}`}>
+		// <div className={`px-16 py-10 ${styleToApply}`}>
+		<div className={`p-5 md:p-12 ${styleToApply}`}>
 			{children}
 		</div>
 	)
