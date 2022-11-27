@@ -47,7 +47,15 @@ const Top = () => {
     <>
       {/* hero container */}
       {/* lg:p-24 */}
-      <div className='flex items-center justify-center h-[calc(100vh_-_64px)] mt-[64px] p-5 lg:p-12'>
+      {/* h-[calc(100vh_-_64px)] */}
+      <div className={`
+          flex items-center justify-center
+          h-[calc(100%_-_64px)] w-full
+          mt-[64px] p-5
+          xs:h-[calc(100vh_-_64px)]
+          lg:p-12`
+        }
+      >
         {/* h-[calc(100% - 96px)] */}
         <div className={`
             flex flex-col justify-center items-center gap-6
@@ -67,7 +75,7 @@ const Top = () => {
         >
           {/* profile photo */}
           <section>
-            <div className='w-[150px] h-[150px] md:w-[250px] md:h-[250px] relative'>
+            <div className='w-[120px] h-[120px] md:w-[250px] md:h-[250px] relative'>
               <Image
                 src='/images/profile/me_monotone.png'
                 layout='fill'
@@ -95,7 +103,7 @@ const Top = () => {
             </div>
             {/* <p>Sometimes backend developer.</p> */}
             {/* links */}
-            <ul className='flex items-center gap-6 pb-1 mb-10'>
+            <ul className='flex items-center gap-6 pb-1 mb-2 md:mb-10'>
               <LinkListItem href={gitHubUrl}>
                 <BsGithub />
               </LinkListItem>
@@ -119,10 +127,10 @@ const Top = () => {
               </li>
             </ul>
             <div>
-              <p className='text-sm text-textMainDark md:text-xl'>
+              <p className='text-xs text-textMainDark xs:text-sm md:text-xl'>
                 I am a Frontend developer who loves creating applications.
               </p>
-              <p className='text-sm text-textMainDark md:text-xl'>
+              <p className='text-xs text-textMainDark xs:text-sm md:text-xl'>
                 Please contact me if you are interested!
               </p>
             </div>
