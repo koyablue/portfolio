@@ -20,7 +20,8 @@ const SkillsAndExperiences = () => {
 
 			{/* TODO: text about my experience. need to brush up. */}
 			<div>
-				<p>I worked as a frontend / backend developer for 3 and a half years. So I have knowledge about both backend and frontend bla bla bla</p>
+				<p>I worked as a frontend / backend developer for 3 and a half years.
+					So I have knowledge about both backend and frontend bla bla bla</p>
 			</div>
 		</MainWrapper>
 	)

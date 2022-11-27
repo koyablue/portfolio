@@ -14,6 +14,7 @@ import { isInBrowser } from '../../../../helpers/environment'
 
 // components
 import LinkListItem from '../../../../components/pages/main/top/LinkListItem'
+import MailToATag from '../../../common/MailToATag'
 
 /**
  * main page top section
@@ -22,26 +23,7 @@ import LinkListItem from '../../../../components/pages/main/top/LinkListItem'
  */
 const Top = () => {
 
-  /**
-   * email icon onClick
-   * build email address string manually to protect it from spam
-   *
-   * @param {(React.MouseEvent<HTMLAnchorElement | HTMLLIElement>)} e
-   * @return {*} false | undefined
-   */
-  const emailIconOnClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLLIElement>) => {
-    if (!isInBrowser) return
-
-    location.href =
-      'mailto:'
-      + e.currentTarget.dataset.name
-      + '@'
-      + e.currentTarget.dataset.domain
-      + '.'
-      + e.currentTarget.dataset.tld
-
-      return false
-  }
+  // TODO: correct email address
 
   return (
     <>
@@ -108,16 +90,10 @@ const Top = () => {
                 <BsFileEarmarkPdfFill />
               </LinkListItem>
               <li className='text-4xl text-textMainDark cursor-pointer hover:text-orange-600'>
-                <a
-                  href={''}
-                  className='block'
-                  data-name="info"
-                  data-domain="example"
-                  data-tld="org"
-                  onClick={emailIconOnClick}
-                >
+                {/* TODO: correct email address */}
+                <MailToATag name='info' domain='example' tld='org' className='block'>
                   <HiOutlineMail />
-                </a>
+                </MailToATag>
               </li>
             </ul>
             <div>
