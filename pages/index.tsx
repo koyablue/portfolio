@@ -27,8 +27,8 @@ import LinkListItem from '../components/pages/main/top/LinkListItem'
 import MainLayout from '../components/layouts/MainLayout'
 import Top from '../components/pages/main/top'
 import SkillsAndExperiences from '../components/pages/main/skillsAndExperiences'
+import MyWork from '../components/pages/main/myWork'
 
-// TODO: extract layout(header, mobile menu etc)
 const Home = () => {
 
 
@@ -36,7 +36,7 @@ const Home = () => {
     <>
       <Top />
       <SkillsAndExperiences />
-      {/* TODO: My Work */}
+      <MyWork />
     </>
   )
 }
