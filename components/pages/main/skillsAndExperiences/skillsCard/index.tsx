@@ -20,7 +20,7 @@ const SkillsCard = ({ title, iconNamesAndLabels }: Props) => {
 			bg-slate-200 rounded-[20px] shadow-xl
 			py-10
 			lg:px-2
-			lg:w-[calc(100%_/_3)]`}
+			lg:w-[calc((100%_-_32px)_/_3)]`}
 		>
 			<p className='text-textMainDark font-bold text-xl text-center mb-5'>{title}</p>
 			<SkillList iconNamesAndLabels={iconNamesAndLabels} />
