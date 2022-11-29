@@ -17,12 +17,6 @@ const SkillsAndExperiences = () => {
 				<SkillsCard title='Backend' iconNamesAndLabels={backendSkills} />
 				<SkillsCard title='Other' iconNamesAndLabels={otherSkills} />
 			</div>
-
-			{/* TODO: text about my experience. need to brush up. */}
-			<div>
-				<p>I worked as a frontend / backend developer for 3 and a half years.
-					So I have knowledge about both backend and frontend bla bla bla</p>
-			</div>
 		</MainWrapper>
 	)
 }

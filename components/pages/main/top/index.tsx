@@ -97,8 +97,11 @@ const Top = () => {
               </li>
             </ul>
             <div>
-              <p className='text-sm text-textMainDark md:text-xl'>
-                I am a Frontend developer who loves creating applications.
+              <p className='text-sm text-textMainDark mb-2 md:text-xl'>
+                I am a Web developer with 3 and a half years experience who loves creating applications.
+              </p>
+              <p className='text-sm text-textMainDark mb-2 md:text-xl'>
+                Skilled in TypeScript, React, Next.js, HTML, CSS, PHP, Laravel and MySQL.
               </p>
               <p className='text-sm text-textMainDark md:text-xl'>
                 Please contact me if you are interested!
