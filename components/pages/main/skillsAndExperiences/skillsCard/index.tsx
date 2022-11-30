@@ -4,26 +4,28 @@ import { Skill } from '../../../../../types/skillsAndExperiences'
 
 type Props = {
 	title: string
-	iconNamesAndLabels: Skill[]
+	skills: Skill[]
 }
 
 /**
- * Card that displays a list of skill icons.
+ * ard that displays a list of skill icons.
  *
- * @param {Props} { title, iconNamesAndLabels }
+ * @param {Props} { title, skills }
  * @return {*} JSX.Element
  */
-const SkillsCard = ({ title, iconNamesAndLabels }: Props) => {
+const SkillsCard = ({ title, skills }: Props) => {
+	// items-center
 	return (
 		<div className={`
-			flex flex-col items-center
-			bg-slate-200 rounded-[20px] shadow-xl
-			py-10
+			flex flex-col
+			bg-slate-200 rounded-[20px] shadow-lg
+			pt-4
+			pb-8
 			lg:px-2
 			lg:w-[calc((100%_-_32px)_/_3)]`}
 		>
-			<p className='text-textMainDark font-bold text-xl text-center mb-5'>{title}</p>
-			<SkillList iconNamesAndLabels={iconNamesAndLabels} />
+			<p className='text-textMainDark font-bold text-xl text-center mb-2'>{title}</p>
+			<SkillList skills={skills} />
 		</div>
 	)
 }
