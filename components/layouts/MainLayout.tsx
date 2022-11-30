@@ -55,10 +55,10 @@ const MainLayout = ({ children }: Props) => {
           {/* header nav */}
           <nav className='hidden md:flex space-x-11 text-orange-600'>
             <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
-              Skills & Experiences
+              <a href='#skillsAndExperiences'>Skills & Experiences</a>
             </div>
             <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
-              My Work
+              <a href='#myWork'>My Work</a>
             </div>
             <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
               About
