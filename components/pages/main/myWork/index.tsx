@@ -1,38 +1,32 @@
+// components
 import MainWrapper from '../../../common/MainWrapper'
 import MainPageSectionTitle from '../common/MainPageSectionTitle'
-import SkillsCard from '../skillsAndExperiences/skillsCard'
+import ProjectCard from './ProjectCard'
 
-import { frontendSkills, backendSkills, otherSkills } from '../../../../constants/skillsAndExperiences'
+// icons
+import { IoIosArrowForward } from 'react-icons/io'
 
-const ProjectCard = () => {
-	return (
-		<div className={`
-			flex flex-col items-center
-			bg-slate-200 rounded-[20px] shadow-xl
-			py-10
-			lg:px-2
-			lg:w-[calc((100%_-_32px)_/_3)]`}
-		>
-			<p className='text-textMainDark font-bold text-xl text-center mb-5'>card title</p>
-			contents here
-		</div>
-	)
-}
+// custom hooks
+import { useGetProjects } from '../../../../hooks/useGetProjects'
 
 const MyWork = () => {
+	const { getProjects } = useGetProjects()
+	const projects = getProjects()
+
 	return (
 		<MainWrapper>
 			<MainPageSectionTitle title='My Work' />
 
 			{/* gap-x-0 gap-y-1  */}
-			<div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'>
-				<ProjectCard />
-				<ProjectCard />
-				<ProjectCard />
-				<ProjectCard />
-				<ProjectCard />
-				<ProjectCard />
-				<ProjectCard />
+			{/* <div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'> */}
+			<div className='flex flex-col justify-between gap-4 flex-wrap mb-4 lg:flex-row lg:justify-start'>
+				{projects.map(project => <ProjectCard key={project.id} project={project} />)}
+			</div>
+			<div className='flex items-center justify-end gap-1'>
+				<p className='font-bold text-orange-600 cursor-pointer hover:text-orange-400'>
+					View all projects
+				</p>
+				<IoIosArrowForward className='font-bold text-orange-600 cursor-pointer hover:text-orange-400' />
 			</div>
 		</MainWrapper>
 	)
