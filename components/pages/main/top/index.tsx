@@ -28,13 +28,14 @@ const Top = () => {
   return (
     <>
       {/* hero container */}
+
+      {/*md:h-[calc(100vh_-_64px)] */}
       <div className={`
           flex items-center justify-center
           h-[calc(100%_-_64px)]
           w-full
           overflow-auto
           mt-[64px] p-5
-          md:h-[calc(100vh_-_64px)]
           md:p-12`
         }
       >
@@ -50,7 +51,7 @@ const Top = () => {
             py-10
             rounded-[20px]
             bg-slate-200
-            shadow-xl
+            shadow-lg
             `
           }
         >
