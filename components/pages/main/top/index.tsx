@@ -44,14 +44,13 @@ const Top = () => {
         {/* lg:items-start */}
         {/* lg:flex-row */}
         {/* h-full */}
-        {/* bg-slate-200 */}
         <div className={`
             flex flex-col justify-center items-center gap-6
             w-full
             px-10
             py-10
             rounded-[20px]
-            bg-appBlue
+            bg-slate-200
             shadow-lg
             `
           }
