@@ -1,5 +1,5 @@
-import { frontendSkills, backendSkills, otherSkills } from '../staticData/skills'
-import { Skill, SkillRawData } from '../types/skillsAndExperiences'
+import { frontendSkills, backendSkills, otherSkills } from '../../staticData/skills'
+import { Skill, SkillRawData } from '../../types/skillsAndExperiences'
 
 export const useGetSkills = () => {
 

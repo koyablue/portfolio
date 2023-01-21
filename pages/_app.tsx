@@ -3,6 +3,8 @@ import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import '../styles/globals.css'
 
+import 'tailwindcss/tailwind.css';
+
 // https://nextjs.org/docs/basic-features/layouts
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

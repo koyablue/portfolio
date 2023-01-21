@@ -7,7 +7,7 @@ import ProjectCard from './ProjectCard'
 import { IoIosArrowForward } from 'react-icons/io'
 
 // custom hooks
-import { useGetProjects } from '../../../../hooks/useGetProjects'
+import { useGetProjects } from '../../../../hooks/data/useGetProjects'
 
 const MyWork = () => {
 	const { getProjects } = useGetProjects()

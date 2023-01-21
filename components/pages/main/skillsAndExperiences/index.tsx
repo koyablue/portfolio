@@ -4,7 +4,7 @@ import MainPageSectionTitle from '../common/MainPageSectionTitle'
 import SkillsCard from './skillsCard'
 
 // custom hooks
-import { useGetSkills } from '../../../../hooks/useGetSkills'
+import { useGetSkills } from '../../../../hooks/data/useGetSkills'
 
 /**
  * main page Skills & Experiences section

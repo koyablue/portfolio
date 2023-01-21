@@ -1,5 +1,5 @@
-import { projects } from '../staticData/projects'
-import { Project, ProjectRawData } from '../types/project'
+import { projects } from '../../staticData/projects'
+import { Project, ProjectRawData } from '../../types/project'
 
 export const useGetProjects = () => {
   const convert = (rawDataList: ProjectRawData[]): Project[] => {

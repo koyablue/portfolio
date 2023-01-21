@@ -5,6 +5,7 @@ import MobileMenu, { useMobileMenu } from '../common/mobileMenu'
 
 // custom hooks
 import { useIsWindowSizeWider } from '../../hooks/useIsWindowSizeWider'
+import { useToggle } from '../../hooks/useToggle'
 
 // icons
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -22,7 +23,7 @@ type Props = {
  */
 const MainLayout = ({ children }: Props) => {
 	const { isWindowSizeWider } = useIsWindowSizeWider(768)
-	const { isMobileMenuOpen, setIsMobileMenuOpen, toggleMobileMenu } = useMobileMenu()
+	const { status: isMobileMenuOpen, setStatus: setIsMobileMenuOpen, toggle: toggleMobileMenu } = useToggle()
 
   /**
    * manage mobile hamburger menu open/close
@@ -53,14 +54,14 @@ const MainLayout = ({ children }: Props) => {
 
         <div className='md:flex md:justify-between md:flex-1'>
           {/* header nav */}
-          <nav className='hidden md:flex space-x-11 text-orange-600'>
-            <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
+          <nav className='hidden md:flex space-x-11 text-appOrange'>
+            <div className='flex items-center justify-center font-bold hover:text-red-500 cursor-pointer'>
               <a href='#skillsAndExperiences'>Skills & Experiences</a>
             </div>
-            <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
+            <div className='flex items-center justify-center font-bold hover:text-red-500 cursor-pointer'>
               <a href='#myWork'>My Work</a>
             </div>
-            <div className='flex items-center justify-center font-bold hover:text-orange-400 cursor-pointer'>
+            <div className='flex items-center justify-center font-bold hover:text-red-500 cursor-pointer'>
               About
             </div>
           </nav>
@@ -68,9 +69,9 @@ const MainLayout = ({ children }: Props) => {
           {/* resume download button */}
           <button className={`
               hidden
-              md:flex items-center justify-center w-40 h-8 border-2 border-orange-600 rounded-[50px]
-              text-orange-600 font-bold
-              hover:bg-orange-600 hover:text-white duration-500 hover:shadow-black hover:shadow-md
+              md:flex items-center justify-center w-40 h-8 border-2 border-appOrange rounded-[50px]
+              text-appOrange font-bold
+              hover:border-red-500 hover:bg-red-500 hover:text-white duration-500 hover:shadow-black hover:shadow-md
               active:shadow-inner active:shadow-black`
             }
           >
@@ -83,7 +84,11 @@ const MainLayout = ({ children }: Props) => {
           </button>
           {/* mobile menu contents */}
           {/* TODO: mobile menu anchor link */}
-          <MobileMenu isOpen={isMobileMenuOpen} setMobileMenuState={setIsMobileMenuOpen} />
+          <MobileMenu
+            isOpen={isMobileMenuOpen}
+            setMobileMenuState={setIsMobileMenuOpen}
+            toggleMobileMenu={toggleMobileMenu}
+          />
         </div>
       </header>
 			{children}

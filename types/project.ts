@@ -5,6 +5,7 @@ export type Project = 	{
   type: ProjectType
   techStack?: string[]
   image?: string
+  githubRepo?: string
 }
 
 export type ProjectType = 'personal' | 'company'
@@ -15,4 +16,5 @@ export type ProjectRawData = {
   type: ProjectType
   techStack?: string[]
   image?: string
+  githubRepo?: string
 }

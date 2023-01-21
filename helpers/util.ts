@@ -13,3 +13,20 @@ export const assertIsNode: (e: EventTarget | null) => asserts e is Node = e => {
 			throw new Error(`Node expected`);
 	}
 }
+
+/**
+ * Omit more than the specified number of characters
+ * FIXME: make it possible to handle surrogate pair(emoji)
+ *
+ * @param {string} text
+ * @param {number} len
+ * @param {string} [ellipsis='...']
+ * @return {*}  {string}
+ */
+export const omitStr = (
+  text: string,
+  len: number,
+  ellipsis = '...'
+): string => {
+  return text.length >= len ? `${text.slice(0, len)}${ellipsis}` : text
+}

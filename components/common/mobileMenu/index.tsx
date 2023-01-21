@@ -3,6 +3,12 @@ import { useState, useEffect, useRef } from 'react'
 // components
 import MenuItem from './MenuItem'
 
+// hooks
+import { useToggle } from '../../../hooks/useToggle'
+
+// types
+import type { UseToggleReturnType } from '../../../hooks/useToggle'
+
 // utils
 import { assertIsNode } from '../../../helpers/util'
 
@@ -28,7 +34,8 @@ export const useMobileMenu = (isOpen = false) => {
 
 type Props = {
 	isOpen: boolean
-	setMobileMenuState: ReturnType<typeof useMobileMenu>['setIsMobileMenuOpen']
+	setMobileMenuState: UseToggleReturnType['setStatus']
+	toggleMobileMenu: UseToggleReturnType['toggle']
 }
 
 /**
@@ -38,7 +45,7 @@ type Props = {
  * @param {Props} { isOpen, setMobileMenuState }
  * @return {*} JSX.Element
  */
-const MobileMenu = ({ isOpen, setMobileMenuState }: Props) => {
+const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => {
 	const mobileMenuRef = useRef<HTMLUListElement>(null)
 
 	const handleOutsideClick = (e: MouseEvent) => {
@@ -73,10 +80,10 @@ const MobileMenu = ({ isOpen, setMobileMenuState }: Props) => {
 				${!isOpen ? 'hidden' : ''}
 				`
 			}>
-				<MenuItem href='#' label='Skills & Experiences' />
-				<MenuItem href='#' label='My Work' />
-				<MenuItem href='#' label='About' />
-				<MenuItem href='#' label='Resume' />
+				<MenuItem href='#skillsAndExperiences' label='Skills & Experiences' toggleMobileMenu={toggleMobileMenu} />
+				<MenuItem href='#myWork' label='My Work' toggleMobileMenu={toggleMobileMenu} />
+				<MenuItem href='#' label='About' toggleMobileMenu={toggleMobileMenu} />
+				<MenuItem href='#' label='Resume' toggleMobileMenu={toggleMobileMenu} />
 			</ul>
 		</div>
 	)

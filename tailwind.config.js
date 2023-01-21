@@ -16,7 +16,13 @@ module.exports = {
     extend: {
       colors: {
         textMainDark: '#333333',
+        textLight: '#f4f5f7',
         bgColorLight: '#f4f5f7',
+        appOrange: '#f76c6c',
+        appBlue: '#a8d0e6',
+        appNavy: '#374785',
+        appDarkNavy: '#24305e',
+        appYellow: '#f8e9a1',
         // bgColorLight: '#f5f5f5',
       },
       screens: {
