@@ -27,7 +27,37 @@ module.exports = {
       },
       screens: {
         lgm: '1280px',
-      }
+      },
+      animation: {
+        "slide-in-fwd-center": "slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
+        "slide-out-fwd-center": "slide-out-fwd-center 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both"
+      },
+      keyframes: {
+        "slide-in-fwd-center": {
+            "0%": {
+                transform: "translateZ(-1400px)",
+                opacity: "0",
+                visibility: "collapse"
+            },
+            to: {
+                transform: "translateZ(0)",
+                opacity: "1",
+                visibility: "visible"
+            }
+        },
+        "slide-out-fwd-center": {
+          "0%": {
+              transform: "translateZ(1)",
+              opacity: "1",
+              visibility: "visible"
+          },
+          to: {
+              transform: "translateZ(600px)",
+              opacity: "0",
+              visibility: "collapse"
+          }
+        },
+      },
     },
     plugins: [require("@tailwindcss/line-clamp")],
   },

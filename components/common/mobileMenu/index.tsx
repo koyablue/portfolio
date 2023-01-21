@@ -17,25 +17,25 @@ import { assertIsNode } from '../../../helpers/util'
  *
  * @param {boolean} [isOpen=false]
  * @return {*} {
-				readonly isMobileMenuOpen: boolean;
-				readonly setIsMobileMenuOpen: Dispatch<SetStateAction<boolean>>;
-				readonly toggleMobileMenu: () => void;
-		}
+        readonly isMobileMenuOpen: boolean;
+        readonly setIsMobileMenuOpen: Dispatch<SetStateAction<boolean>>;
+        readonly toggleMobileMenu: () => void;
+    }
  */
 export const useMobileMenu = (isOpen = false) => {
-	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(isOpen)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(isOpen)
 
-	const toggleMobileMenu = () => {
-		setIsMobileMenuOpen(!isMobileMenuOpen)
-	}
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
-	return { isMobileMenuOpen, setIsMobileMenuOpen, toggleMobileMenu } as const
+  return { isMobileMenuOpen, setIsMobileMenuOpen, toggleMobileMenu } as const
 }
 
 type Props = {
-	isOpen: boolean
-	setMobileMenuState: UseToggleReturnType['setStatus']
-	toggleMobileMenu: UseToggleReturnType['toggle']
+  isOpen: boolean
+  setMobileMenuState: UseToggleReturnType['setStatus']
+  toggleMobileMenu: UseToggleReturnType['toggle']
 }
 
 /**
@@ -46,47 +46,51 @@ type Props = {
  * @return {*} JSX.Element
  */
 const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => {
-	const mobileMenuRef = useRef<HTMLUListElement>(null)
+  const mobileMenuRef = useRef<HTMLUListElement>(null)
 
-	const handleOutsideClick = (e: MouseEvent) => {
+  const handleOutsideClick = (e: MouseEvent) => {
     assertIsNode(e.target)
     if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
       setMobileMenuState(false)
     }
   }
 
-	useEffect(() => {
+  useEffect(() => {
     document.addEventListener('mousedown', e => {handleOutsideClick(e)});
     return () => {
       document.removeEventListener('mousedown', e => {handleOutsideClick(e)});
     };
   }, [])
 
-	// TODO: mobile menu anchor link
-	return (
-		<div className='md:hidden'>
-			{/* space-y-6 */}
-			<ul
-			ref={mobileMenuRef}
-			className={`
-				absolute
-				w-[calc(100%_-_40px)]
-				flex flex-col items-center self-end
-				py-8 mt-10
-				font-bold
-				bg-white
-				rounded-lg
-				sm:self-center left-[20px] right-[20px] drop-shadow-md
-				${!isOpen ? 'hidden' : ''}
-				`
-			}>
-				<MenuItem href='#skillsAndExperiences' label='Skills & Experiences' toggleMobileMenu={toggleMobileMenu} />
-				<MenuItem href='#myWork' label='My Work' toggleMobileMenu={toggleMobileMenu} />
-				<MenuItem href='#' label='About' toggleMobileMenu={toggleMobileMenu} />
-				<MenuItem href='#' label='Resume' toggleMobileMenu={toggleMobileMenu} />
-			</ul>
-		</div>
-	)
+  console.log(isOpen)
+
+  // TODO: mobile menu anchor link
+  return (
+    <div className='md:hidden'>
+      {/* space-y-6 */}
+      {/* 				${!isOpen ? 'hidden' : ''} */}
+      {/* ${isOpen ? 'opacity-100' : 'opacity-0'} */}
+      <ul
+      ref={mobileMenuRef}
+      className={`
+        absolute
+        w-[calc(100%_-_40px)]
+        flex flex-col items-center self-end
+        py-8 mt-10
+        font-bold
+        bg-white
+        rounded-lg
+        sm:self-center left-[20px] right-[20px] drop-shadow-md
+        ${isOpen ? 'animate-slide-in-fwd-center opacity-100' : 'animate-slide-out-fwd-center opacity-0'}
+        `
+      }>
+        <MenuItem href='#skillsAndExperiences' label='Skills & Experiences' toggleMobileMenu={toggleMobileMenu} />
+        <MenuItem href='#myWork' label='My Work' toggleMobileMenu={toggleMobileMenu} />
+        <MenuItem href='#' label='About' toggleMobileMenu={toggleMobileMenu} />
+        <MenuItem href='#' label='Resume' toggleMobileMenu={toggleMobileMenu} />
+      </ul>
+    </div>
+  )
 }
 
 export default MobileMenu
