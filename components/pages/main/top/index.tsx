@@ -44,13 +44,14 @@ const Top = () => {
         {/* lg:items-start */}
         {/* lg:flex-row */}
         {/* h-full */}
+        {/* bg-slate-200 */}
         <div className={`
             flex flex-col justify-center items-center gap-6
             w-full
             px-10
             py-10
             rounded-[20px]
-            bg-slate-200
+            bg-appBlue
             shadow-lg
             `
           }
@@ -60,9 +61,9 @@ const Top = () => {
             <div className='w-[120px] h-[120px] md:w-[200px] md:h-[200px] relative'>
               <Image
                 src='/images/profile/me_monotone.png'
-                layout='fill'
+                fill
                 alt='Photograph of Koya Aoyama'
-                className='rounded-full border-[3px] border-orange-600'
+                className='rounded-full border-[3px] border-appOrange'
               />
             </div>
           </section>
@@ -71,10 +72,10 @@ const Top = () => {
           <section className='flex flex-col items-center'>
             <div className='mb-3.5'>
               {/* text-[52px] */}
-              <p className='text-[35px] text-center font-extrabold text-orange-600 md:text-[75px]'>
+              <p className='text-[35px] text-center font-extrabold text-appOrange md:text-[75px]'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] text-center font-extrabold text-textMainDark md:text-[50px]'>
+              <p className='text-[25px] text-center font-extrabold text-appDarkNavy md:text-[50px]'>
                 Frontend <br className='hidden'/>developer
               </p>
             </div>
@@ -97,14 +98,14 @@ const Top = () => {
                 </MailToATag>
               </li>
             </ul>
-            <div>
-              <p className='text-sm text-textMainDark mb-2 md:text-xl'>
+            <div className='text-appDarkNavy'>
+              <p className='text-sm mb-2 md:text-xl'>
                 I am a Web developer with 3 and a half years experience who loves creating applications.
               </p>
-              <p className='text-sm text-textMainDark mb-2 md:text-xl'>
+              <p className='text-sm mb-2 md:text-xl'>
                 Skilled in TypeScript, React, Next.js, HTML, CSS, PHP, Laravel and MySQL.
               </p>
-              <p className='text-sm text-textMainDark md:text-xl'>
+              <p className='text-sm md:text-xl'>
                 Please contact me if you are interested!
               </p>
             </div>
