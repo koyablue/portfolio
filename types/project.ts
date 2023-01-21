@@ -6,6 +6,7 @@ export type Project = 	{
   shouldPrioritize: boolean
   techStack?: string[]
   image?: string
+  url?: string
   githubRepo?: string
 }
 
@@ -18,5 +19,6 @@ export type ProjectRawData = {
   shouldPrioritize: boolean
   techStack?: string[]
   image?: string
+  url?: string
   githubRepo?: string
 }

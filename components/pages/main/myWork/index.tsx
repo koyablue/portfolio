@@ -15,9 +15,15 @@ const MyWork = () => {
 	const projects = getProjects()
 	const projectsToShow = projects.filter(project => project.shouldPrioritize)
 
+	// TODO: github
+
 	return (
 		<MainWrapper>
 			<MainPageSectionTitle title='My Work' />
+
+			<div>
+				TODO: search projects
+			</div>
 
 			{/* gap-x-0 gap-y-1  */}
 			{/* <div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'> */}

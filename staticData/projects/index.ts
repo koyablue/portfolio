@@ -7,7 +7,9 @@ export const projects: ProjectRawData[] = [
     type: 'personal',
     shouldPrioritize: true,
     techStack: ['TypeScript', 'Node.js', 'NPM', 'Jest', 'GitHub Actions'],
-    image: '/images/projects/path-kanri_image.png'
+    image: '/images/projects/path-kanri_image.png',
+    url: 'https://www.npmjs.com/package/path-kanri',
+    githubRepo: 'https://github.com/koyablue/path-kanri',
   },
   {
     title: 'Urumap',
@@ -15,7 +17,8 @@ export const projects: ProjectRawData[] = [
     type: 'company',
     shouldPrioritize: true,
     techStack: ['PHP', 'Laravel', 'JavaScript', 'MySQL', 'Docker', 'AWS', 'GitHub Actions'],
-    image: '/images/projects/urumap_image.png'
+    image: '/images/projects/urumap_image.png',
+    url: 'https://urumap.com/',
   },
   {
     title: 'Project2 priority',
