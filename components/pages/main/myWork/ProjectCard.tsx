@@ -14,6 +14,9 @@ const ProjectCard = ({ project }: Props) => {
   // TODO: overflow hidden
 
   // hover:opacity-70
+
+  // TODO: decide projects to display in top page
+
   return (
     <div className={`
       relative
@@ -22,7 +25,6 @@ const ProjectCard = ({ project }: Props) => {
       pt-3
       px-3
       pb-8
-      cursor-pointer
       max-h-[500px]
       min-h-[280px]
       max-w-[100%]
@@ -40,26 +42,30 @@ const ProjectCard = ({ project }: Props) => {
             className='rounded-[20px] object-cover object-center'
           />
         </div>
-        <p className='text-textMainDark font-bold text-xl text-center mb-2'>
+        <p className='text-appDarkNavy font-bold text-xl text-center mb-2'>
           {project.title}
         </p>
-        {/* TODO: type tag here */}
-        <div className='bg-zinc-300 w-[90px] text-center text-slate-600 text-sm rounded-[6px] p-1'>
+        <div className='bg-zinc-300 w-[90px] text-center text-zinc-600 text-sm rounded-[6px] p-1'>
           <p>#{project.type}</p>
         </div>
-        <div>
+        <div className='text-appNavy'>
           {techStack}
         </div>
-        <div className='break-words w-full text-slate-700'>
+        <div className='break-words w-full text-appNavy'>
           {omitStr(project.description, 200)}
         </div>
       </div>
-      <div className='w-full'>
+      <div className='flex items-center justify-center w-full md:block'>
         <button className='
-              flex items-center justify-center w-1/4 h-8 border-2 border-orange-600 rounded-[10px]
-              text-orange-600 font-bold
-              hover:bg-orange-600 hover:text-white duration-300
-              '>ttt</button>
+          flex items-center justify-center w-full h-8 border-2 border-appOrange rounded-[10px]
+          text-appOrange font-bold text-sm
+          hover:bg-appOrange hover:text-slate-200
+          active:opacity-60
+          duration-300
+          md:w-1/3'
+        >
+          Details
+        </button>
       </div>
       {/* <div className='
       absolute rounded-[20px] w-full h-full top-0 left-0 opacity-0 bg-gray-500 transition duration-150 ease-out 
