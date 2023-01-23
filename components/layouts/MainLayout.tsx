@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 // components
 import MobileMenu from '../common/mobileMenu'
@@ -20,7 +20,7 @@ const PcNavMenuItem = ({ children }: { children: ReactNode }) => {
 }
 
 type Props = {
-	children: ReactNode
+  children: ReactNode
 }
 
 /**
@@ -30,29 +30,38 @@ type Props = {
  * @return {*} JSX.Element
  */
 const MainLayout = ({ children }: Props) => {
-	const { isWindowSizeWider } = useIsWindowSizeWider(768)
-	const { status: isMobileMenuOpen, setStatus: setIsMobileMenuOpen, toggle: toggleMobileMenu } = useToggle()
+  const [shouldActive, setShouldActive] = useState<boolean | undefined>(undefined)
+  const { isWindowSizeWider } = useIsWindowSizeWider(768)
+  const { status: isMobileMenuOpen, setStatus: setIsMobileMenuOpen, toggle: toggleMobileMenu } = useToggle()
 
   /**
    * manage mobile hamburger menu open/close
    *
    */
-	 const handleMobileMenuButtonOnClick = () => {
+   const handleMobileMenuButtonOnClick = () => {
+    setShouldActive(true)
     toggleMobileMenu()
   }
 
-	useEffect(() => {
+  const mobileMenuOpenStatus = shouldActive && isMobileMenuOpen
+
+  useEffect(() => {
     // close mobile menu if screen is expanded while mobile menu is open
-    if (isWindowSizeWider) setIsMobileMenuOpen(false)
+    if (isWindowSizeWider) {
+      setIsMobileMenuOpen(false)
+      setShouldActive(undefined)
+    }
   }, [isWindowSizeWider])
 
-	return (
-		<div>
-      {/* bg-bgColorLight */}
-			<header
+  return (
+    <div>
+      <header
         className={`
-          flex items-center justify-between bg-appDarkNavy w-full h-[64px] border-b border-slate-200 space-x-11 px-8
+          flex items-center justify-between w-full h-[100px] space-x-11 px-8
           fixed top-0 left-0 right-0
+          border-b-2
+          border-textMainDark
+          bg-bgColorLight
           md:justify-start
           z-[1]
           `
@@ -80,7 +89,7 @@ const MainLayout = ({ children }: Props) => {
               hidden
               md:flex items-center justify-center w-40 h-8 border-2 border-textLight rounded-[50px]
               text-textLight
-              hover:border-red-500 hover:bg-red-500 hover:text-white duration-200 hover:shadow-black hover:shadow-md
+              hover:border-appOrange hover:bg-appOrange hover:text-textLight duration-200 hover:shadow-black hover:shadow-md
               active:shadow-inner active:shadow-black`
             }
           >
@@ -94,15 +103,15 @@ const MainLayout = ({ children }: Props) => {
           {/* mobile menu contents */}
           {/* TODO: mobile menu anchor link */}
           <MobileMenu
-            isOpen={isMobileMenuOpen}
+            isOpen={mobileMenuOpenStatus}
             setMobileMenuState={setIsMobileMenuOpen}
             toggleMobileMenu={toggleMobileMenu}
           />
         </div>
       </header>
-			{children}
-		</div>
-	)
+      {children}
+    </div>
+  )
 }
 
 export default MainLayout

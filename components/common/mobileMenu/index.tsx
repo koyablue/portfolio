@@ -13,7 +13,7 @@ import type { UseToggleReturnType } from '../../../hooks/useToggle'
 import { assertIsNode } from '../../../helpers/util'
 
 type Props = {
-  isOpen: boolean
+  isOpen?: boolean
   setMobileMenuState: UseToggleReturnType['setStatus']
   toggleMobileMenu: UseToggleReturnType['toggle']
 }
@@ -59,9 +59,10 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         font-bold
         bg-white
         rounded-lg
+        opacity-0
         sm:self-center left-[20px] right-[20px] drop-shadow-md
-        ${!isOpen && 'hidden'}
-        ${isOpen && 'animate-slide-in-fwd-center'}
+        ${isOpen && isOpen !== undefined && 'animate-slide-in-fwd-center'}
+        ${!isOpen && isOpen !== undefined && 'animate-slide-out-bck-center'}
         `
       }>
         <MenuItem href='#skillsAndExperiences' label='Skills & Experiences' toggleMobileMenu={toggleMobileMenu} />
