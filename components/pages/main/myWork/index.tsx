@@ -5,39 +5,52 @@ import ProjectCard from './ProjectCard'
 
 // icons
 import { IoIosArrowForward } from 'react-icons/io'
+import { BiRightArrowAlt } from 'react-icons/bi'
 
 // custom hooks
 import { useGetProjects } from '../../../../hooks/data/useGetProjects'
 
 const MyWork = () => {
-	const { getProjects } = useGetProjects()
+  const { getProjects } = useGetProjects()
 
-	const projects = getProjects()
-	const projectsToShow = projects.filter(project => project.shouldPrioritize)
+  const projects = getProjects()
+  const projectsToShow = projects.filter(project => project.shouldPrioritize)
 
-	// TODO: github
+  // TODO: github
 
-	return (
-		<MainWrapper>
-			<MainPageSectionTitle title='My Work' />
+  return (
+    <MainWrapper>
+      <MainPageSectionTitle title='My Work' />
 
-			<div>
-				TODO: search projects
-			</div>
+      <div>
+        TODO: search projects
+      </div>
 
-			{/* gap-x-0 gap-y-1  */}
-			{/* <div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'> */}
-			<div className='flex flex-col justify-between gap-4 flex-wrap mb-4 lg:flex-row lg:justify-start'>
-				{projectsToShow.map(project => <ProjectCard key={project.id} project={project} />)}
-			</div>
-			<div className='flex items-center justify-end gap-1'>
-				<p className='font-bold text-appOrange cursor-pointer hover:text-red-500'>
-					View all projects
-				</p>
-				<IoIosArrowForward className='font-bold text-appOrange cursor-pointer hover:text-red-500' />
-			</div>
-		</MainWrapper>
-	)
+      {/* gap-x-0 gap-y-1  */}
+      {/* <div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'> */}
+      <div className='flex flex-col justify-between gap-4 flex-wrap mb-4 lg:flex-row lg:justify-start'>
+        {projectsToShow.map(project => <ProjectCard key={project.id} project={project} />)}
+      </div>
+        <div className='flex justify-end'>
+          <button className={`
+            flex items-center justify-center
+            font-semibold text-center gap-1 grow-0 box-border
+            border-2 border-textMainDark
+            shadow-noBlurBlackThin
+            p-2
+            hover:shadow-none
+            hover:bg-appLightGreen
+            active:opacity-60
+            duration-300
+            `
+          }>
+            <p>View all projects</p>
+            <BiRightArrowAlt className='text-xl' />
+          </button>
+        </div>
+
+    </MainWrapper>
+  )
 }
 
 export default MyWork

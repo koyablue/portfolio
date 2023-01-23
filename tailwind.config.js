@@ -36,7 +36,8 @@ module.exports = {
       },
       animation: {
         "slide-in-fwd-center": "slide-in-fwd-center 0.3s ease-in forwards",
-        "slide-out-bck-center": "slide-out-bck-center 0.3s ease-in forwards"
+        "slide-out-bck-center": "slide-out-bck-center 0.3s ease-in forwards",
+        "slide-in-fwd-left": "slide-in-fwd-left 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both"
       },
       keyframes: {
         "slide-in-fwd-center": {
@@ -46,6 +47,16 @@ module.exports = {
         "slide-out-bck-center": {
           "0%": { opacity: 1, visibility: "visible" },
           "100%": { opacity: 0, visibility: "hidden" },
+        },
+        "slide-in-fwd-left": {
+          "0%": {
+              transform: "translateZ(-1400px) translateX(-1000px)",
+              opacity: "0"
+          },
+          to: {
+              transform: "translateZ(0) translateX(0)",
+              opacity: "1"
+          }
         },
       },
       boxShadow: {

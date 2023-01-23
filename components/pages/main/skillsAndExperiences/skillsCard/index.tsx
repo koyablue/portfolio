@@ -21,6 +21,8 @@ const SkillsCard = ({ title, skills }: Props) => {
       shadow-[5px_5px_0_0_#333333]
       pt-4
       pb-8
+      border-2
+      border-textMainDark
       lg:px-2
       lg:w-[calc((100%_-_32px)_/_3)]`}
     >

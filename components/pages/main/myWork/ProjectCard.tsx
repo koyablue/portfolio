@@ -21,7 +21,10 @@ const ProjectCard = ({ project }: Props) => {
     <div className={`
       relative
       flex flex-col items-center
-      bg-slate-200 rounded-[20px] shadow-lg
+      bg-appSand
+      shadow-noBlurBlackThin
+      border-2
+      border-textMainDark
       pt-3
       px-3
       pb-8
@@ -39,27 +42,35 @@ const ProjectCard = ({ project }: Props) => {
             src={project.image || '/images/projects/path-kanri_image.png'}
             alt={`${project.title} image`}
             fill
-            className='rounded-[20px] object-cover object-center'
+            className='object-cover object-center border-4 border-double border-textMainDark'
           />
         </div>
-        <p className='text-appDarkNavy font-bold text-xl text-center mb-2'>
+        <p className='text-textMainDark font-bold text-xl text-center mb-2'>
           {project.title}
         </p>
-        <div className='bg-zinc-300 w-[90px] text-center text-zinc-600 text-sm rounded-[6px] p-1'>
+        <div className='bg-appLightBlue w-[90px] text-center text-textDarkMain text-sm rounded-[6px] p-1'>
           <p>#{project.type}</p>
         </div>
-        <div className='text-appNavy'>
+        <div className='text-textMainDark font-semibold'>
           {techStack}
         </div>
-        <div className='break-words w-full text-appNavy'>
+        <div className='break-words w-full text-textMainDark text-sm '>
           {omitStr(project.description, 200)}
         </div>
       </div>
-      <div className='flex items-center justify-center w-full md:block'>
+      <div className='flex items-center justify-center w-full md:justify-end'>
         <button className='
-          flex items-center justify-center w-full h-8 border-2 border-appOrange rounded-[10px]
-          text-appOrange font-bold text-sm
-          hover:bg-appOrange hover:text-slate-200
+          flex items-center justify-center
+          w-full h-8
+          bg-clip-content
+          pt-1
+          pl-1
+          bg-appPink
+          border-2 border-textMainDark
+          shadow-[5px_5px_0_0_#e3bcc3]
+          text-textMainDark font-bold text-sm
+          hover:shadow-none
+          hover:p-0
           active:opacity-60
           duration-300
           md:w-1/3'
