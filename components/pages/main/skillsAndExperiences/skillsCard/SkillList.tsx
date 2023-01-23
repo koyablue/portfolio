@@ -20,7 +20,7 @@ const SkillList = ({ skills }: Props) => {
 					<div className='w-10 h-10 mb-0.5'>
 						<SkillIconImg iconName={iconName} />
 					</div>
-					<p className='text-[10px] font-bold whitespace-nowrap'>{name}</p>
+					<p className='text-[10px] text-appDarkNavy font-bold whitespace-nowrap'>{name}</p>
 				</li>
 			)}
 		</ul>

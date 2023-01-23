@@ -10,10 +10,17 @@ import { useToggle } from '../../hooks/useToggle'
 // icons
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
+import { TbGridDots } from 'react-icons/tb'
+import { BiCodeAlt } from 'react-icons/bi'
+import { HiCode } from 'react-icons/hi'
+import { BsGithub } from 'react-icons/bs'
+
+// constants
+import { githubUrl } from '../../constants'
 
 const PcNavMenuItem = ({ children }: { children: ReactNode }) => {
   return (
-    <div className='flex items-center justify-center hover:text-appOrange duration-200 cursor-pointer'>
+    <div className='flex flex-col items-center justify-center text-textMainDark font-bold hover:text-appOrange duration-200 cursor-pointer'>
       {children}
     </div>
   )
@@ -55,50 +62,55 @@ const MainLayout = ({ children }: Props) => {
 
   return (
     <div>
+      {/* bg-bgColorLight */}
       <header
         className={`
           flex items-center justify-between w-full h-[100px] space-x-11 px-8
           fixed top-0 left-0 right-0
           border-b-2
           border-textMainDark
-          bg-bgColorLight
+          bg-appSand
           md:justify-start
           z-[1]
           `
         }
       >
         {/* TODO: logo */}
-        <div>KOYA</div>
+        <div className='text-4xl hover:text-appOrange duration-200'>
+          <a href={githubUrl}><BsGithub /></a>
+        </div>
 
         <div className='md:flex md:justify-between md:flex-1'>
           {/* header nav */}
           <nav className='hidden md:flex space-x-11 text-textLight'>
             <PcNavMenuItem>
-              <a href='#skillsAndExperiences'>Skills & Experiences</a>
+              {/* <HiCode className='text-xl' /> */}
+              <a href='#skillsAndExperiences'>SKILLS & EXPERIENCES</a>
             </PcNavMenuItem>
             <PcNavMenuItem>
-              <a href='#myWork'>My Work</a>
+              <a href='#myWork'>MY WORK</a>
             </PcNavMenuItem>
             <PcNavMenuItem>
-              About
+              ABOUT
             </PcNavMenuItem>
           </nav>
 
           {/* resume download button */}
           <button className={`
               hidden
-              md:flex items-center justify-center w-40 h-8 border-2 border-textLight rounded-[50px]
-              text-textLight
-              hover:border-appOrange hover:bg-appOrange hover:text-textLight duration-200 hover:shadow-black hover:shadow-md
-              active:shadow-inner active:shadow-black`
+              md:flex items-center justify-center w-40 h-8 border-2 border-textMainDark
+              text-textMainDark
+              shadow-noBlurBlackThin
+              hover:border-appOrange hover:text-appOrange duration-200 hover:shadow-noBlurAppOrangeMid
+              `
             }
           >
             <p>Resume</p>
           </button>
 
           {/* mobile menu open/close button */}
-          <button onClick={handleMobileMenuButtonOnClick} className='md:hidden'>
-            {isMobileMenuOpen ? <GrClose /> : <GiHamburgerMenu />}
+          <button onClick={handleMobileMenuButtonOnClick} className='text-2xl md:hidden'>
+            {isMobileMenuOpen ? <GrClose /> : <TbGridDots />}
           </button>
           {/* mobile menu contents */}
           {/* TODO: mobile menu anchor link */}

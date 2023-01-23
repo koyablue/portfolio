@@ -18,13 +18,13 @@ const SkillsCard = ({ title, skills }: Props) => {
   return (
     <div className={`
       flex flex-col
-      bg-slate-200 rounded-[20px] shadow-lg
+      bg-stone-200 rounded-[20px] shadow-lg
       pt-4
       pb-8
       lg:px-2
       lg:w-[calc((100%_-_32px)_/_3)]`}
     >
-      <p className='text-appDarkNavy font-bold text-xl text-center mb-2'>{title}</p>
+      <p className='text-appNavy font-bold text-xl text-center mb-2'>{title}</p>
       <SkillList skills={skills} />
     </div>
   )

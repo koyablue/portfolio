@@ -53,14 +53,17 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
       ref={mobileMenuRef}
       className={`
         absolute
-        w-[calc(100%_-_40px)]
+        w-[calc(100%_-_60px)]
         flex flex-col items-center self-end
-        py-8 mt-10
+        py-8
+        mt-5
         font-bold
-        bg-white
-        rounded-lg
+        bg-appAmber
+        border-2
+        border-textMainDark
+        shadow-noBlurBlackThin
         opacity-0
-        sm:self-center left-[20px] right-[20px] drop-shadow-md
+        sm:self-center left-[30px] right-[30px] drop-shadow-md
         ${isOpen && isOpen !== undefined && 'animate-slide-in-fwd-center'}
         ${!isOpen && isOpen !== undefined && 'animate-slide-out-bck-center'}
         `

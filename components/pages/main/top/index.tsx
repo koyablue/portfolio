@@ -7,7 +7,7 @@ import { BsGithub, BsLinkedin, BsFileEarmarkPdfFill } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
 
 // constants
-import { gitHubUrl } from '../../../../constants'
+import { githubUrl } from '../../../../constants'
 
 // helpers
 import { isInBrowser } from '../../../../helpers/environment'
@@ -31,32 +31,38 @@ const Top = () => {
       {/* md:p-12 */}
       <div className={`
           flex items-center justify-center
-          h-[calc(100%_-_64px)]
+          h-[calc(100%_-_100px)]
           w-full
           overflow-auto
-          mt-[64px]
+          p-5
+          mt-[100px]
+          md:p-12
           `
         }
       >
         {/* rounded-[20px] */}
+        {/* bg-stone-200 */}
         <div className={`
             flex flex-col justify-center items-center gap-6
             w-full
             px-10
             py-10
-            bg-stone-200
-            shadow-lg
+            rounded
+            border-textMainDark
+            bg-appSand
+            shadow-noBlurBlack
             `
           }
         >
           {/* profile photo */}
           <section className=''>
             <div className='w-[120px] h-[120px] md:w-[200px] md:h-[200px] relative'>
+              {/* rounded-full */}
               <Image
                 src='/images/profile/me_monotone.png'
                 fill
                 alt='Photograph of Koya Aoyama'
-                className='rounded-full border-[3px] border-textLight'
+                className=' border-4 border-double border-textMainDark'
               />
             </div>
           </section>
@@ -75,7 +81,7 @@ const Top = () => {
             {/* <p>Sometimes backend developer.</p> */}
             {/* links */}
             <ul className='flex items-center gap-6 pb-1 mb-2 md:mb-10'>
-              <LinkListItem href={gitHubUrl}>
+              <LinkListItem href={githubUrl}>
                 <BsGithub />
               </LinkListItem>
               <LinkListItem href={''}>

@@ -15,7 +15,10 @@ type Props = {
  */
 const MenuItem = ({ href, label, toggleMobileMenu }: Props) => {
 	return (
-		<li className='ease-in-out flex items-center justify-center w-full h-10  hover:text-appOrange active:text-appOrange' onClick={toggleMobileMenu}>
+		<li
+			className='ease-in-out flex items-center justify-center w-full h-10  hover:text-appOrange active:text-appOrange'
+			onClick={toggleMobileMenu}
+		>
 			<a
 				href={href}
 				className='text-center block w-full'>
