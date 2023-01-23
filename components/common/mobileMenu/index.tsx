@@ -12,26 +12,6 @@ import type { UseToggleReturnType } from '../../../hooks/useToggle'
 // utils
 import { assertIsNode } from '../../../helpers/util'
 
-/**
- * custom hook for managing mobile menu open/close state
- *
- * @param {boolean} [isOpen=false]
- * @return {*} {
-        readonly isMobileMenuOpen: boolean;
-        readonly setIsMobileMenuOpen: Dispatch<SetStateAction<boolean>>;
-        readonly toggleMobileMenu: () => void;
-    }
- */
-export const useMobileMenu = (isOpen = false) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(isOpen)
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
-
-  return { isMobileMenuOpen, setIsMobileMenuOpen, toggleMobileMenu } as const
-}
-
 type Props = {
   isOpen: boolean
   setMobileMenuState: UseToggleReturnType['setStatus']
@@ -62,10 +42,9 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
     };
   }, [])
 
-  console.log(isOpen)
-
   // TODO: mobile menu anchor link
   return (
+    // <div className='md:hidden'>
     <div className='md:hidden'>
       {/* space-y-6 */}
       {/* 				${!isOpen ? 'hidden' : ''} */}
@@ -81,7 +60,8 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         bg-white
         rounded-lg
         sm:self-center left-[20px] right-[20px] drop-shadow-md
-        ${isOpen ? 'animate-slide-in-fwd-center opacity-100' : 'animate-slide-out-fwd-center opacity-0'}
+        ${!isOpen && 'hidden'}
+        ${isOpen && 'animate-slide-in-fwd-center'}
         `
       }>
         <MenuItem href='#skillsAndExperiences' label='Skills & Experiences' toggleMobileMenu={toggleMobileMenu} />

@@ -30,7 +30,8 @@ module.exports = {
       },
       animation: {
         "slide-in-fwd-center": "slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
-        "slide-out-fwd-center": "slide-out-fwd-center 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both"
+        "slide-out-fwd-center": "slide-out-fwd-center 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both",
+        "slide-out-bck-center": "slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both"
       },
       keyframes: {
         "slide-in-fwd-center": {
@@ -55,6 +56,16 @@ module.exports = {
               transform: "translateZ(600px)",
               opacity: "0",
               visibility: "collapse"
+          }
+        },
+        "slide-out-bck-center": {
+          "0%": {
+              transform: "translateZ(0)",
+              opacity: "1"
+          },
+          to: {
+              transform: "translateZ(-1100px)",
+              opacity: "0"
           }
         },
       },

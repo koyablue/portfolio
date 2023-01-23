@@ -4,7 +4,7 @@ import type { UseToggleReturnType } from "../../../hooks/useToggle"
 type Props = {
   href: string
   label: string
-	toggleMobileMenu: UseToggleReturnType['toggle']
+	toggleMobileMenu: () => void
 }
 
 /**

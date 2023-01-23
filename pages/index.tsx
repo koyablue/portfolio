@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react'
 // components
 import MainLayout from '../components/layouts/MainLayout'
 import Top from '../components/pages/main/top'
+import Description from '../components/pages/main/description'
 import SkillsAndExperiences from '../components/pages/main/skillsAndExperiences'
 import MyWork from '../components/pages/main/myWork'
 
@@ -14,6 +15,7 @@ const Home = () => {
   return (
     <>
       <Top />
+      <Description />
       <ScrollPointDiv id={'skillsAndExperiences'} />
       <SkillsAndExperiences />
       <ScrollPointDiv id={'myWork'} />

@@ -1,7 +1,7 @@
 import { ReactNode, useEffect } from 'react'
 
 // components
-import MobileMenu, { useMobileMenu } from '../common/mobileMenu'
+import MobileMenu from '../common/mobileMenu'
 
 // custom hooks
 import { useIsWindowSizeWider } from '../../hooks/useIsWindowSizeWider'
@@ -10,6 +10,14 @@ import { useToggle } from '../../hooks/useToggle'
 // icons
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
+
+const PcNavMenuItem = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className='flex items-center justify-center hover:text-appOrange duration-200 cursor-pointer'>
+      {children}
+    </div>
+  )
+}
 
 type Props = {
 	children: ReactNode
@@ -40,9 +48,10 @@ const MainLayout = ({ children }: Props) => {
 
 	return (
 		<div>
+      {/* bg-bgColorLight */}
 			<header
         className={`
-          flex items-center justify-between bg-bgColorLight w-full h-[64px] border-b border-slate-200 space-x-11 px-8
+          flex items-center justify-between bg-appDarkNavy w-full h-[64px] border-b border-slate-200 space-x-11 px-8
           fixed top-0 left-0 right-0
           md:justify-start
           z-[1]
@@ -54,24 +63,24 @@ const MainLayout = ({ children }: Props) => {
 
         <div className='md:flex md:justify-between md:flex-1'>
           {/* header nav */}
-          <nav className='hidden md:flex space-x-11 text-appOrange'>
-            <div className='flex items-center justify-center font-bold hover:text-red-500 cursor-pointer'>
+          <nav className='hidden md:flex space-x-11 text-textLight'>
+            <PcNavMenuItem>
               <a href='#skillsAndExperiences'>Skills & Experiences</a>
-            </div>
-            <div className='flex items-center justify-center font-bold hover:text-red-500 cursor-pointer'>
+            </PcNavMenuItem>
+            <PcNavMenuItem>
               <a href='#myWork'>My Work</a>
-            </div>
-            <div className='flex items-center justify-center font-bold hover:text-red-500 cursor-pointer'>
+            </PcNavMenuItem>
+            <PcNavMenuItem>
               About
-            </div>
+            </PcNavMenuItem>
           </nav>
 
           {/* resume download button */}
           <button className={`
               hidden
-              md:flex items-center justify-center w-40 h-8 border-2 border-appOrange rounded-[50px]
-              text-appOrange font-bold
-              hover:border-red-500 hover:bg-red-500 hover:text-white duration-500 hover:shadow-black hover:shadow-md
+              md:flex items-center justify-center w-40 h-8 border-2 border-textLight rounded-[50px]
+              text-textLight
+              hover:border-red-500 hover:bg-red-500 hover:text-white duration-200 hover:shadow-black hover:shadow-md
               active:shadow-inner active:shadow-black`
             }
           >

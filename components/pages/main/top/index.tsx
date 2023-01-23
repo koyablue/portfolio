@@ -27,30 +27,24 @@ const Top = () => {
 
   return (
     <>
-      {/* hero container */}
-
-      {/*md:h-[calc(100vh_-_64px)] */}
+      {/* p-5 */}
+      {/* md:p-12 */}
       <div className={`
           flex items-center justify-center
           h-[calc(100%_-_64px)]
           w-full
           overflow-auto
-          mt-[64px] p-5
-          md:p-12`
+          mt-[64px]
+          `
         }
       >
-        {/* card */}
-        {/* lg:py-40 */}
-        {/* lg:items-start */}
-        {/* lg:flex-row */}
-        {/* h-full */}
+        {/* rounded-[20px] */}
         <div className={`
             flex flex-col justify-center items-center gap-6
             w-full
             px-10
             py-10
-            rounded-[20px]
-            bg-slate-200
+            bg-stone-200
             shadow-lg
             `
           }
@@ -62,7 +56,7 @@ const Top = () => {
                 src='/images/profile/me_monotone.png'
                 fill
                 alt='Photograph of Koya Aoyama'
-                className='rounded-full border-[3px] border-appOrange'
+                className='rounded-full border-[3px] border-textLight'
               />
             </div>
           </section>
@@ -71,10 +65,10 @@ const Top = () => {
           <section className='flex flex-col items-center'>
             <div className='mb-3.5'>
               {/* text-[52px] */}
-              <p className='text-[35px] text-center font-extrabold text-appOrange md:text-[75px]'>
+              <p className='text-[35px] text-center text-appNavy font-extrabold md:text-[75px]'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] text-center font-extrabold text-appDarkNavy md:text-[50px]'>
+              <p className='text-[25px] text-center font-bold text-appDarkNavy md:text-[50px]'>
                 Frontend <br className='hidden'/>developer
               </p>
             </div>
@@ -97,7 +91,9 @@ const Top = () => {
                 </MailToATag>
               </li>
             </ul>
-            <div className='text-appDarkNavy'>
+
+            {/* description */}
+            {/* <div className='text-appDarkNavy'>
               <p className='text-sm mb-2 md:text-xl'>
                 I am a Web developer with 3 and a half years experience who loves creating applications.
               </p>
@@ -107,7 +103,7 @@ const Top = () => {
               <p className='text-sm md:text-xl'>
                 Please contact me if you are interested!
               </p>
-            </div>
+            </div> */}
           </section>
         </div>
       </div>
