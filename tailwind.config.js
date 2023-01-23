@@ -25,8 +25,11 @@ module.exports = {
         appYellow: '#f8e9a1',
         appAmber: '#f6ebce',
         appSand: '#ebd4aa',
-        appLightGreen: '#8edfae',
+        // appLightGreen: '#8edfae',
+        appLightGreen: '#a3e3bd',
         // bgColorLight: '#f5f5f5',
+        appPink: '#e3bcc3',
+        appLightBlue: '#a8d3e6',
       },
       screens: {
         lgm: '1280px',
@@ -48,6 +51,7 @@ module.exports = {
       boxShadow: {
         "noBlurBlack": "15px 15px 0px 0 rgb(51, 51, 51);",
         "noBlurBlackThin": "5px 5px 0px 0 rgb(51, 51, 51);",
+        "noBlurBlackMid": "10px 10px 0px 0 rgb(51, 51, 51);",
         "noBlurAppOrangeMid": "10px 10px 0px 0 rgb(247,108,108);",
         "noBlurAppOrangeWide": "20px 20px 0px 0 rgb(247,108,108);",
       },

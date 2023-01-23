@@ -14,17 +14,17 @@ type Props = {
  * @return {*} JSX.Element
  */
 const SkillsCard = ({ title, skills }: Props) => {
-  // items-center
   return (
     <div className={`
       flex flex-col
-      bg-stone-200 rounded-[20px] shadow-lg
+      bg-appSand
+      shadow-[5px_5px_0_0_#333333]
       pt-4
       pb-8
       lg:px-2
       lg:w-[calc((100%_-_32px)_/_3)]`}
     >
-      <p className='text-appNavy font-bold text-xl text-center mb-2'>{title}</p>
+      <p className='text-textMainDark font-bold text-xl text-center mb-2'>{title}</p>
       <SkillList skills={skills} />
     </div>
   )

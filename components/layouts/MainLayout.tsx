@@ -20,7 +20,7 @@ import { githubUrl } from '../../constants'
 
 const PcNavMenuItem = ({ children }: { children: ReactNode }) => {
   return (
-    <div className='flex flex-col items-center justify-center text-textMainDark font-bold hover:text-appOrange duration-200 cursor-pointer'>
+    <div className='flex flex-col items-center justify-center text-textMainDark font-black hover:text-appOrange duration-200 cursor-pointer'>
       {children}
     </div>
   )

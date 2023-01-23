@@ -36,7 +36,7 @@ const ProjectCard = ({ project }: Props) => {
         {/* <div className='relative border border-black h-40'> */}
         <div className='relative h-40'>
           <Image
-            src={project.image || ''}
+            src={project.image || '/images/projects/path-kanri_image.png'}
             alt={`${project.title} image`}
             fill
             className='rounded-[20px] object-cover object-center'
