@@ -47,7 +47,6 @@ const Top = () => {
             w-full
             px-10
             py-10
-            rounded
             border-textMainDark
             bg-appSand
             shadow-noBlurBlack
