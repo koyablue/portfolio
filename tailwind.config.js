@@ -29,44 +29,17 @@ module.exports = {
         lgm: '1280px',
       },
       animation: {
-        "slide-in-fwd-center": "slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
-        "slide-out-fwd-center": "slide-out-fwd-center 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both",
-        "slide-out-bck-center": "slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both"
+        "slide-in-fwd-center": "slide-in-fwd-center 0.3s ease-in forwards",
+        "slide-out-bck-center": "slide-out-bck-center 0.3s ease-in forwards"
       },
       keyframes: {
         "slide-in-fwd-center": {
-            "0%": {
-                transform: "translateZ(-1400px)",
-                opacity: "0",
-                visibility: "collapse"
-            },
-            to: {
-                transform: "translateZ(0)",
-                opacity: "1",
-                visibility: "visible"
-            }
-        },
-        "slide-out-fwd-center": {
-          "0%": {
-              transform: "translateZ(1)",
-              opacity: "1",
-              visibility: "visible"
-          },
-          to: {
-              transform: "translateZ(600px)",
-              opacity: "0",
-              visibility: "collapse"
-          }
+          "0%": { opacity: 0, visibility: "hidden" },
+          "100%": { opacity: 1, visibility: "visible" },
         },
         "slide-out-bck-center": {
-          "0%": {
-              transform: "translateZ(0)",
-              opacity: "1"
-          },
-          to: {
-              transform: "translateZ(-1100px)",
-              opacity: "0"
-          }
+          "0%": { opacity: 1, visibility: "visible" },
+          "100%": { opacity: 0, visibility: "hidden" },
         },
       },
     },
