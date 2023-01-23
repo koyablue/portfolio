@@ -23,6 +23,9 @@ module.exports = {
         appNavy: '#374785',
         appDarkNavy: '#24305e',
         appYellow: '#f8e9a1',
+        appAmber: '#f6ebce',
+        appSand: '#ebd4aa',
+        appLightGreen: '#8edfae',
         // bgColorLight: '#f5f5f5',
       },
       screens: {
@@ -41,6 +44,12 @@ module.exports = {
           "0%": { opacity: 1, visibility: "visible" },
           "100%": { opacity: 0, visibility: "hidden" },
         },
+      },
+      boxShadow: {
+        "noBlurBlack": "15px 15px 0px 0 rgb(51, 51, 51);",
+        "noBlurBlackThin": "5px 5px 0px 0 rgb(51, 51, 51);",
+        "noBlurAppOrangeMid": "10px 10px 0px 0 rgb(247,108,108);",
+        "noBlurAppOrangeWide": "20px 20px 0px 0 rgb(247,108,108);",
       },
     },
     plugins: [require("@tailwindcss/line-clamp")],
