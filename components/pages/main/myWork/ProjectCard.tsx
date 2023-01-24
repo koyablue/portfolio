@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: Props) => {
       bg-appSand
       shadow-noBlurBlackThin
       border-2
-      border-textMainDark
+      border-clrBlack
       pt-3
       px-3
       pb-8
@@ -42,19 +42,19 @@ const ProjectCard = ({ project }: Props) => {
             src={project.image || '/images/projects/path-kanri_image.png'}
             alt={`${project.title} image`}
             fill
-            className='object-cover object-center border-4 border-double border-textMainDark'
+            className='object-cover object-center border-4 border-double border-clrBlack'
           />
         </div>
-        <p className='text-textMainDark font-bold text-xl text-center mb-2'>
+        <p className='text-clrBlack font-bold text-xl text-center mb-2'>
           {project.title}
         </p>
         <div className='bg-appLightBlue w-[90px] text-center text-textDarkMain text-sm rounded-[6px] p-1'>
           <p>#{project.type}</p>
         </div>
-        <div className='text-textMainDark font-semibold'>
+        <div className='text-clrBlack font-semibold'>
           {techStack}
         </div>
-        <div className='break-words w-full text-textMainDark text-sm '>
+        <div className='break-words w-full text-clrBlack text-sm '>
           {omitStr(project.description, 200)}
         </div>
       </div>
@@ -66,9 +66,9 @@ const ProjectCard = ({ project }: Props) => {
           pt-1
           pl-1
           bg-appPink
-          border-2 border-textMainDark
+          border-2 border-clrBlack
           shadow-[5px_5px_0_0_#e3bcc3]
-          text-textMainDark font-bold text-sm
+          text-clrBlack font-bold text-sm
           hover:shadow-none
           hover:p-0
           active:opacity-60
@@ -82,7 +82,7 @@ const ProjectCard = ({ project }: Props) => {
       absolute rounded-[20px] w-full h-full top-0 left-0 opacity-0 bg-gray-500 transition duration-150 ease-out 
       hover:ease-in hover:opacity-70'>
         <div className='flex items-center justify-center align-middle w-full h-full'>
-          <p className='text-textLight text-2xl text-center'>see more details →</p>
+          <p className='text-clrWhite text-2xl text-center'>see more details →</p>
         </div>
       </div> */}
     </div>

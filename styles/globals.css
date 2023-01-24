@@ -13,6 +13,7 @@ body {
   /* background: linear-gradient(190deg,#f6ebce 0%,#f6ebce 80%,#8edfae 80%,#8edfae 100%); */
   /* background: linear-gradient(190deg, #8edfae 0%, #8edfae 10%, #f6ebce 10%, #f6ebce 100%); */
   scroll-behavior: smooth;
+  color: #333333;
 }
 
 a {

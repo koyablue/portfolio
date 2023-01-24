@@ -16,11 +16,20 @@ import { HiCode } from 'react-icons/hi'
 import { BsGithub } from 'react-icons/bs'
 
 // constants
-import { githubUrl } from '../../constants'
+import { GITHUB_URL } from '../../constants'
+import { IS_IN_BROWSER } from '../../constants/environment'
 
 const PcNavMenuItem = ({ children }: { children: ReactNode }) => {
   return (
-    <div className='flex flex-col items-center justify-center text-textMainDark font-black hover:text-appOrange duration-200 cursor-pointer'>
+    <div className={`
+      flex flex-col items-center justify-center
+      text-clrBlack font-semibold text-sm
+      duration-200 cursor-pointer
+      p-2
+      rounded
+      hover:text-clrHyperViolet
+      hover:bg-clrGray
+    `}>
       {children}
     </div>
   )
@@ -37,6 +46,8 @@ type Props = {
  * @return {*} JSX.Element
  */
 const MainLayout = ({ children }: Props) => {
+  const [shouldHeaderOutstand, setShouldHeaderOutstand] = useState<boolean>(false)
+
   const [shouldActive, setShouldActive] = useState<boolean | undefined>(undefined)
   const { isWindowSizeWider } = useIsWindowSizeWider(768)
   const { status: isMobileMenuOpen, setStatus: setIsMobileMenuOpen, toggle: toggleMobileMenu } = useToggle()
@@ -52,6 +63,14 @@ const MainLayout = ({ children }: Props) => {
 
   const mobileMenuOpenStatus = shouldActive && isMobileMenuOpen
 
+  const toggleHeaderStyle = () => {
+    if (!IS_IN_BROWSER) {
+      setShouldHeaderOutstand(false)
+    }
+
+    setShouldHeaderOutstand(window.scrollY > 50)
+  }
+
   useEffect(() => {
     // close mobile menu if screen is expanded while mobile menu is open
     if (isWindowSizeWider) {
@@ -60,48 +79,62 @@ const MainLayout = ({ children }: Props) => {
     }
   }, [isWindowSizeWider])
 
+  // TODO: should separate header in its own file
+  useEffect(() => {
+    window.addEventListener('scroll', toggleHeaderStyle)
+    return () => window.removeEventListener('scroll', toggleHeaderStyle)
+  }, [])
+
   return (
     <div>
-      {/* bg-bgColorLight */}
       <header
         className={`
-          flex items-center justify-between w-full h-[100px] space-x-11 px-8
+          flex items-center justify-between
+          w-full h-[64px] space-x-11 px-8
           fixed top-0 left-0 right-0
-          border-b-2
-          border-textMainDark
-          bg-appSand
+          bg-clrBeige
+          ${shouldHeaderOutstand ? 'bg-white border-b border-clrBlack' : 'bg-clrBeige'}
+          duration-200
           md:justify-start
           z-[1]
           `
         }
       >
         {/* TODO: logo */}
-        <div className='text-4xl hover:text-appOrange duration-200'>
-          <a href={githubUrl}><BsGithub /></a>
+        <div className='text-4xl hover:text-clrHyperViolet duration-200'>
+          <a href={GITHUB_URL}><BsGithub /></a>
         </div>
 
         <div className='md:flex md:justify-between md:flex-1'>
           {/* header nav */}
-          <nav className='hidden md:flex space-x-11 text-textLight'>
+          <nav className='hidden md:flex space-x-11 text-clrWhite'>
             <PcNavMenuItem>
               {/* <HiCode className='text-xl' /> */}
-              <a href='#skillsAndExperiences'>SKILLS & EXPERIENCES</a>
+              <a href='#skillsAndExperiences'>Skills & Experiences</a>
             </PcNavMenuItem>
             <PcNavMenuItem>
-              <a href='#myWork'>MY WORK</a>
+              <a href='#myWork'>My Work</a>
             </PcNavMenuItem>
             <PcNavMenuItem>
-              ABOUT
+              About me
             </PcNavMenuItem>
           </nav>
 
           {/* resume download button */}
           <button className={`
               hidden
-              md:flex items-center justify-center w-40 h-8 border-2 border-textMainDark
-              text-textMainDark
+              md:flex items-center justify-center w-40 h-8 border border-clrBlack
+              text-clrBlack
               shadow-noBlurBlackThin
-              hover:border-appOrange hover:text-appOrange duration-200 hover:shadow-noBlurAppOrangeMid
+              duration-300
+              pt-1
+              pl-1
+              hover:border-clrHyperViolet
+              hover:shadow-none
+              hover:p-0
+              hover:bg-clrHyperViolet
+              hover:text-clrWhite
+              active:opacity-80
               `
             }
           >

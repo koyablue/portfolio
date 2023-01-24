@@ -35,7 +35,7 @@ const MyWork = () => {
           <button className={`
             flex items-center justify-center
             font-semibold text-center gap-1 grow-0 box-border
-            border-2 border-textMainDark
+            border-2 border-clrBlack
             shadow-noBlurBlackThin
             p-2
             hover:shadow-none

@@ -13,7 +13,7 @@ type Props = {
  */
 const LinkListItem = ({ href, children }: Props) => {
 	return (
-		<li className='text-3xl text-textMainDark cursor-pointer hover:text-appOrange'>
+		<li className='text-3xl text-clrBlack cursor-pointer hover:text-clrOrange'>
 			<a href={href} target='_blank' rel='noreferrer'>
 				{children}
 			</a>

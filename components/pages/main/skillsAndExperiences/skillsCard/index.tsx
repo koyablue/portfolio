@@ -22,11 +22,11 @@ const SkillsCard = ({ title, skills }: Props) => {
       pt-4
       pb-8
       border-2
-      border-textMainDark
+      border-clrBlack
       lg:px-2
       lg:w-[calc((100%_-_32px)_/_3)]`}
     >
-      <p className='text-textMainDark font-bold text-xl text-center mb-2'>{title}</p>
+      <p className='text-clrBlack font-bold text-xl text-center mb-2'>{title}</p>
       <SkillList skills={skills} />
     </div>
   )

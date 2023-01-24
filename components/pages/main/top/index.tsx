@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 // icons
 import { BsGithub, BsLinkedin, BsFileEarmarkPdfFill } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
+import { FaLaptopCode } from 'react-icons/fa'
 
 // constants
-import { githubUrl } from '../../../../constants'
+import { GITHUB_URL } from '../../../../constants'
+
+// hooks
+import { useLinearTypingEffect } from '../../../../hooks/useLinearTypingEffect'
 
 // helpers
 import { isInBrowser } from '../../../../helpers/environment'
@@ -22,6 +26,23 @@ import MailToATag from '../../../common/MailToATag'
  * @return {*} JSX.Element
  */
 const Top = () => {
+  const [text, setText] = useState("")
+  const [fullText, setFullText] = useState(
+      "Your source of leading edge water and air treatment technology since 1994."
+    )
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (index < fullText.length) {
+      setTimeout(() => {
+        setText(text + fullText[index])
+        setIndex(index + 1)
+      }, 100)
+    }
+  }, [index])
+
+  const jobTitle = useLinearTypingEffect('Frontend developer', 100)
+  const myName = useLinearTypingEffect('Koya Aoyama', 45)
 
   // TODO: correct email address
 
@@ -31,11 +52,11 @@ const Top = () => {
       {/* md:p-12 */}
       <div className={`
           flex items-center justify-center
-          h-[calc(100%_-_100px)]
+          h-[calc(100%_-_64px)]
           w-full
           overflow-auto
           p-5
-          mt-[100px]
+          mt-[64px]
           md:p-12
           `
         }
@@ -48,7 +69,7 @@ const Top = () => {
             px-10
             py-10
             border-2
-            border-textMainDark
+            border-clrBlack
             bg-appSand
             shadow-noBlurBlack
             `
@@ -62,26 +83,25 @@ const Top = () => {
                 src='/images/profile/me_monotone.png'
                 fill
                 alt='Photograph of Koya Aoyama'
-                className=' border-4 border-double border-textMainDark'
+                className=' border-4 border-double border-appDarkNavy'
               />
             </div>
           </section>
-
           {/* intro and links */}
           <section className='flex flex-col items-center'>
             <div className='mb-3.5'>
               {/* text-[52px] */}
-              <p className='text-[35px] text-center text-appNavy font-extrabold md:text-[75px]'>
+              <p className='text-[35px] text-center text-appNavy font-black md:text-[75px]'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] text-center font-bold text-appDarkNavy md:text-[50px]'>
+              <p className='text-[25px] text-center font-semibold text-appNavy md:text-[50px]'>
                 Frontend <br className='hidden'/>developer
               </p>
             </div>
             {/* <p>Sometimes backend developer.</p> */}
             {/* links */}
             <ul className='flex items-center gap-6 pb-1 mb-2 md:mb-10'>
-              <LinkListItem href={githubUrl}>
+              <LinkListItem href={GITHUB_URL}>
                 <BsGithub />
               </LinkListItem>
               <LinkListItem href={''}>
@@ -90,7 +110,7 @@ const Top = () => {
               <LinkListItem href={''}>
                 <BsFileEarmarkPdfFill />
               </LinkListItem>
-              <li className='text-4xl text-textMainDark cursor-pointer hover:text-orange-600'>
+              <li className='text-4xl text-clrBlack cursor-pointer hover:text-orange-600'>
                 {/* TODO: correct email address */}
                 <MailToATag name='info' domain='example' tld='org' className='block'>
                   <HiOutlineMail />

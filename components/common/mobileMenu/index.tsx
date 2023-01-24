@@ -35,6 +35,13 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
     }
   }
 
+  const menuItems: { [key: string]: { href: string; label: string; } } = {
+    skillsAndExperiences: { href: '#skillsAndExperiences', label: 'Skills & Experiences', },
+    myWork: { href: '#myWork', label: 'My Work', },
+    about: { href: '#', label: 'About Me', },
+    resume: { href: '#', label: 'Resume', },
+  }
+
   useEffect(() => {
     document.addEventListener('mousedown', e => {handleOutsideClick(e)});
     return () => {
@@ -44,11 +51,7 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
 
   // TODO: mobile menu anchor link
   return (
-    // <div className='md:hidden'>
     <div className='md:hidden'>
-      {/* space-y-6 */}
-      {/* 				${!isOpen ? 'hidden' : ''} */}
-      {/* ${isOpen ? 'opacity-100' : 'opacity-0'} */}
       <ul
       ref={mobileMenuRef}
       className={`
@@ -57,21 +60,23 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         flex flex-col items-center self-end
         py-8
         mt-5
-        font-bold
-        bg-appAmber
-        border-2
-        border-textMainDark
-        shadow-noBlurBlackThin
+        bg-clrWhite
+        border
+        border-clrBlack
         opacity-0
         sm:self-center left-[30px] right-[30px] drop-shadow-md
         ${isOpen && isOpen !== undefined && 'animate-slide-in-fwd-center'}
         ${!isOpen && isOpen !== undefined && 'animate-slide-out-bck-center'}
         `
       }>
-        <MenuItem href='#skillsAndExperiences' label='Skills & Experiences' toggleMobileMenu={toggleMobileMenu} />
-        <MenuItem href='#myWork' label='My Work' toggleMobileMenu={toggleMobileMenu} />
-        <MenuItem href='#' label='About' toggleMobileMenu={toggleMobileMenu} />
-        <MenuItem href='#' label='Resume' toggleMobileMenu={toggleMobileMenu} />
+        {Object.keys(menuItems).map(k =>
+          <MenuItem
+            key={k}
+            href={menuItems[k].href}
+            label={menuItems[k].label}
+            toggleMobileMenu={toggleMobileMenu}
+          />
+        )}
       </ul>
     </div>
   )

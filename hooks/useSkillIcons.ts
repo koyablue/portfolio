@@ -1,4 +1,4 @@
-import { skillIconsUrl } from '../constants'
+import { SKILL_ICONS_URL } from '../constants'
 
 /**
  *
@@ -14,7 +14,7 @@ export const useSkillIcons = () => {
 	 *
 	 * @param {string} iconName
 	 */
-	const getSkillIconsFullUrl = (iconName: string) => `${skillIconsUrl}?i=${iconName}`
+	const getSkillIconsFullUrl = (iconName: string) => `${SKILL_ICONS_URL}?i=${iconName}`
 
 	return { getSkillIconsFullUrl } as const
 }
