@@ -55,12 +55,13 @@ const Header = () => {
 
   const mobileMenuOpenStatus = shouldActive && isMobileMenuOpen
 
+  // TODO: avoid magic number
   const toggleHeaderStyle = () => {
     if (!IS_IN_BROWSER) {
       setShouldHeaderOutstand(false)
     }
 
-    setShouldHeaderOutstand(window.scrollY > 50)
+    setShouldHeaderOutstand(window.scrollY > 5)
   }
 
   useEffect(() => {
@@ -82,7 +83,8 @@ const Header = () => {
       className={`
         flex items-center justify-between
         w-full h-[64px] space-x-11 px-8
-        fixed top-0 left-0 right-0
+        sticky
+        top-0 left-0 right-0
         bg-clrBeige
         ${shouldHeaderOutstand ? 'bg-white border-b border-clrBlack' : 'bg-clrBeige border-none'}
         duration-100
