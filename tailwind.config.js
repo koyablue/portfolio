@@ -17,7 +17,7 @@ module.exports = {
       colors: {
         clrBlack: '#333333',
         clrWhite: '#f4f5f7',
-        clrBeige: '#FFF0E5',
+        clrBeige: '#fff0e5',
         clrOrange: '#f76c6c',
         appBlue: '#a8d0e6',
         appNavy: '#374785',
