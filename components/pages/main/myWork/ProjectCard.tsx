@@ -65,7 +65,7 @@ const ProjectCard = ({ project }: Props) => {
           bg-clip-content
           pt-1
           pl-1
-          bg-appPink
+          bg-clrPink
           border-2 border-clrBlack
           shadow-[5px_5px_0_0_#e3bcc3]
           text-clrBlack font-bold text-sm

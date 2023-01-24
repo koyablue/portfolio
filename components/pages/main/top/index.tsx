@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 // icons
 import { BsGithub, BsLinkedin, BsFileEarmarkPdfFill } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
-import { FaLaptopCode } from 'react-icons/fa'
 
 // constants
 import { GITHUB_URL } from '../../../../constants'
 
 // hooks
 import { useLinearTypingEffect } from '../../../../hooks/useLinearTypingEffect'
-
-// helpers
-import { isInBrowser } from '../../../../helpers/environment'
 
 // components
 import LinkListItem from '../../../../components/pages/main/top/LinkListItem'
@@ -48,8 +43,6 @@ const Top = () => {
 
   return (
     <>
-      {/* p-5 */}
-      {/* md:p-12 */}
       <div className={`
           flex items-center justify-center
           h-[calc(100%_-_64px)]
@@ -61,17 +54,14 @@ const Top = () => {
           `
         }
       >
-        {/* rounded-[20px] */}
-        {/* bg-stone-200 */}
+        {/* TODO: should have border? */}
         <div className={`
             flex flex-col justify-center items-center gap-6
             w-full
             px-10
             py-10
-            border-2
-            border-clrBlack
-            bg-appSand
-            shadow-noBlurBlack
+            md:w-[600px]
+            md:h-[600px]
             `
           }
         >
@@ -83,53 +73,48 @@ const Top = () => {
                 src='/images/profile/me_monotone.png'
                 fill
                 alt='Photograph of Koya Aoyama'
-                className=' border-4 border-double border-appDarkNavy'
+                className='border-4 border-t-clrHyperViolet border-r-clrOrange border-b-clrYellow border-l-clrYellow shadow-noBlurBlack'
               />
             </div>
           </section>
           {/* intro and links */}
           <section className='flex flex-col items-center'>
             <div className='mb-3.5'>
-              {/* text-[52px] */}
-              <p className='text-[35px] text-center text-appNavy font-black md:text-[75px]'>
+              <p className='text-[35px] text-center text-clrBlack font-black md:text-[75px]'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] text-center font-semibold text-appNavy md:text-[50px]'>
+              <p className='text-[25px] text-center font-semibold text-clrBlack md:text-[50px]'>
                 Frontend <br className='hidden'/>developer
               </p>
             </div>
-            {/* <p>Sometimes backend developer.</p> */}
             {/* links */}
             <ul className='flex items-center gap-6 pb-1 mb-2 md:mb-10'>
               <LinkListItem href={GITHUB_URL}>
                 <BsGithub />
               </LinkListItem>
               <LinkListItem href={''}>
-                <BsLinkedin />
+                <BsLinkedin className='text-sky-700' />
               </LinkListItem>
               <LinkListItem href={''}>
-                <BsFileEarmarkPdfFill />
+                <BsFileEarmarkPdfFill className='text-clrOrange' />
               </LinkListItem>
-              <li className='text-4xl text-clrBlack cursor-pointer hover:text-orange-600'>
+              <li className='
+                flex items-center justify-center
+                text-4xl text-clrBlack
+                border-[1.5px] border-clrBlack
+                w-12 h-12
+                rounded
+                bg-clrWhite
+                cursor-pointer
+                duration-200
+                hover:opacity-80'
+              >
                 {/* TODO: correct email address */}
                 <MailToATag name='info' domain='example' tld='org' className='block'>
-                  <HiOutlineMail />
+                  <HiOutlineMail className='text-sky-600' />
                 </MailToATag>
               </li>
             </ul>
-
-            {/* description */}
-            {/* <div className='text-appDarkNavy'>
-              <p className='text-sm mb-2 md:text-xl'>
-                I am a Web developer with 3 and a half years experience who loves creating applications.
-              </p>
-              <p className='text-sm mb-2 md:text-xl'>
-                Skilled in TypeScript, React, Next.js, HTML, CSS, PHP, Laravel and MySQL.
-              </p>
-              <p className='text-sm md:text-xl'>
-                Please contact me if you are interested!
-              </p>
-            </div> */}
           </section>
         </div>
       </div>

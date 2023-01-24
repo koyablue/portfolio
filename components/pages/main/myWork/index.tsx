@@ -39,7 +39,7 @@ const MyWork = () => {
             shadow-noBlurBlackThin
             p-2
             hover:shadow-none
-            hover:bg-appLightGreen
+            hover:bg-clrLightGreen
             active:opacity-60
             duration-300
             `
