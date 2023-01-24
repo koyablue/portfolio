@@ -29,11 +29,14 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
   const mobileMenuRef = useRef<HTMLUListElement>(null)
 
   const handleOutsideClick = (e: MouseEvent) => {
+    if (!isOpen) return
     assertIsNode(e.target)
     if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
       setMobileMenuState(false)
     }
   }
+
+  console.log('isOpen: ', isOpen)
 
   const menuItems: { [key: string]: { href: string; label: string; } } = {
     skillsAndExperiences: { href: '#skillsAndExperiences', label: 'Skills & Experiences', },
@@ -65,8 +68,9 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         border-clrBlack
         opacity-0
         sm:self-center left-[30px] right-[30px] drop-shadow-md
-        ${isOpen && isOpen !== undefined && 'animate-slide-in-fwd-center'}
-        ${!isOpen && isOpen !== undefined && 'animate-slide-out-bck-center'}
+        ${isOpen ? 'visible' : 'invisible'}
+        ${isOpen && isOpen !== undefined ? 'animate-slide-in-fwd-center' : ''}
+        ${!isOpen && isOpen !== undefined ? 'animate-slide-out-bck-center' : ''}
         `
       }>
         {Object.keys(menuItems).map(k =>

@@ -43,14 +43,16 @@ const Top = () => {
 
   return (
     <>
+      {/* h-[calc(100%_-_64px)] */}
       <div className={`
           flex items-center justify-center
-          h-[calc(100%_-_64px)]
+          h-[calc(100vh_-_64px)]
           w-full
           overflow-auto
           p-5
           mt-[64px]
           md:p-12
+          md:h-[calc(100%_-_64px)]
           `
         }
       >
