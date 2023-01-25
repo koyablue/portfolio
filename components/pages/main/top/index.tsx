@@ -44,14 +44,15 @@ const Top = () => {
   return (
     <>
       {/* h-[calc(100%_-_64px)] */}
-      {/* TODO: need media query for height */}
+      {/* TODO: need media query for hei */}
+      {/* min-h-[400px] */}
       <div className={`
-          flex items-center justify-center
-          h-[calc(100vh_-_64px)]
+          flex justify-center
+          min-h-[calc(100vh_-_64px)]
           w-full
           overflow-auto
           p-5
-          min-h-[400px]
+          md:items-center
           md:p-12
           `
         }
