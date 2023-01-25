@@ -5,17 +5,19 @@
  */
 const Description = () => {
   return (
-    <div className='flex justify-center py-12 bg-clrDarkNavy md:py-16 '>
+    <div className='flex justify-center py-12 bg-indigo-900 md:py-16'>
       <div className='flex flex-col flex-1 items-center
       text-clrWhite
        text-sm
-       bg-indigo-900
-       md:text-lg'
+       bg-clrDarkNavy
+       bg-clip-content
+       md:text-lg
+       md:px-56'
       >
         <div className='p-8 leading-loose'>
           <div className='mb-6'>
-            <p className='text-3xl'>Hi 👋</p>
-            <p className='text-2xl'>I&apos;m Koya Aoyama 🧑🏻‍💻</p>
+            <p className='text-5xl'>Hi 👋</p>
+            <p className='text-4xl'>I&apos;m Koya Aoyama 🧑🏻‍💻</p>
           </div>
 
           <p>

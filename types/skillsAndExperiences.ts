@@ -1,10 +1,10 @@
 export type Skill = {
-	id: number
-	name: string
-	iconName: string
+  id: number
+  name: string
+  icon: JSX.Element
 }
 
 export type SkillRawData = {
-	name: string
-	iconName: string
+  name: string
+  icon: JSX.Element
 }
