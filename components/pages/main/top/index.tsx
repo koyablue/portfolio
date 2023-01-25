@@ -43,9 +43,6 @@ const Top = () => {
 
   return (
     <>
-      {/* h-[calc(100%_-_64px)] */}
-      {/* TODO: need media query for hei */}
-      {/* min-h-[400px] */}
       <div className={`
           flex justify-center
           min-h-[calc(100vh_-_64px)]
@@ -58,13 +55,14 @@ const Top = () => {
         }
       >
         {/* TODO: should have border? */}
+        {/* border
+            border-clrBlack
+        */}
         <div className={`
             flex flex-col justify-center items-center gap-6
             w-full
             px-10
             py-10
-            border
-            border-clrBlack
             md:w-[600px]
             md:h-[600px]
             `

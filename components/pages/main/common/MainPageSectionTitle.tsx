@@ -11,7 +11,7 @@ type Props = {
  */
 const MainPageSectionTitle = ({ as: Element = 'h2', title }: Props) => {
 	return (
-		<Element className='text-appDarkNavy text-xl font-bold text-center mb-8 md:text-4xl'>
+		<Element className='text-clrDarkNavy text-xl font-bold text-center mb-8 md:text-4xl'>
 			{title}
 		</Element>
 	)
