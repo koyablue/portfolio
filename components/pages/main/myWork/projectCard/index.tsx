@@ -1,6 +1,20 @@
+import { ReactNode } from 'react'
 import Image from 'next/image'
-import { omitStr } from '../../../../helpers/util'
-import { Project } from '../../../../types/project'
+import Link from 'next/link'
+
+// components
+import GitHubLinkButton from './buttons/GitHubLinkButton'
+import ExternalLinkButton from './buttons/ExternalLinkButton'
+
+// helpers
+import { omitStr } from '../../../../../helpers/util'
+
+// types
+import { Project } from '../../../../../types/project'
+
+// icons
+import { SiGithub } from 'react-icons/si'
+import { TbExternalLink, TbExternalLinkOff } from 'react-icons/tb'
 
 type Props = {
   project: Project
@@ -21,10 +35,10 @@ const ProjectCard = ({ project }: Props) => {
     <div className={`
       relative
       flex flex-col items-center
-      bg-appSand
-      shadow-noBlurBlackThin
-      border-2
+      bg-clrWhite
+      border
       border-clrBlack
+      rounded
       pt-3
       px-3
       pb-8
@@ -42,13 +56,13 @@ const ProjectCard = ({ project }: Props) => {
             src={project.image || '/images/projects/path-kanri_image.png'}
             alt={`${project.title} image`}
             fill
-            className='object-cover object-center border-4 border-double border-clrBlack'
+            className='object-cover object-center border border-clrBlack rounded'
           />
         </div>
         <p className='text-clrBlack font-bold text-xl text-center mb-2'>
           {project.title}
         </p>
-        <div className='bg-appLightBlue w-[90px] text-center text-textDarkMain text-sm rounded-[6px] p-1'>
+        <div className='bg-clrPalePink w-[90px] text-center text-textDarkMain text-sm rounded-[6px] p-1 border border-clrBlack'>
           <p>#{project.type}</p>
         </div>
         <div className='text-clrBlack font-semibold'>
@@ -58,33 +72,27 @@ const ProjectCard = ({ project }: Props) => {
           {omitStr(project.description, 200)}
         </div>
       </div>
-      <div className='flex items-center justify-center w-full md:justify-end'>
+      <div className='flex items-center justify-between w-full md:justify-end'>
+        <div className='flex justify-start items-center gap-2 w-full'>
+          <GitHubLinkButton href={project.githubRepo} />
+          <ExternalLinkButton href={project.url} />
+        </div>
         <button className='
           flex items-center justify-center
           w-full h-8
           bg-clip-content
-          pt-1
-          pl-1
-          bg-clrPink
-          border-2 border-clrBlack
-          shadow-[5px_5px_0_0_#e3bcc3]
+          border border-clrBlack
+          shadow-[3px_3px_0_0_#333333]
           text-clrBlack font-bold text-sm
-          hover:shadow-none
-          hover:p-0
+          hover:shadow-[5px_5px_0_0_#333333]
           active:opacity-60
+          active:shadow-none
           duration-300
           md:w-1/3'
         >
           Details
         </button>
       </div>
-      {/* <div className='
-      absolute rounded-[20px] w-full h-full top-0 left-0 opacity-0 bg-gray-500 transition duration-150 ease-out 
-      hover:ease-in hover:opacity-70'>
-        <div className='flex items-center justify-center align-middle w-full h-full'>
-          <p className='text-clrWhite text-2xl text-center'>see more details →</p>
-        </div>
-      </div> */}
     </div>
   )
 }

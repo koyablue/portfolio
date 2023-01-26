@@ -1,11 +1,12 @@
 // components
 import MainWrapper from '../../../common/MainWrapper'
 import MainPageSectionTitle from '../common/MainPageSectionTitle'
-import ProjectCard from './ProjectCard'
+import ProjectCard from './projectCard'
 
 // icons
 import { IoIosArrowForward } from 'react-icons/io'
 import { BiRightArrowAlt } from 'react-icons/bi'
+import { TbExternalLink } from 'react-icons/tb'
 
 // custom hooks
 import { useGetProjects } from '../../../../hooks/data/useGetProjects'
@@ -19,7 +20,7 @@ const MyWork = () => {
   // TODO: github
 
   return (
-    <MainWrapper>
+    <MainWrapper className='min-h-screen' >
       <MainPageSectionTitle title='My Work' />
 
       <div>

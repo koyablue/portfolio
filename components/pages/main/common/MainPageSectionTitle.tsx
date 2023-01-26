@@ -1,6 +1,7 @@
 type Props = {
-	as?: React.ElementType
-	title: string
+  title: string
+  as?: React.ElementType
+  tailwindColor?: string
 }
 
 /**
@@ -9,12 +10,12 @@ type Props = {
  * @param {Props} { as: Element = 'h2', title }
  * @return {*} JSX.Element
  */
-const MainPageSectionTitle = ({ as: Element = 'h2', title }: Props) => {
-	return (
-		<Element className='text-clrDarkNavy text-xl font-bold text-center mb-8 md:text-4xl'>
-			{title}
-		</Element>
-	)
+const MainPageSectionTitle = ({ as: Element = 'h2', title, tailwindColor = 'text-clrBlack' }: Props) => {
+  return (
+    <Element className={`${tailwindColor} text-xl font-bold text-center mb-8 md:text-4xl`}>
+      {title}
+    </Element>
+  )
 }
 
 export default MainPageSectionTitle
