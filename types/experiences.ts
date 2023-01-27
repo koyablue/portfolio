@@ -7,4 +7,5 @@ export type ExperienceRawData = {
   month: number
   title: string
   description: string
+  techStack: string[]
 }

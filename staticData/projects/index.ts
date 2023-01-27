@@ -36,6 +36,17 @@ export const projects: ProjectRawData[] = [
     url: 'https://urumap.com/',
   },
   {
+    title: 'This portfolio',
+    description: 'This portfolio',
+    whatIWorkedOnList: [],
+    developerTypeId: 1,
+    type: 'personal',
+    shouldPrioritize: true,
+    techStack: ['PHP', 'Laravel', 'JavaScript', 'MySQL', 'Docker', 'AWS', 'GitHub Actions'],
+    image: '/images/projects/urumap_image.png',
+    url: 'https://urumap.com/',
+  },
+  {
     title: 'Project2 priority',
     description: 'Description of project2.',
     whatIWorkedOnList: [],

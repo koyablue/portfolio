@@ -1,6 +1,4 @@
-import { ReactNode } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 // components
 import GitHubLinkButton from './buttons/GitHubLinkButton'
@@ -12,9 +10,6 @@ import { omitStr } from '../../../../../helpers/util'
 // types
 import { Project } from '../../../../../types/project'
 
-// icons
-import { SiGithub } from 'react-icons/si'
-import { TbExternalLink, TbExternalLinkOff } from 'react-icons/tb'
 
 type Props = {
   project: Project
