@@ -6,6 +6,7 @@ import Top from '../components/pages/main/top'
 import Description from '../components/pages/main/description'
 import SkillsAndExperiences from '../components/pages/main/skillsAndExperiences'
 import MyWork from '../components/pages/main/myWork'
+import Experiences from '../components/pages/main/experiences'
 
 const ScrollPointDiv = ({ id }: { id: string }) => (
   <div id={id} className='pt-[64px] -mt-[64px]'></div>
@@ -20,6 +21,7 @@ const Home = () => {
       <SkillsAndExperiences />
       <ScrollPointDiv id={'myWork'} />
       <MyWork />
+      <Experiences />
     </>
   )
 }

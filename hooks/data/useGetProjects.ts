@@ -1,14 +1,9 @@
 import { projects } from '../../staticData/projects'
+import { addIdsToAllData } from '../../helpers/data'
 import { Project, ProjectRawData } from '../../types/project'
 
 export const useGetProjects = () => {
-  const convert = (rawDataList: ProjectRawData[]): Project[] => {
-    return rawDataList.map((data, idx) => (
-      { ...data, id: idx }
-    ))
-  }
-
-  const getProjects = () => convert(projects)
+  const getProjects = (): Project[] => addIdsToAllData(projects)
 
   return { getProjects } as const
 }
