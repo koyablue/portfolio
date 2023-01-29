@@ -2,6 +2,7 @@
 import MainWrapper from '../../../common/MainWrapper'
 import MainPageSectionTitle from '../common/MainPageSectionTitle'
 import ProjectCard from './projectCard'
+import Button from '../../../common/Button'
 
 // icons
 import { IoIosArrowForward } from 'react-icons/io'
@@ -33,7 +34,7 @@ const MyWork = () => {
         {projectsToShow.map(project => <ProjectCard key={project.id} project={project} />)}
       </div>
         <div className='flex justify-end'>
-          <button className={`
+          {/* <button className={`
             flex items-center justify-center
             font-semibold text-center gap-1 grow-0 box-border
             border-2 border-clrBlack
@@ -47,7 +48,15 @@ const MyWork = () => {
           }>
             <p>View all projects</p>
             <BiRightArrowAlt className='text-xl' />
-          </button>
+          </button> */}
+          <div className='grow-0'>
+            <Button shadowColor='black'>
+              <div className='flex items-center justify-center font-semibold text-center gap-1 p-2'>
+                <p>View all projects</p>
+                <BiRightArrowAlt className='text-xl' />
+              </div>
+            </Button>
+          </div>
         </div>
 
     </MainWrapper>

@@ -118,16 +118,15 @@ const Header = () => {
             hidden
             md:flex items-center justify-center w-40 h-8 border border-clrBlack
             text-clrBlack
-            shadow-noBlurBlackThin
+            shadow-[3px_3px_0_0_#333333]
             duration-300
-            pt-1
-            pl-1
-            hover:border-clrHyperViolet
-            hover:shadow-none
+            hover:shadow-[5px_5px_0_0_#333333]
             hover:p-0
             hover:bg-clrHyperViolet
             hover:text-clrWhite
-            active:opacity-80
+            hover:border-clrHyperViolet
+            active:opacity-60
+            active:shadow-none
             `
           }
         >

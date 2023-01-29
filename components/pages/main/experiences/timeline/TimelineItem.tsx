@@ -35,8 +35,8 @@ const TimelineItem = (props: Props) => {
   }
 
   return (
-    <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border border-clrBlack rounded'>
-      <div className='absolute w-3 h-3 bg-clrBlack rounded-full mt-1.5 -left-1.5 border border-clrBlack'></div>
+    <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border border-clrBlack '>
+      <div className='absolute w-3 h-3 bg-clrBlack mt-1.5 -left-1.5 border border-clrBlack'></div>
       <time className='mb-1 text-sm font-semibold leading-none text-clrBlack'>
         {getMonthName(experience.month)}&nbsp;{experience.year}
       </time>

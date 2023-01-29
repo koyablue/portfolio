@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 // components
+import Button from '../../../../common/Button'
 import GitHubLinkButton from './buttons/GitHubLinkButton'
 import ExternalLinkButton from './buttons/ExternalLinkButton'
 
@@ -72,21 +73,11 @@ const ProjectCard = ({ project }: Props) => {
           <GitHubLinkButton href={project.githubRepo} />
           <ExternalLinkButton href={project.url} />
         </div>
-        <button className='
-          flex items-center justify-center
-          w-full h-8
-          bg-clip-content
-          border border-clrBlack
-          shadow-[3px_3px_0_0_#333333]
-          text-clrBlack font-bold text-sm
-          hover:shadow-[5px_5px_0_0_#333333]
-          active:opacity-60
-          active:shadow-none
-          duration-300
-          md:w-1/3'
-        >
-          Details
-        </button>
+          <div className='w-1/3 h-8'>
+            <Button shadowColor='black'>
+              <p className='text-clrBlack font-bold text-sm'>Details</p>
+            </Button>
+          </div>
       </div>
     </div>
   )
