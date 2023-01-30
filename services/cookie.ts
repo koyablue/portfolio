@@ -40,9 +40,6 @@ export const setColorThemeCookie = (value: ColorTheme) => {
  *
  * @return {*}  {ColorTheme}
  */
-export const getColorThemeCookie = (): ColorTheme => {
-  const cookieVal = getCookie(colorThemeCookieName)
-  if (!cookieVal || !isColorTheme(cookieVal)) return colorThemeConfig.light
-
-  return cookieVal
+export const getColorThemeCookie = (): ColorTheme | string => {
+  return getCookie(colorThemeCookieName) || ''
 }

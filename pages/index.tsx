@@ -12,8 +12,12 @@ const ScrollPointDiv = ({ id }: { id: string }) => (
   <div id={id} className='pt-[64px] -mt-[64px]'></div>
 )
 
+/**
+ * Top page
+ *
+ * @return {*} JSX.Element
+ */
 const Home = () => {
-  // TODO: check cookie and set darkModeState
   return (
     <>
       <Top />

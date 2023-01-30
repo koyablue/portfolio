@@ -1,6 +1,11 @@
 import { ReactNode } from 'react'
 
+// redux
+import { useAppSelector } from '../../stores/hooks'
+import { selectIsThemeSet } from '../../stores/slices/colorThemeSlice'
+
 // components
+import ColorThemeProvider from './includes/ColorThemeProvider'
 import Header from './includes/header'
 
 type Props = {
@@ -14,10 +19,17 @@ type Props = {
  * @return {*} JSX.Element
  */
 const MainLayout = ({ children }: Props) => {
+  const isThemeSet = useAppSelector(selectIsThemeSet)
+
   return (
     <div>
-      <Header />
-      {children}
+      <ColorThemeProvider />
+      {isThemeSet &&
+        <>
+          <Header />
+          {children}
+        </>
+      }
     </div>
   )
 }

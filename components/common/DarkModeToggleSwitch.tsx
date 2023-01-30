@@ -2,17 +2,29 @@
 import { useAppSelector, useAppDispatch } from '../../stores/hooks'
 import { selectColorTheme } from '../../stores/slices/colorThemeSlice'
 
+// constants
+import { colorThemeConfig } from '../../constants/colorTheme'
+
+// custom hooks
+import { useColorTheme } from '../../hooks/useColorTheme'
+
 // icons
 import { FiSun, FiMoon } from 'react-icons/fi'
 
 const DarkModeToggleSwitch = () => {
-  const dispatch = useAppDispatch()
   const currentColorTheme = useAppSelector(selectColorTheme)
 
-  // TODO: dark mode style
+  const { toggleDarkMode } = useColorTheme()
+
+  const onChangeHandler = () => {
+    toggleDarkMode()
+  }
+
+  const isChecked = currentColorTheme === colorThemeConfig.dark
+
   return (
     <label className='relative inline-flex items-center cursor-pointer w-full'>
-      <input type='checkbox' value='' className='sr-only peer' />
+      <input type='checkbox' value='' className='sr-only peer' checked={isChecked} onChange={onChangeHandler} />
       <div className="
         flex
         items-center

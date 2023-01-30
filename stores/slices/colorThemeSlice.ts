@@ -7,10 +7,12 @@ import { ColorTheme } from '../../types/theme'
 
 type ColorThemeState = {
   theme: ColorTheme
+  isThemeSet: boolean
 }
 
 const initialState: ColorThemeState = {
-  theme: 'light'
+  theme: 'light',
+  isThemeSet: false,
 }
 
 const colorThemeSlice = createSlice({
@@ -19,15 +21,20 @@ const colorThemeSlice = createSlice({
   reducers: {
     updateColorThemeStatus: (state, action: PayloadAction<ColorTheme>) => {
       state.theme = action.payload
+    },
+    updateIsThemeSet: (state, action: PayloadAction<boolean>) => {
+      state.isThemeSet = action.payload
     }
   },
 })
 
 // actions
-export const { updateColorThemeStatus } = colorThemeSlice.actions
+export const { updateColorThemeStatus, updateIsThemeSet } = colorThemeSlice.actions
 
 // selectors
 export const selectColorTheme = (state: RootState) => state.colorTheme.theme
+
+export const selectIsThemeSet = (state: RootState) => state.colorTheme.isThemeSet
 
 export default colorThemeSlice.reducer
 
