@@ -1,6 +1,9 @@
 import React, { ReactElement, ReactNode } from 'react'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
+import { store } from '../stores/store'
+import { Provider } from 'react-redux'
+
 import '../styles/globals.css'
 
 import 'tailwindcss/tailwind.css';
@@ -15,9 +18,17 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
 
-export default function App({ Component, pageProps, }: AppPropsWithLayout) {
+const App = ({ Component, pageProps, }: AppPropsWithLayout) => {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page)
 
-  return getLayout(<Component {...pageProps} />)
+  return (
+    <>
+      <Provider store={store}>
+        {getLayout(<Component {...pageProps} />)}
+      </Provider>
+    </>
+  )
 }
+
+export default App
