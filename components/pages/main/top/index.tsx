@@ -21,24 +21,6 @@ import MailToATag from '../../../common/MailToATag'
  * @return {*} JSX.Element
  */
 const Top = () => {
-  const [text, setText] = useState("")
-  const [fullText, setFullText] = useState(
-      "Your source of leading edge water and air treatment technology since 1994."
-    )
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    if (index < fullText.length) {
-      setTimeout(() => {
-        setText(text + fullText[index])
-        setIndex(index + 1)
-      }, 100)
-    }
-  }, [index])
-
-  const jobTitle = useLinearTypingEffect('Frontend developer', 100)
-  const myName = useLinearTypingEffect('Koya Aoyama', 45)
-
   // TODO: correct email address
 
   return (

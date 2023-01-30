@@ -2,11 +2,14 @@ import { ReactNode, useState, useEffect } from 'react'
 
 // components
 import MobileMenu from '../../common/mobileMenu'
+import DarkModeToggleSwitch from '../../common/DarkModeToggleSwitch'
 
 // icons
 import { GrClose } from 'react-icons/gr'
 import { TbGridDots } from 'react-icons/tb'
 import { BsGithub } from 'react-icons/bs'
+
+import { FiSun, FiMoon } from 'react-icons/fi'
 
 // custom hooks
 import { useToggle } from '../../../hooks/useToggle'
@@ -98,9 +101,13 @@ const Header = () => {
         <a href={GITHUB_URL}><BsGithub /></a>
       </div>
 
+      <div className='block w-14 md:hidden'>
+        <DarkModeToggleSwitch />
+      </div>
+
       <div className='md:flex md:justify-between md:flex-1'>
         {/* header nav */}
-        <nav className='hidden md:flex space-x-11 text-clrWhite'>
+        <nav className='hidden md:flex space-x-5 text-clrWhite'>
           <PcNavMenuItem>
             <a href='#skills'>Skills</a>
           </PcNavMenuItem>
@@ -115,8 +122,12 @@ const Header = () => {
           </PcNavMenuItem>
         </nav>
 
-        {/* resume download button */}
-        <button className={`
+        <div className='flex items-center justify-center gap-8'>
+          <div className='hidden md:block md:w-14'>
+            <DarkModeToggleSwitch />
+          </div>
+          {/* resume download button */}
+          <button className={`
             hidden
             md:flex items-center justify-center w-40 h-8 border border-clrBlack
             text-clrBlack
@@ -130,11 +141,10 @@ const Header = () => {
             active:opacity-60
             active:shadow-none
             `
-          }
-        >
-          <p>Resume</p>
-        </button>
-
+          }>
+            <p>Resume</p>
+          </button>
+        </div>
         {/* mobile menu open/close button */}
         <button onClick={handleMobileMenuButtonOnClick} className='text-2xl md:hidden'>
           {isMobileMenuOpen ? <GrClose /> : <TbGridDots />}
