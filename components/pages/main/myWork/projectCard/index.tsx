@@ -6,7 +6,7 @@ import GitHubLinkButton from './buttons/GitHubLinkButton'
 import ExternalLinkButton from './buttons/ExternalLinkButton'
 
 // helpers
-import { omitStr } from '../../../../../helpers/util'
+import { omitStr } from '../../../../../services/util'
 
 // types
 import { Project } from '../../../../../types/project'

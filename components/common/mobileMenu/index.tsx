@@ -10,7 +10,7 @@ import { useToggle } from '../../../hooks/useToggle'
 import type { UseToggleReturnType } from '../../../hooks/useToggle'
 
 // utils
-import { assertIsNode } from '../../../helpers/util'
+import { assertIsNode } from '../../../services/util'
 
 type Props = {
   isOpen?: boolean

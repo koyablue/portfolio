@@ -1,5 +1,5 @@
 import { projects } from '../../staticData/projects'
-import { addIdsToAllData } from '../../helpers/data'
+import { addIdsToAllData } from '../../services/data'
 import { Project, ProjectRawData } from '../../types/project'
 
 export const useGetProjects = () => {

@@ -1,6 +1,6 @@
 import { experiences } from '../../staticData/experiences'
 
-import { addIdsToAllData } from '../../helpers/data'
+import { addIdsToAllData } from '../../services/data'
 
 // types
 import { Experience, ExperienceRawData } from '../../types/experiences'
