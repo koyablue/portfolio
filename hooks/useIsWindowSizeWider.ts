@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
-// utils
-import { isInBrowser } from '../helpers/environment'
+// constants
+import { IS_IN_BROWSER } from '../constants/environment'
 
 /**
  * check if window size is wider than the given breakpoint
@@ -13,7 +13,7 @@ export const useIsWindowSizeWider = (breakpointPx: number) => {
 	const [isWindowSizeWider, setIsWindowSizeWider] = useState<boolean>(false)
 
 	const resizeEvent = useCallback(() => {
-		if (!isInBrowser) return
+		if (!IS_IN_BROWSER) return
 
 		window.addEventListener('resize', () => {
 			// window size is less than break point
@@ -26,7 +26,7 @@ export const useIsWindowSizeWider = (breakpointPx: number) => {
 	},[breakpointPx])
 
   useEffect(() => {
-		if (isInBrowser) {
+		if (IS_IN_BROWSER) {
 			if (window.innerWidth >= breakpointPx) {
 				setIsWindowSizeWider(true)
 			}

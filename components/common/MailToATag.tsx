@@ -3,8 +3,8 @@ import { ReactNode } from 'react'
 // custom hooks
 import { useStyleJoin } from '../../hooks/useStyleJoin'
 
-// helpers
-import { isInBrowser } from '../../helpers/environment'
+// constants
+import { IS_IN_BROWSER } from '../../constants/environment'
 
 type Props = {
 	name: string
@@ -34,7 +34,7 @@ const MailToATag = ({ name, domain, tld, className = '', children }: Props) => {
    * @return {*} false | undefined
    */
 	 const emailIconOnClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLLIElement>) => {
-    if (!isInBrowser) return
+    if (!IS_IN_BROWSER) return
 
     location.href =
       'mailto:'
