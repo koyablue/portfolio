@@ -1,6 +1,14 @@
+// redux
+import { useAppSelector, useAppDispatch } from '../../stores/hooks'
+import { selectIsDarkMode } from '../../stores/slices/darkModeSlice'
+
+// icons
 import { FiSun, FiMoon } from 'react-icons/fi'
 
 const DarkModeToggleSwitch = () => {
+  const dispatch = useAppDispatch()
+  const isDarkMode = useAppSelector(selectIsDarkMode)
+
   // TODO: dark mode style
   return (
     <label className='relative inline-flex items-center cursor-pointer w-full'>

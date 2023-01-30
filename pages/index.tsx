@@ -13,6 +13,7 @@ const ScrollPointDiv = ({ id }: { id: string }) => (
 )
 
 const Home = () => {
+  // TODO: check cookie and set darkModeState
   return (
     <>
       <Top />
