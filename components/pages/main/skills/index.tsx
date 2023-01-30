@@ -11,14 +11,14 @@ import { useGetSkills } from '../../../../hooks/data/useGetSkills'
  *
  * @return {*} JSX.Element
  */
-const SkillsAndExperiences = () => {
+const Skills = () => {
   const { getAllSkills } = useGetSkills()
 
   const skills = getAllSkills()
 
   return (
     <MainWrapper className=''>
-      <MainPageSectionTitle title='Skills & Experiences' />
+      <MainPageSectionTitle title='Skills' />
       <div className='flex items-center justify-center gap-4 flex-wrap md:justify-start'>
         {skills.map(skill =>
           <div
@@ -39,4 +39,4 @@ const SkillsAndExperiences = () => {
   )
 }
 
-export default SkillsAndExperiences
+export default Skills

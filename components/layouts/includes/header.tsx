@@ -102,11 +102,13 @@ const Header = () => {
         {/* header nav */}
         <nav className='hidden md:flex space-x-11 text-clrWhite'>
           <PcNavMenuItem>
-            {/* <HiCode className='text-xl' /> */}
-            <a href='#skillsAndExperiences'>Skills & Experiences</a>
+            <a href='#skills'>Skills</a>
           </PcNavMenuItem>
           <PcNavMenuItem>
             <a href='#myWork'>My Work</a>
+          </PcNavMenuItem>
+          <PcNavMenuItem>
+            <a href='#experiences'>Experiences</a>
           </PcNavMenuItem>
           <PcNavMenuItem>
             About me
@@ -120,7 +122,7 @@ const Header = () => {
             text-clrBlack
             shadow-[3px_3px_0_0_#333333]
             duration-300
-            hover:shadow-[5px_5px_0_0_#333333]
+            hover:shadow-[5px_5px_0_0_#374151]
             hover:p-0
             hover:bg-clrHyperViolet
             hover:text-clrWhite

@@ -1,5 +1,5 @@
 // types
-import { SkillRawData } from '../../types/skillsAndExperiences'
+import { SkillRawData } from '../../types/skills'
 
 // components
 import {
@@ -19,7 +19,7 @@ import {
   AwsIcon,
   GitIcon,
   GitHubActionsIcon,
-} from '../../components/pages/main/skillsAndExperiences/skills'
+} from '../../components/pages/main/skills/skillIcons'
 
 export const skills: SkillRawData[] = [
   { name: 'React', icon: <ReactDotJsIcon /> },

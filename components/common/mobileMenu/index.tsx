@@ -36,11 +36,10 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
     }
   }
 
-  console.log('isOpen: ', isOpen)
-
   const menuItems: { [key: string]: { href: string; label: string; } } = {
-    skillsAndExperiences: { href: '#skillsAndExperiences', label: 'Skills & Experiences', },
+    skills: { href: '#skills', label: 'Skills', },
     myWork: { href: '#myWork', label: 'My Work', },
+    experiences: { href: '#experiences', label: 'Experiences' },
     about: { href: '#', label: 'About Me', },
     resume: { href: '#', label: 'Resume', },
   }

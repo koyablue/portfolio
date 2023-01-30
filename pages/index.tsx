@@ -4,7 +4,7 @@ import React, { ReactElement } from 'react'
 import MainLayout from '../components/layouts/MainLayout'
 import Top from '../components/pages/main/top'
 import Description from '../components/pages/main/description'
-import SkillsAndExperiences from '../components/pages/main/skillsAndExperiences'
+import Skills from '../components/pages/main/skills'
 import MyWork from '../components/pages/main/myWork'
 import Experiences from '../components/pages/main/experiences'
 
@@ -17,10 +17,11 @@ const Home = () => {
     <>
       <Top />
       <Description />
-      <ScrollPointDiv id={'skillsAndExperiences'} />
-      <SkillsAndExperiences />
+      <ScrollPointDiv id={'skills'} />
+      <Skills />
       <ScrollPointDiv id={'myWork'} />
       <MyWork />
+      <ScrollPointDiv id={'experiences'} />
       <Experiences />
     </>
   )
