@@ -1,13 +1,13 @@
 // redux
 import { useAppSelector, useAppDispatch } from '../../stores/hooks'
-import { selectIsDarkMode } from '../../stores/slices/darkModeSlice'
+import { selectColorTheme } from '../../stores/slices/colorThemeSlice'
 
 // icons
 import { FiSun, FiMoon } from 'react-icons/fi'
 
 const DarkModeToggleSwitch = () => {
   const dispatch = useAppDispatch()
-  const isDarkMode = useAppSelector(selectIsDarkMode)
+  const currentColorTheme = useAppSelector(selectColorTheme)
 
   // TODO: dark mode style
   return (
