@@ -1,6 +1,7 @@
 import { FiSun, FiMoon } from 'react-icons/fi'
 
 const DarkModeToggleSwitch = () => {
+  // TODO: dark mode style
   return (
     <label className='relative inline-flex items-center cursor-pointer w-full'>
       <input type='checkbox' value='' className='sr-only peer' />

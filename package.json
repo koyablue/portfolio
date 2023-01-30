@@ -11,6 +11,7 @@
     "watch": "npx tailwindcss -i ./input.css -o ./css/main.css --watch"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.2",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
