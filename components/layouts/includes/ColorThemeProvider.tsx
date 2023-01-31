@@ -8,7 +8,7 @@ import { updateIsThemeSet } from '../../../stores/slices/colorThemeSlice'
 import { useColorTheme } from '../../../hooks/useColorTheme'
 
 /**
- *
+ * Apply color theme to the app.
  *
  * @return {*} null
  */

@@ -4,11 +4,15 @@ import { selectColorTheme, updateColorThemeStatus } from '../stores/slices/color
 
 // constants
 import { colorThemeConfig } from '../constants/colorTheme'
+import { IS_IN_BROWSER } from '../constants/environment'
 
 // services
 import { setColorThemeCookie, getColorThemeCookie } from '../services/cookie'
-import { useSelector } from 'react-redux'
+
+// types
 import { isColorTheme } from '../types/theme'
+import { useEffect } from 'react'
+
 
 /**
  * Custom hook for managing color themes
@@ -20,9 +24,26 @@ import { isColorTheme } from '../types/theme'
 export const useColorTheme = () => {
   const dispatch = useAppDispatch()
 
-  const currentColorThemeState = useSelector(selectColorTheme)
+  const currentColorThemeState = useAppSelector(selectColorTheme)
 
   const currentColorThemeCookie = getColorThemeCookie()
+
+  /**
+   * Toggle 'dark' className of <html></html>
+   *
+   */
+  const toggleDarkModeClassName = () => {
+    if (!IS_IN_BROWSER) return
+
+    currentColorThemeState === colorThemeConfig.dark
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark')
+  }
+
+  useEffect(() => {
+    toggleDarkModeClassName()
+  }, [currentColorThemeState])
+
 
   /**
    *
@@ -55,10 +76,7 @@ export const useColorTheme = () => {
       ? colorThemeConfig.dark
       : colorThemeConfig.light
 
-    console.log('colorThemeToApply: ', colorThemeToApply)
-
     dispatch(updateColorThemeStatus(colorThemeToApply))
-
     setColorThemeCookie(colorThemeToApply)
   }
 
