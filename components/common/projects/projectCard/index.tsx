@@ -1,15 +1,15 @@
 import Image from 'next/image'
 
 // components
-import Button from '../../../../common/Button'
+import Button from '../../Button'
 import GitHubLinkButton from './buttons/GitHubLinkButton'
 import ExternalLinkButton from './buttons/ExternalLinkButton'
 
 // helpers
-import { omitStr } from '../../../../../services/util'
+import { omitStr } from '../../../../services/util'
 
 // types
-import { Project } from '../../../../../types/project'
+import { Project } from '../../../../types/project'
 
 
 type Props = {
