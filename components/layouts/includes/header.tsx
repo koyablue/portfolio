@@ -5,37 +5,40 @@ import MobileMenu from '../../common/mobileMenu'
 import DarkModeToggleSwitch from '../../common/DarkModeToggleSwitch'
 
 // icons
-import { GrClose } from 'react-icons/gr'
 import { TbGridDots } from 'react-icons/tb'
 import { BsGithub } from 'react-icons/bs'
 import { VscChromeClose } from 'react-icons/vsc'
-
-import { FiSun, FiMoon } from 'react-icons/fi'
+import { BsCodeSquare } from 'react-icons/bs'
 
 // custom hooks
 import { useToggle } from '../../../hooks/useToggle'
 import { useIsWindowSizeWider } from '../../../hooks/useIsWindowSizeWider'
+import { useScrollToId } from '../../../hooks/useScrollToId'
 
 // constants
 import { GITHUB_URL } from '../../../constants'
 import { IS_IN_BROWSER } from '../../../constants/environment'
 
-const PcNavMenuItem = ({ children }: { children: ReactNode }) => {
+const PcNavMenuItem = ({ id = '', children }: { id?: string; children: ReactNode }) => {
+  const { scrollToId } = useScrollToId()
+
   return (
-    <div className={`
-      flex flex-col items-center justify-center
-      text-clrBlack font-semibold text-sm
-      duration-200 cursor-pointer
-      p-2
-      rounded
-      hover:text-clrHyperViolet
-      hover:bg-clrWhiteOpa
-      dark:text-clrWhiteOpa
-      dark:hover:text-clrYellow
-      dark:hover:bg-[rgb(244,245,247,0.2)]
-    `}>
+    <button className={`
+        flex flex-col items-center justify-center
+        text-clrBlack font-semibold text-sm
+        duration-200 cursor-pointer
+        p-2
+        rounded
+        hover:text-clrHyperViolet
+        hover:bg-clrWhiteOpa
+        dark:text-clrWhiteOpa
+        dark:hover:text-clrYellow
+        dark:hover:bg-[rgb(244,245,247,0.2)]
+      `}
+      onClick={() => scrollToId(id)}
+    >
       {children}
-    </div>
+    </button>
   )
 }
 
@@ -85,6 +88,9 @@ const Header = () => {
     return () => window.removeEventListener('scroll', toggleHeaderStyle)
   }, [])
 
+  //TODO: change contents depends on the page
+  // TODO: to top icon => BsCodeSquare
+
   return (
     <header
       className={`
@@ -110,14 +116,14 @@ const Header = () => {
       <div className='md:flex md:justify-between md:flex-1'>
         {/* header nav */}
         <nav className='hidden md:flex space-x-5 text-clrWhite'>
-          <PcNavMenuItem>
-            <a href='#skills'>Skills</a>
+          <PcNavMenuItem id='skills'>
+            <p>Skills</p>
           </PcNavMenuItem>
-          <PcNavMenuItem>
-            <a href='#myWork'>My Work</a>
+          <PcNavMenuItem id='myWork'>
+            <p>My Work</p>
           </PcNavMenuItem>
-          <PcNavMenuItem>
-            <a href='#experiences'>Experiences</a>
+          <PcNavMenuItem id='experiences'>
+            <p>Experiences</p>
           </PcNavMenuItem>
           <PcNavMenuItem>
             About me

@@ -1,4 +1,5 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
+import { isScrollYZero } from '../../constants/util'
 
 // redux
 import { useAppSelector } from '../../stores/hooks'
@@ -19,7 +20,13 @@ type Props = {
  * @return {*} JSX.Element
  */
 const MainLayout = ({ children }: Props) => {
+  const isCurrentScrollYZero = isScrollYZero
+  const [isPageTop, setIsPageTop] = useState<boolean>(false)
   const isThemeSet = useAppSelector(selectIsThemeSet)
+
+  useEffect(() => {
+    setIsPageTop(isCurrentScrollYZero)
+  }, [isCurrentScrollYZero])
 
   return (
     <div>
