@@ -1,16 +1,19 @@
+import Link from 'next/link'
+
 // components
 import MainWrapper from '../../../common/MainWrapper'
 import MainPageSectionTitle from '../common/MainPageSectionTitle'
-import ProjectCard from './projectCard'
+import ProjectCard from '../../../common/projects/projectCard'
 import Button from '../../../common/Button'
 
 // icons
-import { IoIosArrowForward } from 'react-icons/io'
 import { BiRightArrowAlt } from 'react-icons/bi'
-import { TbExternalLink } from 'react-icons/tb'
 
 // custom hooks
 import { useGetProjects } from '../../../../hooks/data/useGetProjects'
+
+// services
+import { getPath } from '../../../../services/pathService'
 
 const MyWork = () => {
   const { getProjects } = useGetProjects()
@@ -24,9 +27,9 @@ const MyWork = () => {
     <MainWrapper className='min-h-screen' >
       <MainPageSectionTitle title='My Work' />
 
-      <div>
+      {/* <div>
         TODO: search projects
-      </div>
+      </div> */}
 
       {/* gap-x-0 gap-y-1  */}
       {/* <div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'> */}
@@ -42,10 +45,10 @@ const MyWork = () => {
               dark:hover:shadow-noBlurWhiteOpa5px
               dark:active:shadow-none'
             >
-              <div className='flex items-center justify-center font-semibold text-center gap-1 p-2 text-clrBlack'>
+              <Link href={getPath('projects')} className='flex items-center justify-center font-semibold text-center gap-1 p-2 text-clrBlack'>
                 <p>View all projects</p>
                 <BiRightArrowAlt className='text-xl' />
-              </div>
+              </Link>
             </Button>
           </div>
         </div>
