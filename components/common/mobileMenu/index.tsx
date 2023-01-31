@@ -36,12 +36,12 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
     }
   }
 
-  const menuItems: { [key: string]: { href: string; label: string; } } = {
-    skills: { href: '#skills', label: 'Skills', },
-    myWork: { href: '#myWork', label: 'My Work', },
-    experiences: { href: '#experiences', label: 'Experiences' },
-    about: { href: '#', label: 'About Me', },
-    resume: { href: '#', label: 'Resume', },
+  const menuItems: { [key: string]: { id: string; label: string; } } = {
+    skills: { id: 'skills', label: 'Skills', },
+    myWork: { id: 'myWork', label: 'My Work', },
+    experiences: { id: 'experiences', label: 'Experiences' },
+    about: { id: '', label: 'About Me', },
+    resume: { id: '', label: 'Resume', },
   }
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         {Object.keys(menuItems).map(k =>
           <MenuItem
             key={k}
-            href={menuItems[k].href}
+            id={menuItems[k].id}
             label={menuItems[k].label}
             toggleMobileMenu={toggleMobileMenu}
           />

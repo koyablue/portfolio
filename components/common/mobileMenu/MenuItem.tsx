@@ -1,7 +1,7 @@
-import Link from 'next/link'
+import { useScrollToId } from '../../../hooks/useScrollToId'
 
 type Props = {
-  href: string
+  id?: string
   label: string
   toggleMobileMenu: () => void
 }
@@ -12,15 +12,22 @@ type Props = {
  * @param {Props} { href, label }
  * @return {*} JSX.Element
  */
-const MenuItem = ({ href, label, toggleMobileMenu }: Props) => {
+const MenuItem = ({ id = '', label, toggleMobileMenu }: Props) => {
+  const { scrollToId } = useScrollToId()
+
+  const onClickHandler = () => {
+    scrollToId(id)
+    toggleMobileMenu()
+  }
+
   return (
     <li
       className='ease-in-out flex items-center justify-center w-full h-10 duration-200 hover:text-clrHyperViolet dark:hover:text-clrYellow'
-      onClick={toggleMobileMenu}
+      onClick={onClickHandler}
     >
-      <Link href={href} scroll={false} className='text-center block w-full'>
-          <p className=''>{label}</p>
-      </Link>
+      {/* <Link href={href} scroll={false} className='text-center block w-full'> */}
+          <p className='text-center block w-full'>{label}</p>
+      {/* </Link> */}
     </li>
   )
 }
