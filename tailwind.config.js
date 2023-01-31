@@ -17,6 +17,7 @@ module.exports = {
       colors: {
         clrBlack: '#333333',
         clrWhite: '#f4f5f7',
+        clrWhiteOpa: 'rgb(244,245,247,0.85)',
         clrBeige: '#fff0e5',
         clrOrange: '#f76c6c',
         appBlue: '#a8d0e6',
@@ -33,6 +34,7 @@ module.exports = {
         clrHyperViolet: '#3a10e5',
         clrGray: '#eeeeee',
         clrYellow: '#ffd300',
+        clrThickNavy: '#262f52',
       },
       screens: {
         lgm: '1280px',
@@ -63,12 +65,11 @@ module.exports = {
         },
       },
       boxShadow: {
-        "noBlurBlack": "15px 15px 0px 0 rgb(51, 51, 51);",
-        "noBlurBlackThin": "5px 5px 0px 0 rgb(51, 51, 51);",
-        "noBlurBlackMid": "10px 10px 0px 0 rgb(51, 51, 51);",
-        "noBlurHyperVioletThin": "5px 5px 0px 0 #3a10e5;",
-        "noBlurAppOrangeMid": "10px 10px 0px 0 rgb(247,108,108);",
-        "noBlurAppOrangeWide": "20px 20px 0px 0 rgb(247,108,108);",
+        "noBlurBlack15px": "15px 15px 0px 0 rgb(51, 51, 51);",
+        "noBlurBlack5px": "5px 5px 0px 0 rgb(51, 51, 51);",
+        "noBlurBlack10px": "10px 10px 0px 0 rgb(51, 51, 51);",
+        "noBlurWhiteOpa3px": "3px 3px 0px 0px rgb(244,245,247,0.85)",
+        "noBlurWhiteOpa5px": "5px 5px 0px 0px rgb(244,245,247,0.85)",
       },
     },
     plugins: [require("@tailwindcss/line-clamp")],

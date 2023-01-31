@@ -8,6 +8,7 @@ import DarkModeToggleSwitch from '../../common/DarkModeToggleSwitch'
 import { GrClose } from 'react-icons/gr'
 import { TbGridDots } from 'react-icons/tb'
 import { BsGithub } from 'react-icons/bs'
+import { VscChromeClose } from 'react-icons/vsc'
 
 import { FiSun, FiMoon } from 'react-icons/fi'
 
@@ -28,7 +29,10 @@ const PcNavMenuItem = ({ children }: { children: ReactNode }) => {
       p-2
       rounded
       hover:text-clrHyperViolet
-      hover:bg-clrGray
+      hover:bg-clrWhiteOpa
+      dark:text-clrWhiteOpa
+      dark:hover:text-clrYellow
+      dark:hover:bg-[rgb(244,245,247,0.2)]
     `}>
       {children}
     </div>
@@ -88,16 +92,14 @@ const Header = () => {
         w-full h-[64px] space-x-11 px-8
         sticky
         top-0 left-0 right-0
-        bg-clrBeige
-        ${shouldHeaderOutstand ? 'bg-white border-b border-clrBlack' : 'bg-clrBeige border-none'}
-        duration-100
+        ${shouldHeaderOutstand ? 'bg-white border-b border-clrBlack dark:bg-clrDarkNavy dark:border-b dark:border-none' : 'border-none'}
+        duration-200
         md:justify-start
         z-[1]
         `
       }
     >
-      {/* TODO: logo */}
-      <div className='text-4xl hover:text-clrHyperViolet duration-200'>
+      <div className='text-4xl duration-200 hover:text-clrHyperViolet dark:hover:text-clrYellow'>
         <a href={GITHUB_URL}><BsGithub /></a>
       </div>
 
@@ -134,20 +136,24 @@ const Header = () => {
             shadow-[3px_3px_0_0_#333333]
             duration-300
             hover:shadow-[5px_5px_0_0_#374151]
-            hover:p-0
             hover:bg-clrHyperViolet
             hover:text-clrWhite
             hover:border-clrHyperViolet
             active:opacity-60
             active:shadow-none
+            dark:text-clrBlack
+            dark:bg-clrYellow
+            dark:shadow-[3px_3px_0_0_rgb(244,245,247,0.8)]
+            dark:hover:shadow-[5px_5px_0_0_rgb(244,245,247,0.8)]
+            dark:active:shadow-none
             `
           }>
             <p>Resume</p>
           </button>
         </div>
         {/* mobile menu open/close button */}
-        <button onClick={handleMobileMenuButtonOnClick} className='text-2xl md:hidden'>
-          {isMobileMenuOpen ? <GrClose /> : <TbGridDots />}
+        <button onClick={handleMobileMenuButtonOnClick} className='text-2xl md:hidden dark:text-clrWhiteOpa'>
+          {isMobileMenuOpen ? <VscChromeClose /> : <TbGridDots />}
         </button>
         {/* mobile menu contents */}
         {/* TODO: mobile menu anchor link */}

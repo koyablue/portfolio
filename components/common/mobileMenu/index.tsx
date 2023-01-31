@@ -70,6 +70,7 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         ${isOpen ? 'visible' : 'invisible'}
         ${isOpen && isOpen !== undefined ? 'animate-slide-in-fwd-center' : ''}
         ${!isOpen && isOpen !== undefined ? 'animate-slide-out-bck-center' : ''}
+        dark:bg-clrThickNavy
         `
       }>
         {Object.keys(menuItems).map(k =>

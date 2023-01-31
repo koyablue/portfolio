@@ -24,8 +24,8 @@ const LinkButton = ({ label, href = '', children }: LinkButtonProps) => {
         text-clrBlack
         active:opacity-60
         active:shadow-none
-        ${!href && 'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed shadow-none active:opacity-100'}
-        ${href && 'hover:shadow-[4px_4px_0_0_#333333]'}`
+        ${!href && 'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed shadow-none active:opacity-100 dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
+        ${href && 'hover:shadow-[4px_4px_0_0_#333333] dark:bg-indigo-400 dark:shadow-[2px_2px_0_0_rgb(244,245,247,0.85)]  dark:hover:shadow-[4px_4px_0_0_rgb(244,245,247,0.85)] dark:active:opacity-60 dark:active:shadow-none'}`
       }
       disabled={Boolean(href)}
     >

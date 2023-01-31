@@ -54,21 +54,22 @@ const Top = () => {
           <section className=''>
             <div className='w-[120px] h-[120px] md:w-[200px] md:h-[200px] relative'>
               {/* rounded-full */}
+              {/* dark:shadow-[15px_15px_0_0_rgb(51,65,85)] */}
               <Image
                 src='/images/profile/me_monotone.png'
                 fill
                 alt='Photograph of Koya Aoyama'
-                className='border-4 border-t-clrHyperViolet border-r-clrOrange border-b-clrYellow border-l-clrYellow shadow-noBlurBlack'
+                className='border-4 border-t-clrHyperViolet border-r-clrOrange border-b-clrYellow border-l-clrYellow shadow-noBlurBlack15px dark:border-t-blue-600 dark:shadow-[15px_15px_0_0_rgb(51,65,160)] dark-shadow-black'
               />
             </div>
           </section>
           {/* intro and links */}
           <section className='flex flex-col items-center'>
             <div className='mb-3.5'>
-              <p className='text-[35px] text-center text-clrBlack font-black md:text-[75px]'>
+              <p className='text-[35px] text-center text-clrBlack font-black md:text-[75px] dark:text-clrWhiteOpa'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] text-center font-semibold text-clrBlack md:text-[50px]'>
+              <p className='text-[25px] text-center font-semibold text-clrBlack md:text-[50px] dark:text-clrWhiteOpa'>
                 Frontend <br className='hidden'/>developer
               </p>
             </div>
@@ -92,7 +93,8 @@ const Top = () => {
                 bg-clrWhite
                 cursor-pointer
                 duration-200
-                hover:opacity-80'
+                hover:opacity-80
+                dark:bg-clrWhiteOpa'
               >
                 {/* TODO: correct email address */}
                 <MailToATag name='info' domain='example' tld='org' className='block'>

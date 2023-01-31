@@ -20,8 +20,11 @@ const getColor = (color: ButtonColor) => buttonColorConfig[color]
 const getShadow = (color: ShadowColor) => shadowColorConfig[color]
 
 type Props = {
-  buttonColor?: ButtonColor
-  shadowColor?: ShadowColor
+  borderStyle?: string
+  bgStyle?: string
+  textStyle?: string
+  shadowStyle?: string
+  className?: string
   children?: ReactNode
 }
 
@@ -31,20 +34,26 @@ type Props = {
  * @param {Props} { buttonColor, shadowColor, children }
  * @return {*} JSX.Element
  */
-const Button = ({ buttonColor, shadowColor, children }: Props) => {
-  const bgColor = getColor(buttonColor || 'none')
-  const shadow = getShadow(shadowColor || 'none')
+const Button = (props: Props) => {
+  const {
+    borderStyle = 'border border-clrBlack',
+    bgStyle = '',
+    textStyle = '',
+    shadowStyle = 'shadow-[3px_3px_0_0_#333333] hover:shadow-[5px_5px_0_0_#333333]',
+    className = '',
+    children,
+  } = props
 
   return (
     <button className={`
       w-full h-full
       bg-clip-content
       border border-clrBlack
+      shadow-[3px_3px_0_0_#333333] hover:shadow-[5px_5px_0_0_#333333]
       active:opacity-60
       active:shadow-none
       duration-300
-      ${bgColor}
-      ${shadow}
+      ${className}
       `}
     >
       {children}

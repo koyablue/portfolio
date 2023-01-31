@@ -34,24 +34,15 @@ const MyWork = () => {
         {projectsToShow.map(project => <ProjectCard key={project.id} project={project} />)}
       </div>
         <div className='flex justify-end'>
-          {/* <button className={`
-            flex items-center justify-center
-            font-semibold text-center gap-1 grow-0 box-border
-            border-2 border-clrBlack
-            shadow-noBlurBlackThin
-            p-2
-            hover:shadow-none
-            hover:bg-clrLightGreen
-            active:opacity-60
-            duration-300
-            `
-          }>
-            <p>View all projects</p>
-            <BiRightArrowAlt className='text-xl' />
-          </button> */}
           <div className='grow-0'>
-            <Button shadowColor='black'>
-              <div className='flex items-center justify-center font-semibold text-center gap-1 p-2'>
+            <Button className='
+              dark:bg-indigo-400
+              dark:text-clrWhiteOpa
+              dark:shadow-noBlurWhiteOpa3px
+              dark:hover:shadow-noBlurWhiteOpa5px
+              dark:active:shadow-none'
+            >
+              <div className='flex items-center justify-center font-semibold text-center gap-1 p-2 text-clrBlack'>
                 <p>View all projects</p>
                 <BiRightArrowAlt className='text-xl' />
               </div>

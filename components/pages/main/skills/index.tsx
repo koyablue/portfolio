@@ -28,10 +28,12 @@ const Skills = () => {
             bg-clrWhite
             text-[35px]
             border-[1.5px] border-clrBlack
-            rounded`}
+            rounded
+            dark:bg-clrThickNavy
+            dark:border-clrThickNavy`}
           >
             {skill.icon}
-            <p className='text-[13px] font-medium text-center text-clrBlack'>{skill.name}</p>
+            <p className='text-[13px] font-medium text-center text-clrBlack dark:text-clrWhiteOpa'>{skill.name}</p>
           </div>
         )}
       </div>

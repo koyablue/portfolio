@@ -21,7 +21,8 @@ const LinkListItem = ({ href, children }: Props) => {
       cursor-pointer
       bg-clrWhite
       duration-200
-      hover:opacity-80'
+      hover:opacity-80
+      dark:bg-clrWhiteOpa'
     >
       <a href={href} target='_blank' rel='noreferrer'>
         {children}

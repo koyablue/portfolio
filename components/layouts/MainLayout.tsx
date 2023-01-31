@@ -6,7 +6,7 @@ import { selectIsThemeSet } from '../../stores/slices/colorThemeSlice'
 
 // components
 import ColorThemeProvider from './includes/ColorThemeProvider'
-import Header from './includes/header'
+import Header from './includes/Header'
 
 type Props = {
   children: ReactNode
