@@ -1,4 +1,5 @@
 import { ReactNode, useState, useEffect } from 'react'
+import Link from 'next/link'
 
 // components
 import MobileMenu from '../../common/mobileMenu'
@@ -14,16 +15,33 @@ import { BsCodeSquare } from 'react-icons/bs'
 import { useToggle } from '../../../hooks/useToggle'
 import { useIsWindowSizeWider } from '../../../hooks/useIsWindowSizeWider'
 import { useScrollToId } from '../../../hooks/useScrollToId'
+import { usePathMatch } from '../../../hooks/usePathMatch'
 
 // constants
 import { GITHUB_URL } from '../../../constants'
 import { IS_IN_BROWSER } from '../../../constants/environment'
 
-const PcNavMenuItem = ({ id = '', children }: { id?: string; children: ReactNode }) => {
+// services
+import { getPath } from '../../../services/pathService'
+
+type PcNavMenuItemProps = {
+  id?: string
+  isVisible?: boolean
+  onClick?: () => void
+  children?: ReactNode
+}
+
+const PcNavMenuItem = ({ id = '', isVisible = true, onClick = () => {/* do nothing */}, children }: PcNavMenuItemProps) => {
   const { scrollToId } = useScrollToId()
+
+  const onClickHandler = () => {
+    scrollToId(id)
+    onClick()
+  }
 
   return (
     <button className={`
+        ${!isVisible && 'hidden'}
         flex flex-col items-center justify-center
         text-clrBlack font-semibold text-sm
         duration-200 cursor-pointer
@@ -35,7 +53,7 @@ const PcNavMenuItem = ({ id = '', children }: { id?: string; children: ReactNode
         dark:hover:text-clrYellow
         dark:hover:bg-[rgb(244,245,247,0.2)]
       `}
-      onClick={() => scrollToId(id)}
+      onClick={onClickHandler}
     >
       {children}
     </button>
@@ -51,8 +69,13 @@ const Header = () => {
   const [shouldHeaderOutstand, setShouldHeaderOutstand] = useState<boolean>(false)
 
   const [shouldActive, setShouldActive] = useState<boolean | undefined>(undefined)
+
   const { isWindowSizeWider } = useIsWindowSizeWider(768)
+
   const { status: isMobileMenuOpen, setStatus: setIsMobileMenuOpen, toggle: toggleMobileMenu } = useToggle()
+
+  const topPagePath = getPath('top')
+  const { doesPathMatch: isTopPage } = usePathMatch(topPagePath)
 
   /**
    * manage mobile hamburger menu open/close
@@ -116,13 +139,18 @@ const Header = () => {
       <div className='md:flex md:justify-between md:flex-1'>
         {/* header nav */}
         <nav className='hidden md:flex space-x-5 text-clrWhite'>
-          <PcNavMenuItem id='skills'>
+          <PcNavMenuItem isVisible={!isTopPage}>
+            <Link href={topPagePath} className='block -m-2 p-2'>
+              Top
+            </Link>
+          </PcNavMenuItem>
+          <PcNavMenuItem id='skills' isVisible={isTopPage}>
             <p>Skills</p>
           </PcNavMenuItem>
-          <PcNavMenuItem id='myWork'>
+          <PcNavMenuItem id='myWork' isVisible={isTopPage}>
             <p>My Work</p>
           </PcNavMenuItem>
-          <PcNavMenuItem id='experiences'>
+          <PcNavMenuItem id='experiences' isVisible={isTopPage}>
             <p>Experiences</p>
           </PcNavMenuItem>
           <PcNavMenuItem>

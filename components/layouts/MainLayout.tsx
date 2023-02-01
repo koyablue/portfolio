@@ -1,12 +1,7 @@
-import { ReactNode, useEffect, useState } from 'react'
-import { isScrollYZero } from '../../constants/util'
-
-// redux
-import { useAppSelector } from '../../stores/hooks'
-import { selectIsThemeSet } from '../../stores/slices/colorThemeSlice'
+import { ReactNode } from 'react'
 
 // components
-import ColorThemeProvider from './includes/ColorThemeProvider'
+import LayoutWrapper from './LayoutWrapper'
 import Header from './includes/Header'
 
 type Props = {
@@ -14,30 +9,16 @@ type Props = {
 }
 
 /**
- * main layout
- * header nav, mobile menu
+ * Layout for the top page.
  *
  * @return {*} JSX.Element
  */
 const MainLayout = ({ children }: Props) => {
-  const isCurrentScrollYZero = isScrollYZero
-  const [isPageTop, setIsPageTop] = useState<boolean>(false)
-  const isThemeSet = useAppSelector(selectIsThemeSet)
-
-  useEffect(() => {
-    setIsPageTop(isCurrentScrollYZero)
-  }, [isCurrentScrollYZero])
-
   return (
-    <div>
-      <ColorThemeProvider />
-      {isThemeSet &&
-        <>
-          <Header />
-          {children}
-        </>
-      }
-    </div>
+    <LayoutWrapper>
+      <Header />
+      {children}
+    </LayoutWrapper>
   )
 }
 

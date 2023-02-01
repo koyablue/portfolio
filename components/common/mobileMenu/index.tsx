@@ -1,16 +1,20 @@
 import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 
 // components
 import MenuItem from './MenuItem'
 
 // hooks
-import { useToggle } from '../../../hooks/useToggle'
+import { usePathMatch } from '../../../hooks/usePathMatch'
 
 // types
 import type { UseToggleReturnType } from '../../../hooks/useToggle'
 
 // utils
 import { assertIsNode } from '../../../services/util'
+
+// services
+import { getPath } from '../../../services/pathService'
 
 type Props = {
   isOpen?: boolean
@@ -26,8 +30,16 @@ type Props = {
  * @return {*} JSX.Element
  */
 const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => {
+  const topPagePath = getPath('top')
+  const { doesPathMatch: isTopPage } = usePathMatch(topPagePath)
+
   const mobileMenuRef = useRef<HTMLUListElement>(null)
 
+  /**
+   * Close the mobile menu when the outside of the mobile menu area is clicked
+   *
+   * @param {MouseEvent} e
+   */
   const handleOutsideClick = (e: MouseEvent) => {
     if (!isOpen) return
     assertIsNode(e.target)
@@ -36,12 +48,12 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
     }
   }
 
-  const menuItems: { [key: string]: { id: string; label: string; } } = {
-    skills: { id: 'skills', label: 'Skills', },
-    myWork: { id: 'myWork', label: 'My Work', },
-    experiences: { id: 'experiences', label: 'Experiences' },
-    about: { id: '', label: 'About Me', },
-    resume: { id: '', label: 'Resume', },
+  const menuItems: { [key: string]: { id: string; label: string; isVisible: boolean; } } = {
+    skills: { id: 'skills', label: 'Skills', isVisible: isTopPage, },
+    myWork: { id: 'myWork', label: 'My Work', isVisible: isTopPage, },
+    experiences: { id: 'experiences', label: 'Experiences', isVisible: isTopPage, },
+    about: { id: '', label: 'About Me', isVisible: true, },
+    resume: { id: '', label: 'Resume', isVisible: true },
   }
 
   useEffect(() => {
@@ -51,7 +63,6 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
     };
   }, [])
 
-  // TODO: mobile menu anchor link
   return (
     <div className='md:hidden'>
       <ul
@@ -73,13 +84,18 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         dark:bg-clrThickNavy
         `
       }>
+        <MenuItem isVisible={!isTopPage}>
+          <Link href={topPagePath} className='block'>Top</Link>
+        </MenuItem>
         {Object.keys(menuItems).map(k =>
           <MenuItem
             key={k}
             id={menuItems[k].id}
-            label={menuItems[k].label}
+            isVisible={menuItems[k].isVisible}
             toggleMobileMenu={toggleMobileMenu}
-          />
+          >
+            <p className='text-center block w-full'>{menuItems[k].label}</p>
+          </MenuItem>
         )}
       </ul>
     </div>
