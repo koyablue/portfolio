@@ -1,11 +1,24 @@
-import { developerTypes } from '../staticData/projects'
-
-export type ProjectType = 'personal' | 'company'
+import { developerTypes, projectTypes } from '../staticData/projects'
+import { ValueOf } from './utils'
 
 export type DeveloperTypeId = keyof typeof developerTypes
 
-export type Project = ProjectRawData & {
+export type ProjectType = ValueOf<typeof projectTypes>
+
+export type ProjectTypeId = keyof typeof projectTypes
+
+export type Project = {
   id: number
+  title: string
+  description: string
+  whatIWorkedOnList: string[]
+  developerTypeId: DeveloperTypeId
+  type: ProjectType
+  shouldPrioritize: boolean
+  techStack?: string[]
+  image?: string
+  url?: string
+  githubRepo?: string
 }
 
 export type ProjectRawData = {
@@ -13,7 +26,7 @@ export type ProjectRawData = {
   description: string
   whatIWorkedOnList: string[]
   developerTypeId: DeveloperTypeId
-  type: ProjectType
+  type: ProjectTypeId
   shouldPrioritize: boolean
   techStack?: string[]
   image?: string

@@ -4,7 +4,12 @@ export const developerTypes = {
   1: 'Backend',
   2: 'Frontend',
   3: 'Other',
-}
+} as const
+
+export const projectTypes = {
+  1: 'personal',
+  2: 'company'
+} as const
 
 export const projects: ProjectRawData[] = [
   {
@@ -17,7 +22,7 @@ export const projects: ProjectRawData[] = [
       'Test test test test test test test test test test test test test test test test test.',
     ],
     developerTypeId: 2,
-    type: 'personal',
+    type: 1,
     shouldPrioritize: true,
     techStack: ['TypeScript', 'Node.js', 'NPM', 'Jest', 'GitHub Actions'],
     image: '/images/projects/path-kanri_image.png',
@@ -29,7 +34,7 @@ export const projects: ProjectRawData[] = [
     description: 'A recruitment website specializing in sales jobs. I implemented the backend for most of the user pages and admin pages.',
     whatIWorkedOnList: [],
     developerTypeId: 1,
-    type: 'company',
+    type: 2,
     shouldPrioritize: true,
     techStack: ['PHP', 'Laravel', 'JavaScript', 'MySQL', 'Docker', 'AWS', 'GitHub Actions'],
     image: '/images/projects/urumap_image.png',
@@ -40,7 +45,7 @@ export const projects: ProjectRawData[] = [
     description: 'This portfolio',
     whatIWorkedOnList: [],
     developerTypeId: 1,
-    type: 'personal',
+    type: 1,
     shouldPrioritize: true,
     techStack: ['PHP', 'Laravel', 'JavaScript', 'MySQL', 'Docker', 'AWS', 'GitHub Actions'],
     image: '/images/projects/urumap_image.png',
@@ -51,7 +56,7 @@ export const projects: ProjectRawData[] = [
     description: 'Description of project2.',
     whatIWorkedOnList: [],
     developerTypeId: 3,
-    type: 'company',
+    type: 2,
     shouldPrioritize: true,
   },
   {
@@ -59,7 +64,7 @@ export const projects: ProjectRawData[] = [
     description: 'Description of project3.',
     whatIWorkedOnList: [],
     developerTypeId: 2,
-    type: 'company',
+    type: 2,
     shouldPrioritize: false,
   },
   {
@@ -67,7 +72,7 @@ export const projects: ProjectRawData[] = [
     description: 'Description of project4.',
     whatIWorkedOnList: [],
     developerTypeId: 1,
-    type: 'company',
+    type: 2,
     shouldPrioritize: false,
   },
   {
@@ -75,7 +80,7 @@ export const projects: ProjectRawData[] = [
     description: 'Description of project6.',
     whatIWorkedOnList: [],
     developerTypeId: 2,
-    type: 'company',
+    type: 2,
     shouldPrioritize: true,
   },
   {
@@ -83,7 +88,7 @@ export const projects: ProjectRawData[] = [
     description: 'Description of project6.',
     whatIWorkedOnList: [],
     developerTypeId: 3,
-    type: 'company',
+    type: 2,
     shouldPrioritize: true,
   },
 ]

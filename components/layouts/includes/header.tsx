@@ -124,7 +124,7 @@ const Header = () => {
         ${shouldHeaderOutstand ? 'bg-white border-b border-clrBlack dark:bg-clrDarkNavy dark:border-b dark:border-none' : 'border-none'}
         duration-200
         md:justify-start
-        z-[1]
+        z-50
         `
       }
     >
