@@ -1,4 +1,4 @@
-import { developerTypes, projectTypes } from '../staticData/projects'
+import { developerTypes, projectTypes } from '../constants/project'
 import { ValueOf } from './utils'
 
 export type DeveloperTypeId = keyof typeof developerTypes
