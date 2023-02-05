@@ -4,7 +4,6 @@ import { ReactElement, useState } from 'react'
 import SubLayout from '../../components/layouts/SubLayout'
 import MainWrapper from '../../components/common/MainWrapper'
 import ProjectCard from '../../components/common/projects/projectCard'
-import Accordion from '../../components/common/Accordion'
 import ProjectTypeDropdown from '../../components/common/projects/ProjectTypeDropdown'
 
 // custom hooks
@@ -12,7 +11,7 @@ import { useGetProjects } from '../../hooks/data/useGetProjects'
 import { useScrollTo } from '../../hooks/useScrollTo'
 
 
-
+// TODO: manage dropdown state and search result by context and useReducer
 
 const Projects = () => {
   // const [] = useState()
