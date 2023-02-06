@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, ReactNode } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 // custom hooks
 import { useToggle } from '../../../hooks/useToggle'
@@ -10,17 +10,24 @@ import { projectTypes } from '../../../constants/project'
 import { assertIsNode } from '../../../services/util'
 
 // types
-import { ProjectTypeId, ProjectType } from '../../../types/project'
+import { ProjectTypeId } from '../../../types/project'
 
 // icons
 import { RiArrowDropUpLine, RiArrowDropDownLine } from 'react-icons/ri'
+
+type Props = {
+  onSelectedAction: (projectTypeId: ProjectTypeId | 0) => void
+}
+
+// TODO: dark mode styles
 
 /**
  *
  *
  * @return {*} JSX.Element
  */
-const ProjectTypeDropdown = () => {
+const ProjectTypeDropdown = (props: Props) => {
+  const { onSelectedAction } = props
   const { status: isOpen, setStatus: setIsOpen, toggle: toggleDropdown } = useToggle()
   const [selectedProjectType, setSelectedProjectType] = useState<ProjectTypeId | 0>(0)
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -41,6 +48,7 @@ const ProjectTypeDropdown = () => {
 
   const handleOnSelect = (projectTypeId: typeof selectedProjectType) => {
     setSelectedProjectType(projectTypeId)
+    onSelectedAction(projectTypeId)
     toggleDropdown()
   }
 
