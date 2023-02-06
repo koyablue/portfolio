@@ -32,7 +32,16 @@ const ProjectTypeDropdown = (props: Props) => {
   const [selectedProjectType, setSelectedProjectType] = useState<ProjectTypeId | 0>(0)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const currentSelectedProjectTypeName = selectedProjectType === 0 ? 'all' : projectTypes[selectedProjectType]
+  /**
+   * Returns a label for the dropdown.
+   *
+   * @param {(ProjectTypeId | 0)} projectTypeId
+   * @return {*}  {string}
+   */
+  const getMenuLabel = (projectTypeId: ProjectTypeId | 0): string => {
+    const projectTypeName = projectTypeId === 0 ? 'all' : projectTypes[projectTypeId]
+    return `${projectTypeName} projects`
+  }
 
   /**
    * Close when the outside of the dropdown is clicked.
@@ -53,8 +62,8 @@ const ProjectTypeDropdown = (props: Props) => {
   }
 
   const MenuItem = ({ projectTypeId }: { projectTypeId: typeof selectedProjectType }): JSX.Element => (
-    <li className='text-center cursor-pointer hover:opacity-80' onClick={() => handleOnSelect(projectTypeId)}>
-      <p>{projectTypeId === 0 ? 'all' : projectTypes[projectTypeId]}</p>
+    <li className='text-left cursor-pointer hover:text-clrHyperViolet dark:hover:text-clrYellow' onClick={() => handleOnSelect(projectTypeId)}>
+      <p>{getMenuLabel(projectTypeId)}</p>
     </li>
   )
 
@@ -73,14 +82,43 @@ const ProjectTypeDropdown = (props: Props) => {
     <>
       <div ref={dropdownRef} className='relative inline-block text-left'>
         <span className='rounded-md shadow-sm'>
-          <button onClick={toggleDropdown} type='button' className='inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150' id='options-menu' aria-haspopup='true' aria-expanded={isOpen}>
-            {currentSelectedProjectTypeName}
+          <button
+            onClick={toggleDropdown}
+            type='button'
+            className='
+              inline-flex justify-between items-center
+              w-44
+              border-b border-clrBlack
+              px-4 py-2
+              text-sm leading-5 font-medium text-gray-700
+              hover:text-clrHyperViolet
+              hover:bg-clrWhiteOpa
+              focus:outline-none
+              active:opacity-80
+              active:text-gray-800
+              transition ease-in-out duration-150
+              dark:text-clrWhiteOpa
+              dark:border-clrWhiteOpa
+              dark:hover:bg-clrThickNavy'
+            id='options-menu'
+          >
+            {getMenuLabel(selectedProjectType)}
             <Arrow />
           </button>
         </span>
 
         {isOpen && (
-          <div className='absolute top-12 right-2 w-28 p-4 bg-white z-50 shadow-lg border border-gray-100 rounded'>
+          <div className='
+            absolute
+            top-12 right-2
+            w-44
+            p-4
+            bg-clrWhite
+            border border-clrBlack
+            z-50
+            dark:bg-clrThickNavy
+            dark:border-none'
+          >
             <ul>
               <MenuItem projectTypeId={0} />
               {

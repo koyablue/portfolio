@@ -88,7 +88,7 @@ const ProjectCard = ({ project }: Props) => {
                 dark:bg-indigo-400
               '
             >
-              <p className='text-clrBlack font-semibold text-sm'>
+              <p className='text-clrBlack text-sm'>
                 Details
               </p>
             </Button>
