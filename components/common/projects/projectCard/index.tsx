@@ -82,13 +82,14 @@ const ProjectCard = ({ project }: Props) => {
               className='
                 shadow-[3px_3px_0_0_#333333]
                 hover:shadow-[5px_5px_0_0_#333333]
-                dark:shadow-noBlurWhiteOpa3px
-                dark:hover:shadow-noBlurWhiteOpa5px
+                dark:shadow-none
                 dark:active:shadow-none
                 dark:bg-indigo-400
+                dark:hover:bg-indigo-300
+                dark:rounded
               '
             >
-              <p className='text-clrBlack text-sm'>
+              <p className='text-clrBlack text-sm font-medium'>
                 Details
               </p>
             </Button>
