@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+html {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  min-height: 100%;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
