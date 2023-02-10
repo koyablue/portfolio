@@ -11,12 +11,12 @@ export type Project = {
   id: number
   title: string
   description: string
-  whatIWorkedOnList: string[]
   developerTypeId: DeveloperTypeId
   type: ProjectType
   shouldPrioritize: boolean
+  detailedDescription?: string
   techStack?: string[]
-  image?: string
+  images?: string[]
   url?: string
   githubRepo?: string
 }
@@ -24,12 +24,12 @@ export type Project = {
 export type ProjectRawData = {
   title: string
   description: string
-  whatIWorkedOnList: string[]
   developerTypeId: DeveloperTypeId
   type: ProjectTypeId
   shouldPrioritize: boolean
+  detailedDescription?: string
   techStack?: string[]
-  image?: string
+  images?: string[]
   url?: string
   githubRepo?: string
 }
