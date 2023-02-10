@@ -177,8 +177,11 @@ const Header = () => {
             active:shadow-none
             dark:text-clrBlack
             dark:bg-clrYellow
-            dark:shadow-[3px_3px_0_0_rgb(244,245,247,0.8)]
-            dark:hover:shadow-[5px_5px_0_0_rgb(244,245,247,0.8)]
+            dark:border-clrYellow
+            dark:hover:bg-yellow-300
+            dark:hover:border-yellow-300
+            dark:shadow-none
+            dark:rounded
             dark:active:shadow-none
             `
           }>
