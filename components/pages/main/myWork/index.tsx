@@ -39,10 +39,11 @@ const MyWork = () => {
         <div className='flex justify-end'>
           <div className='grow-0'>
             <Button className='
+              dark:rounded
               dark:bg-indigo-400
               dark:text-clrWhiteOpa
-              dark:shadow-noBlurWhiteOpa3px
-              dark:hover:shadow-noBlurWhiteOpa5px
+              dark:shadow-none
+              dark:hover:bg-indigo-300
               dark:active:shadow-none'
             >
               <Link href={getPath('projects')} className='flex items-center justify-center font-semibold text-center gap-1 p-2 text-clrBlack'>
