@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Button from '../../Button'
 import GitHubLinkButton from './buttons/GitHubLinkButton'
 import ExternalLinkButton from './buttons/ExternalLinkButton'
+import Nl2br from '../../Nl2br'
 
 // helpers
 import { omitStr } from '../../../../services/util'
@@ -11,13 +12,41 @@ import { omitStr } from '../../../../services/util'
 // types
 import { Project } from '../../../../types/project'
 
+// icons
+import { HiCode } from 'react-icons/hi'
+
+/**
+ * Returns<Image /> or no-image element
+ *
+ * @param {{ images: Project['images']; alt: string }} { images, alt }
+ * @return {*} JSX.Element
+ */
+const ProjectImage = ({ images, alt }: { images: Project['images']; alt: string }) => {
+  const noImage = (
+    <div className='flex items-center justify-center h-full bg-clrWhite border border-clrBlack rounded'>
+      <HiCode className='text-6xl text-clrBlack' />
+    </div>
+  )
+
+  if (!images || !images.length) return noImage
+
+  return (
+    <Image
+      src={images[0]}
+      alt={alt}
+      fill
+      className='object-cover object-center border border-clrBlack rounded'
+    />
+  )
+}
 
 type Props = {
   project: Project
 }
 
 const ProjectCard = ({ project }: Props) => {
-  const techStack = project.techStack && project.techStack.length ? project.techStack.join(' / ') :''
+  const techStack = project.techStack && project.techStack.length ? project.techStack.join(' / ') : ''
+
 
   // TODO: link to project detail page or project url?
 
@@ -52,12 +81,7 @@ const ProjectCard = ({ project }: Props) => {
         {/* <div className='border border-black h-40'></div> */}
         {/* <div className='relative border border-black h-40'> */}
         <div className='relative h-40'>
-          <Image
-            src={project.image || '/images/projects/path-kanri_image.png'}
-            alt={`${project.title} image`}
-            fill
-            className='object-cover object-center border border-clrBlack rounded'
-          />
+          <ProjectImage images={project.images} alt={`${project.title} image`} />
         </div>
         <p className='font-bold text-xl text-center mb-2'>
           {project.title}
@@ -69,7 +93,7 @@ const ProjectCard = ({ project }: Props) => {
           {techStack}
         </div>
         <div className='break-words w-full text-sm '>
-          {omitStr(project.description, 200)}
+          <Nl2br text={omitStr(project.description, 200)} />
         </div>
       </div>
       <div className='flex items-center justify-between w-full md:justify-end'>
