@@ -10,6 +10,7 @@ import Tag from '../../../../common/Tag'
 // types
 import { Experience } from '../../../../../types/experiences'
 import { colorThemeConfig } from '../../../../../constants/colorTheme'
+import Nl2br from '../../../../common/Nl2br'
 
 type Props = {
   experience: Experience
@@ -47,7 +48,8 @@ const TimelineItem = (props: Props) => {
     <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border border-clrBlack dark:bg-clrThickNavy dark:border-clrThickNavy'>
       <div className='absolute w-3 h-3 bg-clrBlack mt-1.5 -left-1.5 border border-clrBlack dark:bg-clrWhite dark:border-clrWhite'></div>
       <time className='mb-1 text-sm font-semibold leading-none text-clrBlack dark:text-clrWhiteOpa'>
-        {getMonthName(experience.month)}&nbsp;{experience.year}
+        {getMonthName(experience.fromMonth)}&nbsp;{experience.fromYear}&nbsp;-&nbsp;
+        {experience.toMonth && getMonthName(experience.toMonth)}&nbsp;{experience.toYear || ''}
       </time>
       <p className='text-lg font-semibold text-gray-900 mb-2 dark:text-clrWhiteOpa'>
         {experience.title}
@@ -60,7 +62,7 @@ const TimelineItem = (props: Props) => {
         )}
       </div>
       <p className='mb-4 text-base font-normal text-gray-500 dark:text-clrWhiteOpa'>
-        {experience.description}
+        <Nl2br text={experience.description} />
       </p>
       {children}
     </li>
