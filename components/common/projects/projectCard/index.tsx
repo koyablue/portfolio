@@ -42,9 +42,10 @@ const ProjectImage = ({ images, alt }: { images: Project['images']; alt: string 
 
 type Props = {
   project: Project
+  disableDetailButton?: boolean
 }
 
-const ProjectCard = ({ project }: Props) => {
+const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
   const techStack = project.techStack && project.techStack.length ? project.techStack.join(' / ') : ''
 
 
@@ -101,23 +102,25 @@ const ProjectCard = ({ project }: Props) => {
           <GitHubLinkButton href={project.githubRepo} />
           <ExternalLinkButton href={project.url} />
         </div>
-          <div className='w-1/3 h-8'>
-            <Button
-              className='
-                shadow-[3px_3px_0_0_#333333]
-                hover:shadow-[5px_5px_0_0_#333333]
-                dark:shadow-none
-                dark:active:shadow-none
-                dark:bg-indigo-400
-                dark:hover:bg-indigo-300
-                dark:rounded
-              '
-            >
-              <p className='text-clrBlack text-sm font-medium'>
-                Details
-              </p>
-            </Button>
-          </div>
+        <div className='w-1/3 h-8'>
+          {/* TODO: if no id then disable */}
+          <Button
+            className={`
+              shadow-[3px_3px_0_0_#333333]
+              hover:shadow-[5px_5px_0_0_#333333]
+              dark:shadow-none
+              dark:active:shadow-none
+              dark:bg-indigo-400
+              dark:hover:bg-indigo-300
+              dark:rounded
+              ${disableDetailButton && 'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
+            `}
+          >
+            <p className={`text-clrBlack text-sm font-medium ${disableDetailButton && 'text-gray-500'}`}>
+              Details
+            </p>
+          </Button>
+        </div>
       </div>
     </div>
   )

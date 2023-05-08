@@ -14,6 +14,20 @@ import { useGetProjects } from '../../../../hooks/data/useGetProjects'
 
 // services
 import { getPath } from '../../../../services/pathService'
+import { Project } from '../../../../types/project'
+
+const MockProjectCard = () => {
+  const mockProject: Project =   {
+    id: Number.MAX_SAFE_INTEGER,
+    title: 'More and more projects are coming!',
+    description: '',
+    developerTypeId: 3,
+    type: 'personal',
+    shouldPrioritize: true,
+  }
+
+  return <ProjectCard project={mockProject} disableDetailButton />
+}
 
 const MyWork = () => {
   const { getProjects } = useGetProjects()
@@ -35,24 +49,26 @@ const MyWork = () => {
       {/* <div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'> */}
       <div className='flex flex-col justify-between gap-4 flex-wrap mb-4 lg:flex-row lg:justify-start'>
         {projectsToShow.map(project => <ProjectCard key={project.id} project={project} />)}
+        <MockProjectCard />
       </div>
-        <div className='flex justify-end'>
-          <div className='grow-0'>
-            <Button className='
-              dark:rounded
-              dark:bg-indigo-400
-              dark:text-clrWhiteOpa
-              dark:shadow-none
-              dark:hover:bg-indigo-300
-              dark:active:shadow-none'
-            >
-              <Link href={getPath('projects')} className='flex items-center justify-center font-semibold text-center gap-1 p-2 text-clrBlack'>
-                <p>View all projects</p>
-                <BiRightArrowAlt className='text-xl' />
-              </Link>
-            </Button>
-          </div>
+      {/* view all projects button */}
+      <div className='flex justify-end'>
+        <div className='grow-0'>
+          <Button className='
+            dark:rounded
+            dark:bg-indigo-400
+            dark:text-clrWhiteOpa
+            dark:shadow-none
+            dark:hover:bg-indigo-300
+            dark:active:shadow-none'
+          >
+            <Link href={getPath('projects')} className='flex items-center justify-center font-semibold text-center gap-1 p-2 text-clrBlack'>
+              <p>View all projects</p>
+              <BiRightArrowAlt className='text-xl' />
+            </Link>
+          </Button>
         </div>
+      </div>
 
     </MainWrapper>
   )
