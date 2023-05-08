@@ -1,4 +1,4 @@
-import { Project, ProjectRawData } from '../../types/project'
+import { ProjectRawData } from '../../types/project'
 
 export const projects: ProjectRawData[] = [
   {
