@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 // components
-import Header from './includes/Header'
+import Header from './includes/header'
 import LayoutWrapper from './LayoutWrapper'
 
 type Props = {
