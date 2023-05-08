@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 // components
 import LayoutWrapper from './LayoutWrapper'
-import Header from './includes/Header'
+import Header from './includes/header'
 
 type Props = {
   children: ReactNode
