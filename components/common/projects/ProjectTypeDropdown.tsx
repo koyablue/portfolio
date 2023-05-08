@@ -81,7 +81,7 @@ const ProjectTypeDropdown = (props: Props) => {
   return(
     <>
       <div ref={dropdownRef} className='relative inline-block text-left'>
-        <span className='rounded-md shadow-sm'>
+        <span className='rounded-md'>
           <button
             onClick={toggleDropdown}
             type='button'
