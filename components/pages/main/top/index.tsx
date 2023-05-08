@@ -6,7 +6,7 @@ import { BsGithub, BsLinkedin, BsFileEarmarkPdfFill } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
 
 // constants
-import { GITHUB_URL } from '../../../../constants'
+import { GITHUB_URL, LINKED_IN_URL } from '../../../../constants'
 
 // hooks
 import { useLinearTypingEffect } from '../../../../hooks/useLinearTypingEffect'
@@ -78,7 +78,7 @@ const Top = () => {
               <LinkListItem href={GITHUB_URL}>
                 <BsGithub />
               </LinkListItem>
-              <LinkListItem href={''}>
+              <LinkListItem href={LINKED_IN_URL}>
                 <BsLinkedin className='text-sky-700' />
               </LinkListItem>
               <LinkListItem href={''}>
