@@ -14,6 +14,8 @@ const ScrollPointDiv = ({ id }: { id: string }) => (
 
 /**
  * Top page
+ * TODO: need to set paddings left and right so that the layout doesn't go crazy in large screen.
+ * TODO: already have padding but need more space
  *
  * @return {*} JSX.Element
  */
