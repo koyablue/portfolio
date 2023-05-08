@@ -1,45 +1,33 @@
 import { ExperienceRawData } from '../../types/experiences'
 
-// year: number
-// month: number
+// fromYear: number
+// fromMonth: number
 // title: string
 // description: string
 
 // TODO: add correct experiences
 export const experiences: ExperienceRawData[] = [
   {
-    year: 2019,
-    month: 4,
+    fromYear: 2019,
+    fromMonth: 4,
+    toYear: 2021,
+    toMonth: 10,
     title: 'Backend-Developer',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    techStack: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Tailwind aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'],
+    description: "Developed backend side of several Web applications.\nInvolved in the development of a job searching application, a map application, a table ordering application, an online cell phone contract website and so on.\nAlso performed server configuration on AWS and code infrastructure using Terraform.",
+    techStack: ['PHP', 'Laravel', 'JavaScript', 'Go', 'MySQL', 'GitHub Actions', 'AWS', 'Terraform', 'Docker', 'Linux'],
   },
   {
-    year: 2020,
-    month: 4,
-    title: 'Backend-Developer',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    techStack: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Tailwind css'],
-  },
-  {
-    year: 2021,
-    month: 5,
-    title: 'Backend-Developer',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    techStack: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Tailwind css'],
-  },
-  {
-    year: 2021,
-    month: 10,
+    fromYear: 2021,
+    fromMonth: 10,
     title: 'Frontend-Developer',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    techStack: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Tailwind css'],
+    description: "Developed frontend side of several Web applications.\nInvolved in the development of a job board application, a table ordering application and so on.",
+    techStack: ['TypeScript', 'React', 'Next.js', 'Redux', 'JavaScript', 'HTML', 'CSS'],
   },
   {
-    year: 2022,
-    month: 4,
-    title: 'Frontend-Developer',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    techStack: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Tailwind css'],
+    fromYear: 2023,
+    fromMonth: 3,
+    title: 'Moved to Canada',
+    description: "I left Japan and moved to Canada to find new opportunities!",
+    techStack: [],
   },
 ]

@@ -3,8 +3,10 @@ export type Experience = ExperienceRawData & {
 }
 
 export type ExperienceRawData = {
-  year: number
-  month: number
+  fromYear: number
+  fromMonth: number
+  toYear?: number
+  toMonth?: number
   title: string
   description: string
   techStack: string[]
