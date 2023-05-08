@@ -1,7 +1,5 @@
 import { Project, ProjectRawData } from '../../types/project'
 
-import { developerTypes, projectTypes } from '../../constants/project'
-
 export const projects: ProjectRawData[] = [
   {
     title: 'Path-Kanri',
