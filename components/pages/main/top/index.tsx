@@ -21,7 +21,6 @@ import MailToATag from '../../../common/MailToATag'
  * @return {*} JSX.Element
  */
 const Top = () => {
-  // TODO: correct email address
 
   return (
     <>
@@ -96,8 +95,7 @@ const Top = () => {
                 hover:opacity-80
                 dark:bg-clrWhiteOpa'
               >
-                {/* TODO: correct email address */}
-                <MailToATag name='info' domain='example' tld='org' className='block'>
+                <MailToATag name='aoyama.ko0920' domain='gmail' tld='com' className='block'>
                   <HiOutlineMail className='text-sky-600' />
                 </MailToATag>
               </li>
