@@ -153,7 +153,8 @@ const Header = () => {
           <PcNavMenuItem id='experiences' isVisible={isTopPage}>
             <p>Experiences</p>
           </PcNavMenuItem>
-          <PcNavMenuItem>
+          {/* TODO: temporarily scroll to 'Hi!' section. Fix later when the about me page is ready */}
+          <PcNavMenuItem id='aboutMe' isVisible={isTopPage}>
             About me
           </PcNavMenuItem>
         </nav>

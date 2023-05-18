@@ -23,6 +23,7 @@ const Home = () => {
   return (
     <>
       <Top />
+      <ScrollPointDiv id={'aboutMe'} />
       <Description />
       <ScrollPointDiv id={'skills'} />
       <Skills />
