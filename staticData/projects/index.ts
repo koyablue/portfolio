@@ -32,7 +32,8 @@ export const projects: ProjectRawData[] = [
     shouldPrioritize: true,
     techStack: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS',],
     images: ['/images/projects/portfolio_image.png'],
-    url: 'https://urumap.com/',
+    url: 'https://koyaaoyama.com',
+    githubRepo: 'https://github.com/koyablue/portfolio',
   },
   // {
   //   title: 'Project3',

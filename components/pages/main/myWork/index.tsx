@@ -48,12 +48,14 @@ const MyWork = () => {
       {/* gap-x-0 gap-y-1  */}
       {/* <div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'> */}
       <div className='flex flex-col justify-between gap-4 flex-wrap mb-4 lg:flex-row lg:justify-start'>
-        {projectsToShow.map(project => <ProjectCard key={project.id} project={project} />)}
+        {/* TODO: disabled all Detail button for now. Enable when the detail info is ready. */}
+        {projectsToShow.map(project => <ProjectCard key={project.id} project={project} disableDetailButton />)}
         <MockProjectCard />
       </div>
       {/* view all projects button */}
       <div className='flex justify-end'>
-        <div className='grow-0'>
+        {/* TODO: Comment out view all projects button for now. Uncomment later */}
+        {/* <div className='grow-0'>
           <Button className='
             dark:rounded
             dark:bg-indigo-400
@@ -62,12 +64,15 @@ const MyWork = () => {
             dark:hover:bg-indigo-300
             dark:active:shadow-none'
           >
-            <Link href={getPath('projects')} className='flex items-center justify-center font-semibold text-center gap-1 p-2 text-clrBlack'>
+            <Link
+              href={getPath('projects')}
+              className='flex items-center justify-center font-semibold text-center gap-1 p-2 text-clrBlack'
+            >
               <p>View all projects</p>
               <BiRightArrowAlt className='text-xl' />
             </Link>
           </Button>
-        </div>
+        </div> */}
       </div>
 
     </MainWrapper>
