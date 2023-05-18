@@ -6,7 +6,7 @@ import { BsGithub, BsLinkedin, BsFileEarmarkPdfFill } from 'react-icons/bs'
 import { HiOutlineMail } from 'react-icons/hi'
 
 // constants
-import { GITHUB_URL, LINKED_IN_URL } from '../../../../constants'
+import { GITHUB_URL, LINKED_IN_URL, RESUME_PDF_PATH } from '../../../../constants'
 
 // hooks
 import { useLinearTypingEffect } from '../../../../hooks/useLinearTypingEffect'
@@ -80,7 +80,7 @@ const Top = () => {
               <LinkListItem href={LINKED_IN_URL}>
                 <BsLinkedin className='text-sky-700' />
               </LinkListItem>
-              <LinkListItem href={''}>
+              <LinkListItem href={RESUME_PDF_PATH}>
                 <BsFileEarmarkPdfFill className='text-clrOrange' />
               </LinkListItem>
               <li className='
@@ -95,7 +95,7 @@ const Top = () => {
                 hover:opacity-80
                 dark:bg-clrWhiteOpa'
               >
-                <MailToATag name='aoyama.ko0920' domain='gmail' tld='com' className='block'>
+                <MailToATag name='aoyama.ko0920' domain='gmail' tld='com' className='flex items-center justify-center w-full h-full'>
                   <HiOutlineMail className='text-sky-600' />
                 </MailToATag>
               </li>

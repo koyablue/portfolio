@@ -18,7 +18,7 @@ import { useScrollToId } from '../../../hooks/useScrollToId'
 import { usePathMatch } from '../../../hooks/usePathMatch'
 
 // constants
-import { GITHUB_URL } from '../../../constants'
+import { GITHUB_URL, RESUME_PDF_PATH } from '../../../constants'
 import { IS_IN_BROWSER } from '../../../constants/environment'
 
 // services
@@ -185,7 +185,7 @@ const Header = () => {
             dark:active:shadow-none
             `
           }>
-            <p>Resume</p>
+            <a href={RESUME_PDF_PATH} target='_blank' rel='noreferrer'>Resume</a>
           </button>
         </div>
         {/* mobile menu open/close button */}
