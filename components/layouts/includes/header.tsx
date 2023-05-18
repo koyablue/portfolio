@@ -185,7 +185,9 @@ const Header = () => {
             dark:active:shadow-none
             `
           }>
-            <a href={RESUME_PDF_PATH} target='_blank' rel='noreferrer'>Resume</a>
+            <a href={RESUME_PDF_PATH} target='_blank' rel='noreferrer' className='flex items-center justify-center w-full h-full'>
+              Resume
+            </a>
           </button>
         </div>
         {/* mobile menu open/close button */}

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 // icons
@@ -7,9 +6,6 @@ import { HiOutlineMail } from 'react-icons/hi'
 
 // constants
 import { GITHUB_URL, LINKED_IN_URL, RESUME_PDF_PATH } from '../../../../constants'
-
-// hooks
-import { useLinearTypingEffect } from '../../../../hooks/useLinearTypingEffect'
 
 // components
 import LinkListItem from '../../../../components/pages/main/top/LinkListItem'
