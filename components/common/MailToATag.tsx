@@ -34,6 +34,9 @@ const MailToATag = ({ name, domain, tld, className = '', children }: Props) => {
    * @return {*} false | undefined
    */
 	 const emailIconOnClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLLIElement>) => {
+		// prevent page reloading
+		e.preventDefault()
+
     if (!IS_IN_BROWSER) return
 
     location.href =
