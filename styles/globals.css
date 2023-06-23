@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 
 html {
   min-height: 100%;
@@ -15,7 +16,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overscroll-behavior: none;
-  @apply text-clrBlack bg-clrBeige dark:text-clrWhiteOpa dark:bg-clrDarkNavy;
+  @apply font-cabin text-clrBlack bg-clrBeige dark:text-clrWhiteOpa dark:bg-clrDarkNavy;
 }
 
 a {

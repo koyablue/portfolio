@@ -22,7 +22,7 @@ const LinkListItem = ({ href, children }: Props) => {
       bg-clrWhite
       duration-200
       hover:opacity-80
-      dark:bg-clrWhiteOpa'
+      dark:bg-slate-100'
     >
       <a href={href} target='_blank' rel='noreferrer' className='flex items-center justify-center w-full h-full'>
         {children}

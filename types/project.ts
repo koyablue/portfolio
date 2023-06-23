@@ -7,6 +7,8 @@ export type ProjectType = ValueOf<typeof projectTypes>
 
 export type ProjectTypeId = keyof typeof projectTypes
 
+// TODO: Too many duplicated properties. Need to fix.
+
 export type Project = {
   id: number
   title: string

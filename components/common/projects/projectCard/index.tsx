@@ -84,7 +84,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <div className='relative h-40'>
           <ProjectImage images={project.images} alt={`${project.title} image`} />
         </div>
-        <p className='font-bold text-xl text-center mb-2'>
+        <p className='font-bold text-xl text-center mb-2 dark:text-slate-100'>
           {project.title}
         </p>
         <div className='bg-clrPalePink w-[90px] text-center text-textDarkMain text-sm rounded-[6px] p-1 border border-clrBlack dark:text-clrWhiteOpa dark:bg-rose-400 dark:border-rose-400'>
@@ -116,9 +116,13 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
               ${disableDetailButton && 'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
             `}
           >
-            <p className={`text-clrBlack text-sm font-medium ${disableDetailButton && 'text-gray-500'}`}>
+            <a
+              href={`${project.githubRepo}#readme`}
+              target='_blank'
+              rel='noreferrer'
+              className={`block text-clrBlack text-sm font-medium ${disableDetailButton && 'text-gray-500'}`}>
               Details
-            </p>
+            </a>
           </Button>
         </div>
       </div>
