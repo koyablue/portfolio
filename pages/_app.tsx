@@ -9,6 +9,7 @@ import '../styles/globals.css'
 import 'tailwindcss/tailwind.css';
 
 import { Cabin } from 'next/font/google'
+import Head from 'next/head'
 
 // https://nextjs.org/docs/basic-features/layouts
 
@@ -39,6 +40,9 @@ const App = ({ Component, pageProps, }: AppPropsWithLayout) => {
           }
         `}
       </style>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
         {/* <div className={`${cabin.variable}`}> */}
         {getLayout(<Component {...pageProps} />)}
         {/* </div> */}
