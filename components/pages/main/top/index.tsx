@@ -61,10 +61,10 @@ const Top = () => {
           {/* intro and links */}
           <section className='flex flex-col items-center'>
             <div className='mb-3.5'>
-              <p className='text-[35px] text-center text-clrBlack font-black md:text-[75px] dark:text-clrWhiteOpa'>
+              <p className='text-[35px] tracking-wide text-center text-clrBlack font-black md:text-[75px] dark:text-clrWhiteOpa'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] text-center font-semibold text-clrBlack md:text-[50px] dark:text-clrWhiteOpa'>
+              <p className='text-[25px] tracking-wide text-center font-semibold text-clrBlack md:text-[50px] dark:text-clrWhiteOpa'>
                 Frontend <br className='hidden'/>developer
               </p>
             </div>

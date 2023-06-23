@@ -43,7 +43,7 @@ const PcNavMenuItem = ({ id = '', isVisible = true, onClick = () => {/* do nothi
     <button className={`
         ${!isVisible && 'hidden'}
         flex flex-col items-center justify-center
-        text-clrBlack font-semibold text-sm
+        text-clrBlack font-semibold text-sm tracking-wide
         duration-200 cursor-pointer
         p-2
         rounded
@@ -168,6 +168,7 @@ const Header = () => {
             hidden
             md:flex items-center justify-center w-40 h-8 border border-clrBlack
             text-clrBlack
+            tracking-wide
             shadow-[3px_3px_0_0_#333333]
             duration-300
             hover:shadow-[5px_5px_0_0_#374151]
