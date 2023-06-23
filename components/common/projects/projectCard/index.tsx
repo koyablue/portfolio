@@ -84,7 +84,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <div className='relative h-40'>
           <ProjectImage images={project.images} alt={`${project.title} image`} />
         </div>
-        <p className='font-bold text-xl text-center mb-2'>
+        <p className='font-bold text-xl text-center mb-2 dark:text-slate-100'>
           {project.title}
         </p>
         <div className='bg-clrPalePink w-[90px] text-center text-textDarkMain text-sm rounded-[6px] p-1 border border-clrBlack dark:text-clrWhiteOpa dark:bg-rose-400 dark:border-rose-400'>

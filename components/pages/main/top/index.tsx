@@ -61,10 +61,10 @@ const Top = () => {
           {/* intro and links */}
           <section className='flex flex-col items-center'>
             <div className='mb-3.5'>
-              <p className='text-[35px] tracking-wide text-center text-clrBlack font-black md:text-[75px] dark:text-clrWhiteOpa'>
+              <p className='text-[35px] tracking-wide text-center text-clrBlack font-black md:text-[75px] dark:text-white'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] tracking-wide text-center font-semibold text-clrBlack md:text-[50px] dark:text-clrWhiteOpa'>
+              <p className='text-[25px] tracking-wide text-center font-semibold text-clrBlack md:text-[50px] dark:text-slate-100'>
                 Frontend <br className='hidden'/>developer
               </p>
             </div>
@@ -89,7 +89,7 @@ const Top = () => {
                 cursor-pointer
                 duration-200
                 hover:opacity-80
-                dark:bg-clrWhiteOpa'
+                dark:bg-slate-100'
               >
                 <MailToATag name='aoyama.ko0920' domain='gmail' tld='com' className='flex items-center justify-center w-full h-full'>
                   <HiOutlineMail className='text-sky-600' />

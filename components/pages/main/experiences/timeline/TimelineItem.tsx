@@ -51,7 +51,7 @@ const TimelineItem = (props: Props) => {
         {getMonthName(experience.fromMonth)}&nbsp;{experience.fromYear}&nbsp;-&nbsp;
         {experience.toMonth && getMonthName(experience.toMonth)}&nbsp;{experience.toYear || ''}
       </time>
-      <p className='text-lg font-semibold text-gray-900 mb-2 dark:text-clrWhiteOpa'>
+      <p className='text-lg font-semibold text-gray-900 mb-2 dark:text-slate-100'>
         {experience.title}
       </p>
       <div className='flex items-center justify-start gap-2 flex-wrap mb-2.5'>

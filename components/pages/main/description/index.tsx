@@ -19,8 +19,8 @@ const Description = () => {
       >
         <div className='p-8 leading-loose'>
           <div className='mb-6'>
-            <p className='text-5xl'>Hi 👋</p>
-            <p className='text-4xl'>I&apos;m Koya Aoyama 🧑🏻‍💻</p>
+            <p className='text-5xl dark:text-slate-100'>Hi 👋</p>
+            <p className='text-4xl dark:text-slate-100'>I&apos;m Koya Aoyama 🧑🏻‍💻</p>
           </div>
 
           <p>

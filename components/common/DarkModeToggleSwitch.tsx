@@ -50,7 +50,7 @@ const DarkModeToggleSwitch = () => {
         after:w-6
         after:transition-all
         dark:peer-checked:bg-clrHyperViolet
-        dark:after:bg-neutral-300
+        dark:after:bg-slate-100
         "
       >
         <FiSun className='dark:text-clrYellow' />
