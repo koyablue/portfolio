@@ -71,6 +71,9 @@ module.exports = {
         "noBlurWhiteOpa3px": "3px 3px 0px 0px rgb(244,245,247,0.85)",
         "noBlurWhiteOpa5px": "5px 5px 0px 0px rgb(244,245,247,0.85)",
       },
+      fontFamily: {
+        cabin: ['var(--font-cabin)'],
+      }
     },
     plugins: [require("@tailwindcss/line-clamp")],
   },

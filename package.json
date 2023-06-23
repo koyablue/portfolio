@@ -11,6 +11,7 @@
     "watch": "npx tailwindcss -i ./input.css -o ./css/main.css --watch"
   },
   "dependencies": {
+    "@next/font": "^13.4.7",
     "@reduxjs/toolkit": "^1.9.2",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/node": "18.11.9",
@@ -18,7 +19,7 @@
     "@types/react-dom": "18.0.9",
     "eslint-config-next": "13.0.4",
     "js-cookie": "^3.0.1",
-    "next": "13.0.4",
+    "next": "^13.4.8-canary.1",
     "path-kanri": "^0.1.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
