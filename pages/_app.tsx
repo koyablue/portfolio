@@ -42,6 +42,7 @@ const App = ({ Component, pageProps, }: AppPropsWithLayout) => {
       </style>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="theme-color" content="#000000" />
       </Head>
         {/* <div className={`${cabin.variable}`}> */}
         {getLayout(<Component {...pageProps} />)}

@@ -9,7 +9,6 @@ import DarkModeToggleSwitch from '../../common/DarkModeToggleSwitch'
 import { TbGridDots } from 'react-icons/tb'
 import { BsGithub } from 'react-icons/bs'
 import { VscChromeClose } from 'react-icons/vsc'
-import { BsCodeSquare } from 'react-icons/bs'
 
 // custom hooks
 import { useToggle } from '../../../hooks/useToggle'
