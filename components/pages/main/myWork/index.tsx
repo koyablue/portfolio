@@ -49,7 +49,12 @@ const MyWork = () => {
       {/* <div className='flex flex-col justify-between gap-4 flex-wrap lg:flex-row lg:justify-start'> */}
       <div className='flex flex-col justify-between gap-4 flex-wrap mb-4 lg:flex-row lg:justify-start'>
         {/* TODO: disabled all Detail button for now. Enable when the detail info is ready. */}
-        {projectsToShow.map(project => <ProjectCard key={project.id} project={project} disableDetailButton />)}
+        {projectsToShow.map(project =>
+          <ProjectCard
+            key={project.id}
+            project={project}
+            disableDetailButton={!Boolean(project?.githubRepo)}
+          />)}
         <MockProjectCard />
       </div>
       {/* view all projects button */}

@@ -116,9 +116,13 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
               ${disableDetailButton && 'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
             `}
           >
-            <p className={`text-clrBlack text-sm font-medium ${disableDetailButton && 'text-gray-500'}`}>
+            <a
+              href={`${project.githubRepo}#readme`}
+              target='_blank'
+              rel='noreferrer'
+              className={`block text-clrBlack text-sm font-medium ${disableDetailButton && 'text-gray-500'}`}>
               Details
-            </p>
+            </a>
           </Button>
         </div>
       </div>
