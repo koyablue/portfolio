@@ -14,6 +14,7 @@ import LinuxIcon from './LinuxIcon'
 import AwsIcon from './AwsIcon'
 import GitIcon from './GitIcon'
 import GitHubActionsIcon from './GitHubActionsIcon'
+import StorybookIcon from './StorybookIcon'
 
 export {
   ReactDotJsIcon,
@@ -32,4 +33,5 @@ export {
   AwsIcon,
   GitIcon,
   GitHubActionsIcon,
+  StorybookIcon,
 }

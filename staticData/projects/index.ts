@@ -41,7 +41,7 @@ export const projects: ProjectRawData[] = [
     developerTypeId: 2,
     type: 1,
     shouldPrioritize: true,
-    techStack: ['TypeScript', 'Next.js', 'Styled Components', 'SWR', 'Redux(Redux Toolkit)'],
+    techStack: ['TypeScript', 'Next.js', 'Styled Components', 'SWR', 'Redux(Redux Toolkit)', 'Storybook'],
     images: ['/images/projects/weather-wear_image.png'],
     url: 'https://weather-wear-zeta.vercel.app/',
     githubRepo: 'https://github.com/koyablue/weather-wear',

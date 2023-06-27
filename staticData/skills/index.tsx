@@ -19,6 +19,7 @@ import {
   AwsIcon,
   GitIcon,
   GitHubActionsIcon,
+  StorybookIcon,
 } from '../../components/pages/main/skills/skillIcons'
 
 export const skills: SkillRawData[] = [
@@ -38,4 +39,5 @@ export const skills: SkillRawData[] = [
   { name: 'AWS', icon: <AwsIcon />, },
   { name: 'Git', icon: <GitIcon />, },
   { name: 'GitHub Actions', icon: <GitHubActionsIcon />, },
+  { name: 'Storybook', icon: <StorybookIcon />, },
 ]
