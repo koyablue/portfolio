@@ -1,3 +1,5 @@
+import GitHubCalendar from 'react-github-calendar';
+
 /**
  * Self introduction section of main page.
  *
@@ -33,6 +35,7 @@ const Description = () => {
             Please contact me if you are interested!
           </p>
         </div>
+        <GitHubCalendar username='koyablue' />
       </div>
     </div>
   )
