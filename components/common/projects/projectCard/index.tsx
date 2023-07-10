@@ -84,7 +84,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <div className='relative h-40'>
           <ProjectImage images={project.images} alt={`${project.title} image`} />
         </div>
-        <p className='font-bold text-xl text-center mb-2 dark:text-clrCream'>
+        <p className='font-bold text-clrOrange text-xl text-center mb-2'>
           {project.title}
         </p>
         {/* <div className='
@@ -95,7 +95,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         >
           <p>#{project.type}</p>
         </div> */}
-        <div className='font-semibold dark:text-clrMatcha'>
+        <div className='font-semibold'>
           {techStack}
         </div>
         <div className='break-words w-full text-sm dark:text-clrBlueGray'>

@@ -55,7 +55,7 @@ const MyWork = () => {
             project={project}
             disableDetailButton={!Boolean(project?.githubRepo)}
           />)}
-        <MockProjectCard />
+        {/* <MockProjectCard /> */}
       </div>
       {/* view all projects button */}
       <div className='flex justify-end'>
