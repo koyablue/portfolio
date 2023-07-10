@@ -85,7 +85,7 @@ const Top = () => {
               <li className='
                 flex items-center justify-center
                 text-4xl text-clrBlack
-                border-[1.5px] border-clrBlack
+                border-[1.5px] border-slate-400
                 w-12 h-12
                 rounded
                 bg-clrWhite
