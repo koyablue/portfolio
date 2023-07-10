@@ -67,7 +67,7 @@ const Top = () => {
               <p className='text-[35px] tracking-wide text-center text-clrBlack font-black md:text-[75px] dark:text-white'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] tracking-wide text-center font-semibold text-clrBlack md:text-[50px] dark:text-slate-100'>
+              <p className='text-[25px] tracking-wide text-center font-semibold text-clrBlack md:text-[50px] dark:text-clrOrange'>
                 Frontend <br className='hidden'/>developer
               </p>
             </div>
