@@ -22,7 +22,7 @@ const Description = () => {
         <div className='p-8 leading-loose'>
           <div className='mb-6'>
             <p className='text-5xl dark:text-slate-100'>Hi 👋</p>
-            <p className='text-4xl dark:text-slate-100'>I&apos;m Koya Aoyama 🧑🏻‍💻</p>
+            <p className='text-4xl dark:text-slate-100'>I&apos;m <span className='dark:text-clrOrange'>Koya Aoyama</span> 🧑🏻‍💻</p>
           </div>
 
           <p>
@@ -35,8 +35,10 @@ const Description = () => {
             Please contact me if you are interested!
           </p>
         </div>
-        {/* TODO: wrap it div and add some paddings */}
-        <GitHubCalendar username='koyablue' />
+        {/* GitHub contribution chart */}
+        <div className='p-4'>
+          <GitHubCalendar username='koyablue' />
+        </div>
       </div>
     </div>
   )
