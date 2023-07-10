@@ -35,6 +35,7 @@ const Description = () => {
             Please contact me if you are interested!
           </p>
         </div>
+        {/* TODO: wrap it div and add some paddings */}
         <GitHubCalendar username='koyablue' />
       </div>
     </div>

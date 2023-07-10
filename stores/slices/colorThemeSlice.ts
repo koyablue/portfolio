@@ -11,7 +11,7 @@ type ColorThemeState = {
 }
 
 const initialState: ColorThemeState = {
-  theme: 'light',
+  theme: 'dark',
   isThemeSet: false,
 }
 
