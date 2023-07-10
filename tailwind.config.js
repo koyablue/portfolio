@@ -19,7 +19,6 @@ module.exports = {
         clrWhite: '#f4f5f7',
         clrWhiteOpa: 'rgb(244,245,247,0.85)',
         clrBeige: '#fff0e5',
-        clrOrange: '#f76c6c',
         appBlue: '#a8d0e6',
         clrNavy: '#374785',
         clrDarkNavy: '#10162f',
@@ -35,6 +34,7 @@ module.exports = {
         clrGray: '#eeeeee',
         clrYellow: '#ffd300',
         clrThickNavy: '#262f52',
+        clrOrange: '#eb4431',
       },
       screens: {
         lgm: '1280px',

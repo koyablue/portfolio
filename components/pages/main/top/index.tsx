@@ -54,7 +54,10 @@ const Top = () => {
                 src='/images/profile/me_monotone.png'
                 fill
                 alt='Photograph of Koya Aoyama'
-                className='border-4 border-t-clrHyperViolet border-r-clrOrange border-b-clrYellow border-l-clrYellow shadow-noBlurBlack15px dark:border-t-blue-600 dark:shadow-[15px_15px_0_0_rgb(51,65,160)] dark-shadow-black'
+                className='border-4 border-t-clrHyperViolet border-r-clrOrange border-b-clrYellow border-l-clrYellow
+                shadow-noBlurBlack15px
+                dark:border-t-blue-600
+                dark:shadow-[15px_15px_0_0_rgb(38,47,82)]'
               />
             </div>
           </section>
