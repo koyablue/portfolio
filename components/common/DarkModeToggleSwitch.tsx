@@ -49,11 +49,11 @@ const DarkModeToggleSwitch = () => {
         after:h-6
         after:w-6
         after:transition-all
-        dark:peer-checked:bg-clrHyperViolet
+        dark:peer-checked:bg-slate-800
         dark:after:bg-slate-100
         "
       >
-        <FiSun className='dark:text-clrYellow' />
+        <FiSun className='dark:text-clrOrange' />
         <FiMoon className='text-clrYellow' />
       </div>
     </label>

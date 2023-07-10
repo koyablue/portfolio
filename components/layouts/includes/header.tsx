@@ -49,7 +49,7 @@ const PcNavMenuItem = ({ id = '', isVisible = true, onClick = () => {/* do nothi
         hover:text-clrHyperViolet
         hover:bg-clrWhiteOpa
         dark:text-clrWhiteOpa
-        dark:hover:text-clrYellow
+        dark:hover:text-clrOrange
         dark:hover:bg-[rgb(244,245,247,0.2)]
       `}
       onClick={onClickHandler}
@@ -127,7 +127,7 @@ const Header = () => {
         `
       }
     >
-      <div className='text-4xl duration-200 hover:text-clrHyperViolet dark:hover:text-clrYellow'>
+      <div className='text-4xl duration-200 hover:text-clrHyperViolet dark:hover:text-clrOrange'>
         <a href={GITHUB_URL}><BsGithub /></a>
       </div>
 
@@ -171,18 +171,14 @@ const Header = () => {
             shadow-[3px_3px_0_0_#333333]
             duration-300
             hover:shadow-[5px_5px_0_0_#374151]
-            hover:bg-clrHyperViolet
             hover:text-clrWhite
             hover:border-clrHyperViolet
             active:opacity-60
             active:shadow-none
-            dark:text-clrBlack
-            dark:bg-clrYellow
-            dark:border-clrYellow
-            dark:hover:bg-yellow-300
-            dark:hover:border-yellow-300
+            dark:text-clrOrange
+            dark:border-clrOrange
             dark:shadow-none
-            dark:rounded
+            dark:hover:shadow-[3.5px_3.5px_0_0_#eb4431]
             dark:active:shadow-none
             `
           }>
