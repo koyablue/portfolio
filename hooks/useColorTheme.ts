@@ -51,14 +51,14 @@ export const useColorTheme = () => {
    */
   const initColorTheme = () => {
     if (!currentColorThemeCookie) {
-      setColorThemeCookie(colorThemeConfig.light)
-      dispatch(updateColorThemeStatus(colorThemeConfig.light))
+      setColorThemeCookie(colorThemeConfig.dark)
+      dispatch(updateColorThemeStatus(colorThemeConfig.dark))
 
       return
     }
 
     if (currentColorThemeCookie !== currentColorThemeState) {
-      const colorThemeToApply = isColorTheme(currentColorThemeCookie) ? currentColorThemeCookie : colorThemeConfig.light
+      const colorThemeToApply = isColorTheme(currentColorThemeCookie) ? currentColorThemeCookie : colorThemeConfig.dark
       dispatch(updateColorThemeStatus(colorThemeToApply))
 
       return

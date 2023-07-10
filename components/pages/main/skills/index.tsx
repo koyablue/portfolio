@@ -19,7 +19,7 @@ const Skills = () => {
   return (
     <MainWrapper className=''>
       <MainPageSectionTitle title='Skills' />
-      <div className='flex items-center justify-center gap-4 flex-wrap md:justify-start'>
+      <div className='flex items-center justify-center gap-4 flex-wrap'>
         {skills.map(skill =>
           <div
             key={skill.id}
@@ -27,10 +27,10 @@ const Skills = () => {
             w-24 h-24
             bg-clrWhite
             text-[35px]
-            border-[1.5px] border-clrBlack
+            border-[1.5px] border-slate-400
             rounded
-            dark:bg-clrThickNavy
-            dark:border-clrThickNavy`}
+            dark:bg-slate-800
+            dark:border-slate-800`}
           >
             {skill.icon}
             <p className='text-[13px] font-medium text-center text-clrBlack dark:text-clrWhiteOpa'>{skill.name}</p>

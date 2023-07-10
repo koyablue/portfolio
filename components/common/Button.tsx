@@ -48,8 +48,9 @@ const Button = (props: Props) => {
     <button className={`
       w-full h-full
       bg-clip-content
-      border border-clrBlack
-      shadow-[3px_3px_0_0_#333333] hover:shadow-[5px_5px_0_0_#333333]
+      ${borderStyle}
+      ${textStyle}
+      ${shadowStyle}
       active:opacity-60
       active:shadow-none
       duration-300

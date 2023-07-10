@@ -26,13 +26,15 @@ import {
 export const skills: SkillRawData[] = [
   { name: 'React', icon: <ReactDotJsIcon /> },
   { name: 'TypeScript', icon: <TypeScriptIcon />, },
-  { name: 'JavaScript', icon: <JavaScriptIcon />, },
   { name: 'Next.js', icon: <NextDotJsIcon />, },
   { name: 'Node.js', icon: <NodeDotJsIcon />, },
   { name: 'Jest', icon: <JestIcon />, },
+  { name: 'Testing Library', icon: <TestingLibraryIcon />, },
+  { name: 'Storybook', icon: <StorybookIcon />, },
   { name: 'Tailwind CSS', icon: <TailwindCssIcon />, },
   { name: 'HTML', icon: <HtmlIcon />, },
   { name: 'CSS', icon: <CssIcon />, },
+  { name: 'JavaScript', icon: <JavaScriptIcon />, },
   { name: 'PHP', icon: <PhpIcon />, },
   { name: 'Laravel', icon: <LaravelIcon />, },
   { name: 'MySQL', icon: <MySqlIcon />, },
@@ -40,6 +42,4 @@ export const skills: SkillRawData[] = [
   { name: 'AWS', icon: <AwsIcon />, },
   { name: 'Git', icon: <GitIcon />, },
   { name: 'GitHub Actions', icon: <GitHubActionsIcon />, },
-  { name: 'Storybook', icon: <StorybookIcon />, },
-  { name: 'Testing Library', icon: <TestingLibraryIcon />, },
 ]

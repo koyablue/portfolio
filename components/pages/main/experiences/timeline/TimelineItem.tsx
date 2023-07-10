@@ -45,19 +45,19 @@ const TimelineItem = (props: Props) => {
   const isDark = currentColorTheme === colorThemeConfig.dark
 
   return (
-    <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border border-clrBlack dark:bg-clrThickNavy dark:border-clrThickNavy'>
-      <div className='absolute w-3 h-3 bg-clrBlack mt-1.5 -left-1.5 border border-clrBlack dark:bg-clrWhite dark:border-clrWhite'></div>
+    <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border rounded border-slate-400 dark:bg-slate-800 dark:border-slate-800'>
+      <div className='absolute w-3 h-3 bg-slate-300 mt-1.5 -left-1.5 border rounded-sm border-slate-300 dark:bg-clrWhite dark:border-clrWhite'></div>
       <time className='mb-1 text-sm font-semibold leading-none text-clrBlack dark:text-clrWhiteOpa'>
         {getMonthName(experience.fromMonth)}&nbsp;{experience.fromYear}&nbsp;-&nbsp;
         {experience.toMonth && getMonthName(experience.toMonth)}&nbsp;{experience.toYear || ''}
       </time>
-      <p className='text-lg font-semibold text-gray-900 mb-2 dark:text-slate-100'>
+      <p className='text-lg font-semibold text-clrOrange mb-2'>
         {experience.title}
       </p>
       <div className='flex items-center justify-start gap-2 flex-wrap mb-2.5'>
         {experience.techStack.map(techName =>
           <div key={techName} className='max-w-[90px]'>
-            <Tag color={isDark ? 'green' : 'pink'}>{techName}</Tag>
+            <Tag className='text-clrOrange border-clrOrange dark:text-clrOrange'>{techName}</Tag>
           </div>
         )}
       </div>

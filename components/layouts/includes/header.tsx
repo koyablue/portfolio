@@ -46,10 +46,10 @@ const PcNavMenuItem = ({ id = '', isVisible = true, onClick = () => {/* do nothi
         duration-200 cursor-pointer
         p-2
         rounded
-        hover:text-clrHyperViolet
+        hover:text-clrOrange
         hover:bg-clrWhiteOpa
         dark:text-clrWhiteOpa
-        dark:hover:text-clrYellow
+        dark:hover:text-clrOrange
         dark:hover:bg-[rgb(244,245,247,0.2)]
       `}
       onClick={onClickHandler}
@@ -120,14 +120,14 @@ const Header = () => {
         w-full h-[64px] space-x-11 px-8
         sticky
         top-0 left-0 right-0
-        ${shouldHeaderOutstand ? 'bg-white border-b border-clrBlack dark:bg-clrDarkNavy dark:border-b dark:border-none' : 'border-none'}
+        ${shouldHeaderOutstand ? 'bg-slate-200 dark:bg-clrDarkNavy dark:border-b dark:border-none' : 'border-none'}
         duration-200
         md:justify-start
         z-50
         `
       }
     >
-      <div className='text-4xl duration-200 hover:text-clrHyperViolet dark:hover:text-clrYellow'>
+      <div className='text-4xl duration-200 hover:text-clrOrange dark:hover:text-clrOrange'>
         <a href={GITHUB_URL}><BsGithub /></a>
       </div>
 
@@ -165,24 +165,17 @@ const Header = () => {
           {/* resume download button */}
           <button className={`
             hidden
-            md:flex items-center justify-center w-40 h-8 border border-clrBlack
-            text-clrBlack
+            md:flex items-center justify-center w-40 h-8 border border-clrOrange
+            text-clrOrange
             tracking-wide
-            shadow-[3px_3px_0_0_#333333]
             duration-300
-            hover:shadow-[5px_5px_0_0_#374151]
-            hover:bg-clrHyperViolet
-            hover:text-clrWhite
-            hover:border-clrHyperViolet
+            hover:shadow-[5px_5px_0_0_#eb4431]
             active:opacity-60
             active:shadow-none
-            dark:text-clrBlack
-            dark:bg-clrYellow
-            dark:border-clrYellow
-            dark:hover:bg-yellow-300
-            dark:hover:border-yellow-300
+            dark:text-clrOrange
+            dark:border-clrOrange
             dark:shadow-none
-            dark:rounded
+            dark:hover:shadow-[3.5px_3.5px_0_0_#eb4431]
             dark:active:shadow-none
             `
           }>
