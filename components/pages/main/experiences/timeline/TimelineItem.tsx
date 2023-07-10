@@ -51,17 +51,17 @@ const TimelineItem = (props: Props) => {
         {getMonthName(experience.fromMonth)}&nbsp;{experience.fromYear}&nbsp;-&nbsp;
         {experience.toMonth && getMonthName(experience.toMonth)}&nbsp;{experience.toYear || ''}
       </time>
-      <p className='text-lg font-semibold text-clrOrange mb-2 dark:text-clrCream'>
+      <p className='text-lg font-semibold text-clrOrange mb-2'>
         {experience.title}
       </p>
       <div className='flex items-center justify-start gap-2 flex-wrap mb-2.5'>
         {experience.techStack.map(techName =>
           <div key={techName} className='max-w-[90px]'>
-            <Tag className='text-clrOrange border-clrOrange dark:border-clrMatcha dark:text-clrMatcha'>{techName}</Tag>
+            <Tag className='text-clrOrange border-clrOrange dark:text-clrOrange'>{techName}</Tag>
           </div>
         )}
       </div>
-      <p className='mb-4 text-base font-normal text-gray-500 dark:text-clrBlueGray'>
+      <p className='mb-4 text-base font-normal text-gray-500 dark:text-clrWhiteOpa'>
         <Nl2br text={experience.description} />
       </p>
       {children}
