@@ -19,7 +19,7 @@ const Skills = () => {
   return (
     <MainWrapper className=''>
       <MainPageSectionTitle title='Skills' />
-      <div className='flex items-center justify-center gap-4 flex-wrap md:justify-start'>
+      <div className='flex items-center justify-center gap-4 flex-wrap'>
         {skills.map(skill =>
           <div
             key={skill.id}
