@@ -29,8 +29,8 @@ const Skills = () => {
             text-[35px]
             border-[1.5px] border-clrBlack
             rounded
-            dark:bg-clrThickNavy
-            dark:border-clrThickNavy`}
+            dark:bg-slate-800
+            dark:border-slate-800`}
           >
             {skill.icon}
             <p className='text-[13px] font-medium text-center text-clrBlack dark:text-clrWhiteOpa'>{skill.name}</p>

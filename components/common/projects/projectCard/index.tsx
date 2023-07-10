@@ -84,7 +84,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <div className='relative h-40'>
           <ProjectImage images={project.images} alt={`${project.title} image`} />
         </div>
-        <p className='font-bold text-xl text-center mb-2 dark:text-slate-100'>
+        <p className='font-bold text-xl text-center mb-2 dark:text-clrCream'>
           {project.title}
         </p>
         {/* <div className='
@@ -95,10 +95,10 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         >
           <p>#{project.type}</p>
         </div> */}
-        <div className='font-semibold'>
+        <div className='font-semibold text-clrMatcha'>
           {techStack}
         </div>
-        <div className='break-words w-full text-sm '>
+        <div className='break-words w-full text-sm text-clrBlueGray'>
           <Nl2br text={omitStr(project.description, 200)} />
         </div>
       </div>
@@ -110,12 +110,13 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <div className='w-1/3 h-8'>
           {/* TODO: if no id then disable */}
           <Button
-            borderStyle='border border-clrOrange'
-            shadowStyle={`${disableDetailButton ? '' : 'hover:shadow-[3.5px_3.5px_0_0_#eb4431]'}`}
+            shadowStyle={`${disableDetailButton ? '' : 'hover:shadow-[3.5px_3.5px_0_0_#eb4431] dark:hover:shadow-[3.5px_3.5px_0_0_#c792e9]'}`}
             className={`
               dark:active:shadow-none
+              border-clrOrange
+              ${disableDetailButton ? 'border-gray-300' : 'dark:border-clrLightPurple'}
               ${disableDetailButton &&
-                'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
+                'bg-gray-200 text-gray-500 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
             `}
           >
             <a
@@ -123,7 +124,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
               target='_blank'
               rel='noreferrer'
               className={`
-                block text-sm font-medium ${disableDetailButton ? 'text-gray-400 cursor-not-allowed' : 'text-clrOrange'}
+                block text-sm font-medium ${disableDetailButton ? 'text-gray-400 cursor-not-allowed' : 'text-clrOrange dark:text-clrLightPurple'}
               `}
               onClick={e => {
                 if (!project.githubRepo) {

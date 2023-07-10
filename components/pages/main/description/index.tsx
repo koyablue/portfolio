@@ -16,7 +16,7 @@ const Description = () => {
        bg-clip-content
        md:text-lg
        md:px-28
-       dark:bg-clrThickNavy
+       dark:bg-slate-800
        dark:text-clrWhiteOpa'
       >
         <div className='p-8 leading-loose'>

@@ -35,6 +35,10 @@ module.exports = {
         clrYellow: '#ffd300',
         clrThickNavy: '#262f52',
         clrOrange: '#eb4431',
+        clrCream: '#f7c589',
+        clrBlueGray: '#6684c3',
+        clrMatcha: '#b4d785',
+        clrLightPurple: '#c792e9',
       },
       screens: {
         lgm: '1280px',

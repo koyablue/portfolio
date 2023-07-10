@@ -45,7 +45,7 @@ const TimelineItem = (props: Props) => {
   const isDark = currentColorTheme === colorThemeConfig.dark
 
   return (
-    <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border border-clrBlack dark:bg-clrThickNavy dark:border-clrThickNavy'>
+    <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border border-clrBlack dark:bg-slate-800 dark:border-slate-800'>
       <div className='absolute w-3 h-3 bg-clrBlack mt-1.5 -left-1.5 border border-clrBlack dark:bg-clrWhite dark:border-clrWhite'></div>
       <time className='mb-1 text-sm font-semibold leading-none text-clrBlack dark:text-clrWhiteOpa'>
         {getMonthName(experience.fromMonth)}&nbsp;{experience.fromYear}&nbsp;-&nbsp;
