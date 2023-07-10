@@ -15,7 +15,7 @@ type Props = {
 const Timeline = ({ experiences }: Props) => {
   // https://flowbite.com/docs/components/timeline/
   return (
-    <ol className='relative border-l border-clrBlack dark:border-clrWhiteOpa'>
+    <ol className='relative border-l border-slate-400 dark:border-clrWhiteOpa'>
       {experiences.map(experience =>
         <TimelineItem key={experience.id} experience={experience} />
       )}
