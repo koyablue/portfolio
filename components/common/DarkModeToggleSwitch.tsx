@@ -30,7 +30,7 @@ const DarkModeToggleSwitch = () => {
         items-center
         justify-between
         w-full h-7
-        bg-clrNavy
+        bg-slate-700
         border border-clrBlack
         rounded-full
         px-2
@@ -54,7 +54,7 @@ const DarkModeToggleSwitch = () => {
         "
       >
         <FiSun className='dark:text-clrOrange' />
-        <FiMoon className='text-clrYellow' />
+        <FiMoon className='text-clrOrange' />
       </div>
     </label>
   )

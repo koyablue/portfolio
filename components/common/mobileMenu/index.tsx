@@ -53,7 +53,7 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
     myWork: { id: 'myWork', label: 'My Work', isVisible: isTopPage, },
     experiences: { id: 'experiences', label: 'Experiences', isVisible: isTopPage, },
     about: { id: '', label: 'About Me', isVisible: true, },
-    resume: { id: '', label: 'Resume', isVisible: true },
+    // resume: { id: '', label: 'Resume', isVisible: true },
   }
 
   useEffect(() => {
