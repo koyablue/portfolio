@@ -73,7 +73,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
       max-w-[100%]
       text-clrBlack
       lg:w-[calc((100%_-_32px)_/_3)]
-      dark:bg-clrThickNavy
+      dark:bg-slate-800
       dark:border-clrThickNavy
       dark:text-clrWhiteOpa`}
     >
@@ -87,9 +87,14 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <p className='font-bold text-xl text-center mb-2 dark:text-slate-100'>
           {project.title}
         </p>
-        <div className='bg-clrPalePink w-[90px] text-center text-textDarkMain text-sm rounded-[6px] p-1 border border-clrBlack dark:text-clrWhiteOpa dark:bg-rose-400 dark:border-rose-400'>
+        {/* <div className='
+          bg-clrPalePink w-[90px] text-center text-textDarkMain text-sm rounded-[6px] p-1 border border-clrBlack
+          dark:text-clrWhiteOpa
+          dark:bg-rose-400
+          dark:border-rose-400'
+        >
           <p>#{project.type}</p>
-        </div>
+        </div> */}
         <div className='font-semibold'>
           {techStack}
         </div>
@@ -105,22 +110,27 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <div className='w-1/3 h-8'>
           {/* TODO: if no id then disable */}
           <Button
+            borderStyle='border border-clrOrange'
+            shadowStyle={`${disableDetailButton ? '' : 'hover:shadow-[3.5px_3.5px_0_0_#eb4431]'}`}
             className={`
-              shadow-[3px_3px_0_0_#333333]
-              hover:shadow-[5px_5px_0_0_#333333]
-              dark:shadow-none
               dark:active:shadow-none
-              dark:bg-indigo-400
-              dark:hover:bg-indigo-300
-              dark:rounded
-              ${disableDetailButton && 'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
+              ${disableDetailButton &&
+                'bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
             `}
           >
             <a
-              href={`${project.githubRepo}#readme`}
+              href={`${project.githubRepo && `${project.githubRepo}#readme`}`}
               target='_blank'
               rel='noreferrer'
-              className={`block text-clrBlack text-sm font-medium ${disableDetailButton && 'text-gray-500'}`}>
+              className={`
+                block text-sm font-medium ${disableDetailButton ? 'text-gray-400 cursor-not-allowed' : 'text-clrOrange'}
+              `}
+              onClick={e => {
+                if (!project.githubRepo) {
+                  e.preventDefault()
+                }
+              }}
+            >
               Details
             </a>
           </Button>
