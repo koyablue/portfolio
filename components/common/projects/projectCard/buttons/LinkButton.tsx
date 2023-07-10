@@ -13,6 +13,7 @@ type LinkButtonProps = {
  * @return {*} JSX.Element
  */
 const LinkButton = ({ label, href = '', children }: LinkButtonProps) => {
+  // TODO: href condition is messed up. should make it clean
   return (
     <button className={`
         flex items-center justify-center gap-1
@@ -35,7 +36,7 @@ const LinkButton = ({ label, href = '', children }: LinkButtonProps) => {
         className={`
           flex gap-1
           font-medium
-          ${!href && 'cursor-not-allowed pointer-events-none'}`
+          ${!href && 'cursor-not-allowed pointer-events-none text-gray-400'}`
       }>
         {children}
         <p className='text-sm'>{label}</p>

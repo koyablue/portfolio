@@ -23,7 +23,7 @@ import { HiCode } from 'react-icons/hi'
  */
 const ProjectImage = ({ images, alt }: { images: Project['images']; alt: string }) => {
   const noImage = (
-    <div className='flex items-center justify-center h-full bg-clrWhite border border-clrBlack rounded'>
+    <div className='flex items-center justify-center h-full bg-clrWhite border border-slate-300 rounded'>
       <HiCode className='text-6xl text-clrBlack' />
     </div>
   )
@@ -35,7 +35,7 @@ const ProjectImage = ({ images, alt }: { images: Project['images']; alt: string 
       src={images[0]}
       alt={alt}
       fill
-      className='object-cover object-center border border-clrBlack rounded'
+      className='object-cover object-center border border-slate-300 rounded'
     />
   )
 }
@@ -63,7 +63,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
       flex flex-col items-center
       bg-clrWhite
       border
-      border-clrBlack
+      border-slate-400
       rounded
       pt-3
       px-3
@@ -95,10 +95,10 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         >
           <p>#{project.type}</p>
         </div> */}
-        <div className='font-semibold text-clrMatcha'>
+        <div className='font-semibold dark:text-clrMatcha'>
           {techStack}
         </div>
-        <div className='break-words w-full text-sm text-clrBlueGray'>
+        <div className='break-words w-full text-sm dark:text-clrBlueGray'>
           <Nl2br text={omitStr(project.description, 200)} />
         </div>
       </div>
