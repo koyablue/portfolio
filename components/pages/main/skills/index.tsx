@@ -27,7 +27,7 @@ const Skills = () => {
             w-24 h-24
             bg-clrWhite
             text-[35px]
-            border-[1.5px] border-clrBlack
+            border-[1.5px] border-slate-400
             rounded
             dark:bg-slate-800
             dark:border-slate-800`}
