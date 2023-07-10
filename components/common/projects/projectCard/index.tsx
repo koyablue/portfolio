@@ -110,11 +110,11 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <div className='w-1/3 h-8'>
           {/* TODO: if no id then disable */}
           <Button
-            shadowStyle={`${disableDetailButton ? '' : 'hover:shadow-[3.5px_3.5px_0_0_#eb4431] dark:hover:shadow-[3.5px_3.5px_0_0_#c792e9]'}`}
+            shadowStyle={`${disableDetailButton ? '' : 'hover:shadow-[3.5px_3.5px_0_0_#eb4431] dark:hover:shadow-[3.5px_3.5px_0_0_rgb(226,232,240)]'}`}
             className={`
               dark:active:shadow-none
               border-clrOrange
-              ${disableDetailButton ? 'border-gray-300' : 'dark:border-clrLightPurple'}
+              ${disableDetailButton ? 'border-gray-300' : 'dark:border-slate-200'}
               ${disableDetailButton &&
                 'bg-gray-200 text-gray-500 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
             `}
@@ -124,7 +124,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
               target='_blank'
               rel='noreferrer'
               className={`
-                block text-sm font-medium ${disableDetailButton ? 'text-gray-400 cursor-not-allowed' : 'text-clrOrange dark:text-clrLightPurple'}
+                block text-sm font-medium ${disableDetailButton ? 'text-gray-400 cursor-not-allowed' : 'text-clrOrange dark:text-slate-200'}
               `}
               onClick={e => {
                 if (!project.githubRepo) {
