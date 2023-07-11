@@ -68,7 +68,7 @@ const Top = () => {
                 Koya Aoyama
               </p>
               <p className='text-[25px] tracking-wide text-center font-semibold text-clrOrange md:text-[50px]'>
-                Frontend <br className='hidden'/>developer
+                Fullstack <br className='hidden'/>developer
               </p>
             </div>
             {/* links */}
