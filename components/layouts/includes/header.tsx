@@ -146,8 +146,8 @@ const Header = () => {
           <PcNavMenuItem id='skills' isVisible={isTopPage}>
             <p>Skills</p>
           </PcNavMenuItem>
-          <PcNavMenuItem id='myWork' isVisible={isTopPage}>
-            <p>My Work</p>
+          <PcNavMenuItem id='projects' isVisible={isTopPage}>
+            <p>Projects</p>
           </PcNavMenuItem>
           <PcNavMenuItem id='experiences' isVisible={isTopPage}>
             <p>Experiences</p>
