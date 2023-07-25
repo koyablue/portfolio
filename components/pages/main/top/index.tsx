@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import TypeWriter from 'typewriter-effect'
 
 // icons
 import { BsGithub, BsLinkedin, BsFileEarmarkPdfFill } from 'react-icons/bs'
@@ -8,6 +9,8 @@ import { HiOutlineMail } from 'react-icons/hi'
 import { GITHUB_URL, LINKED_IN_URL, RESUME_PDF_PATH } from '../../../../constants'
 
 // components
+import MyName from './MyName'
+import JobTitle from './JobTitle'
 import LinkListItem from '../../../../components/pages/main/top/LinkListItem'
 import MailToATag from '../../../common/MailToATag'
 
@@ -31,7 +34,6 @@ const Top = () => {
           `
         }
       >
-        {/* TODO: should have border? */}
         {/* border
             border-clrBlack
         */}
@@ -45,6 +47,7 @@ const Top = () => {
             `
           }
         >
+
           {/* profile photo */}
           <section className=''>
             <div className='w-[120px] h-[120px] md:w-[200px] md:h-[200px] relative'>
@@ -61,15 +64,12 @@ const Top = () => {
               />
             </div>
           </section>
+
           {/* intro and links */}
           <section className='flex flex-col items-center'>
             <div className='mb-3.5'>
-              <p className='text-[35px] tracking-wide text-center text-clrBlack font-black md:text-[75px] dark:text-white'>
-                Koya Aoyama
-              </p>
-              <p className='text-[25px] tracking-wide text-center font-semibold text-clrOrange md:text-[50px]'>
-                Fullstack <br className='hidden'/>developer
-              </p>
+              <MyName />
+              <JobTitle />
             </div>
             {/* links */}
             <ul className='flex items-center gap-6 pb-1 mb-2 md:mb-10'>
@@ -100,6 +100,7 @@ const Top = () => {
               </li>
             </ul>
           </section>
+
         </div>
       </div>
     </>
