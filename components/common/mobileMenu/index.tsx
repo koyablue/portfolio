@@ -50,7 +50,7 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
 
   const menuItems: { [key: string]: { id: string; label: string; isVisible: boolean; } } = {
     skills: { id: 'skills', label: 'Skills', isVisible: isTopPage, },
-    myWork: { id: 'myWork', label: 'My Work', isVisible: isTopPage, },
+    projects: { id: 'projects', label: 'Projects', isVisible: isTopPage, },
     experiences: { id: 'experiences', label: 'Experiences', isVisible: isTopPage, },
     about: { id: '', label: 'About Me', isVisible: true, },
     // resume: { id: '', label: 'Resume', isVisible: true },

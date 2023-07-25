@@ -29,7 +29,7 @@ const MockProjectCard = () => {
   return <ProjectCard project={mockProject} disableDetailButton />
 }
 
-const MyWork = () => {
+const Projects = () => {
   const { getProjects } = useGetProjects()
 
   const projects = getProjects()
@@ -39,7 +39,7 @@ const MyWork = () => {
 
   return (
     <MainWrapper className='min-h-screen' >
-      <MainPageSectionTitle title='My Work' />
+      <MainPageSectionTitle title='Projects' />
 
       {/* <div>
         TODO: search projects
@@ -84,4 +84,4 @@ const MyWork = () => {
   )
 }
 
-export default MyWork
+export default Projects
