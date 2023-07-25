@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import TypeWriter from 'typewriter-effect'
 
 // icons
 import { BsGithub, BsLinkedin, BsFileEarmarkPdfFill } from 'react-icons/bs'
@@ -67,9 +68,22 @@ const Top = () => {
               <p className='text-[35px] tracking-wide text-center text-clrBlack font-black md:text-[75px] dark:text-white'>
                 Koya Aoyama
               </p>
-              <p className='text-[25px] tracking-wide text-center font-semibold text-clrOrange md:text-[50px]'>
-                Fullstack <br className='hidden'/>developer
-              </p>
+              <div className='text-[25px] tracking-wide text-center font-semibold text-clrOrange md:text-[50px]'>
+
+                <TypeWriter
+                  onInit={(typewriter) => {
+                    typewriter
+                      .pauseFor(1000)
+                      .typeString('Fullstack developer')
+                      .start();
+                  }}
+                  options={{
+                    cursor: '_',
+                  }}
+                />
+                {/* Fullstack <br className='hidden'/>developer */}
+
+              </div>
             </div>
             {/* links */}
             <ul className='flex items-center gap-6 pb-1 mb-2 md:mb-10'>
