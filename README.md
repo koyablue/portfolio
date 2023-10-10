@@ -8,8 +8,8 @@ Built with TypeScript, Next.js and Tailwind CSS. Hosting on Vercel.
 
 :computer: [Skills](https://www.koyaaoyama.com/#skills)  
 :wrench: [Experiences](https://www.koyaaoyama.com/#experiences)  
-:point_right: [LinkedIn](https://www.linkedin.com/in/koya-aoyama/)
-:clipboard: [Resume](https://koyaaoyama.com/pdf/koya_aoyama_resume.pdf)
+:point_right: [LinkedIn](https://www.linkedin.com/in/koya-aoyama/)  
+:clipboard: [Resume](https://koyaaoyama.com/pdf/koya_aoyama_resume.pdf)  
 
 ## Built with
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
