@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 // components
@@ -15,6 +15,9 @@ import { assertIsNode } from '../../../services/util'
 
 // services
 import { getPath } from '../../../services/pathService'
+
+// constants
+import { MenuItemKey, menuIdAndLabel } from '../../../constants/menuConfig'
 
 type Props = {
   isOpen?: boolean
@@ -48,13 +51,15 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
     }
   }
 
-  const menuItems: { [key: string]: { id: string; label: string; isVisible: boolean; } } = {
-    skills: { id: 'skills', label: 'Skills', isVisible: isTopPage, },
-    projects: { id: 'projects', label: 'Projects', isVisible: isTopPage, },
-    experiences: { id: 'experiences', label: 'Experiences', isVisible: isTopPage, },
-    about: { id: '', label: 'About Me', isVisible: true, },
-    // resume: { id: '', label: 'Resume', isVisible: true },
-  }
+  const MenuItemWrapper = ({ itemKey, isVisible }: { itemKey: MenuItemKey, isVisible: boolean }) => (
+    <MenuItem
+      id={menuIdAndLabel[itemKey].id}
+      isVisible={isVisible}
+      toggleMobileMenu={toggleMobileMenu}
+    >
+      <p className='text-center block w-full'>{menuIdAndLabel[itemKey].label}</p>
+    </MenuItem>
+  )
 
   useEffect(() => {
     document.addEventListener('mousedown', e => {handleOutsideClick(e)});
@@ -88,15 +93,18 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         <MenuItem isVisible={!isTopPage}>
           <Link href={topPagePath} className='block'>Top</Link>
         </MenuItem>
-        {Object.keys(menuItems).map(k =>
-          <MenuItem
-            key={k}
-            id={menuItems[k].id}
-            isVisible={menuItems[k].isVisible}
-            toggleMobileMenu={toggleMobileMenu}
-          >
-            <p className='text-center block w-full'>{menuItems[k].label}</p>
-          </MenuItem>
+        {Object.keys(menuIdAndLabel).map(k =>
+          k === 'aboutMe'
+            ? <MenuItemWrapper
+                key={k}
+                itemKey={k as MenuItemKey}
+                isVisible={true}
+              />
+            : <MenuItemWrapper
+                key={k}
+                itemKey={k as MenuItemKey}
+                isVisible={isTopPage}
+              />
         )}
       </ul>
     </div>
