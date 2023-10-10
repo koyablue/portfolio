@@ -19,6 +19,7 @@ import { usePathMatch } from '../../../hooks/usePathMatch'
 // constants
 import { GITHUB_URL, RESUME_PDF_PATH } from '../../../constants'
 import { IS_IN_BROWSER } from '../../../constants/environment'
+import { MenuItemKey, menuIdAndLabel } from '../../../constants/menuConfig'
 
 // services
 import { getPath } from '../../../services/pathService'
@@ -96,6 +97,12 @@ const Header = () => {
     setShouldHeaderOutstand(window.scrollY > 5)
   }
 
+  const PcNavMenuItemWrapper = ({ itemKey }: { itemKey: MenuItemKey }) => (
+    <PcNavMenuItem id={menuIdAndLabel[itemKey].id} isVisible={isTopPage}>
+      <p>{menuIdAndLabel[itemKey].label}</p>
+    </PcNavMenuItem>
+  )
+
   useEffect(() => {
     // close mobile menu if screen is expanded while mobile menu is open
     if (isWindowSizeWider) {
@@ -143,19 +150,9 @@ const Header = () => {
               Top
             </Link>
           </PcNavMenuItem>
-          <PcNavMenuItem id='skills' isVisible={isTopPage}>
-            <p>Skills</p>
-          </PcNavMenuItem>
-          <PcNavMenuItem id='projects' isVisible={isTopPage}>
-            <p>Projects</p>
-          </PcNavMenuItem>
-          <PcNavMenuItem id='experiences' isVisible={isTopPage}>
-            <p>Experiences</p>
-          </PcNavMenuItem>
-          {/* TODO: temporarily scroll to 'Hi!' section. Fix later when the about me page is ready */}
-          <PcNavMenuItem id='aboutMe' isVisible={isTopPage}>
-            About me
-          </PcNavMenuItem>
+          {Object.keys(menuIdAndLabel).map(k =>
+            <PcNavMenuItemWrapper key={k} itemKey={k as MenuItemKey} />
+          )}
         </nav>
 
         <div className='flex items-center justify-center gap-8'>
