@@ -33,7 +33,7 @@ export const experiences: ExperienceRawData[] = [
     fromYear: 2023,
     fromMonth: 10,
     title: 'Backend Developer',
-    description: "Developed backend side of a system for managing tools used in factories.\nIt was my first experience working for a Canadian company.",
+    description: "Developed backend side of a system for managing tools used in factories.\nIt was my first experience working for a company in Canadian.",
     techStack: ['PHP', 'Laravel', 'PostgreSQL', 'JavaScript', 'Docker', 'Linux'],
   },
 ]
