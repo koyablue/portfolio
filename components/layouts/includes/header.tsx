@@ -47,11 +47,11 @@ const PcNavMenuItem = ({ id = '', isVisible = true, onClick = () => {/* do nothi
         duration-200 cursor-pointer
         p-2
         rounded
-        hover:text-clrOrange
-        hover:bg-clrWhiteOpa
+        hover:text-sky-400
+        hover:bg-sky-400/10
         dark:text-clrWhiteOpa
-        dark:hover:text-clrOrange
-        dark:hover:bg-[rgb(244,245,247,0.2)]
+        dark:hover:text-sky-400
+        dark:bg-sky-400/10
       `}
       onClick={onClickHandler}
     >
@@ -63,7 +63,7 @@ const PcNavMenuItem = ({ id = '', isVisible = true, onClick = () => {/* do nothi
 /**
  * header and mobile menu
  *
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const Header = () => {
   const [shouldHeaderOutstand, setShouldHeaderOutstand] = useState<boolean>(false)
@@ -120,21 +120,22 @@ const Header = () => {
   //TODO: change contents depends on the page
   // TODO: to top icon => BsCodeSquare
 
+  //         ${shouldHeaderOutstand ? 'bg-slate-200 dark:bg-clrDarkNavy dark:border-b dark:border-none' : 'border-none'}
   return (
     <header
-      className={`
-        flex items-center justify-between
-        w-full h-[64px] space-x-11 px-8
-        sticky
-        top-0 left-0 right-0
-        ${shouldHeaderOutstand ? 'bg-slate-200 dark:bg-clrDarkNavy dark:border-b dark:border-none' : 'border-none'}
-        duration-200
-        md:justify-start
-        z-50
-        `
-      }
+      className='
+      flex items-center justify-between
+      w-full h-[64px] space-x-11 px-8
+      sticky
+      top-0 left-0 right-0
+      bg-gradient-to-r from-sky-50 to-blue-50
+      dark:bg-clrDarkNavy
+      duration-200
+      md:justify-start
+      z-50
+      '
     >
-      <div className='text-4xl duration-200 hover:text-clrOrange dark:hover:text-clrOrange'>
+      <div className='text-4xl duration-200 text-slate-900 hover:text-sky-400'>
         <a href={GITHUB_URL}><BsGithub /></a>
       </div>
 
@@ -162,18 +163,16 @@ const Header = () => {
           {/* resume download button */}
           <button className={`
             hidden
-            md:flex items-center justify-center w-40 h-8 border border-clrOrange
-            text-clrOrange
+            md:flex items-center justify-center w-40 h-8
+            border
+            border-slate-400
+            text-slate-900
             tracking-wide
             duration-300
-            hover:shadow-[5px_5px_0_0_#eb4431]
-            active:opacity-60
-            active:shadow-none
-            dark:text-clrOrange
-            dark:border-clrOrange
-            dark:shadow-none
-            dark:hover:shadow-[3.5px_3.5px_0_0_#eb4431]
-            dark:active:shadow-none
+            rounded
+            hover:text-sky-400
+            hover:border-sky-400
+            hover:bg-sky-400/10
             `
           }>
             <a href={RESUME_PDF_PATH} target='_blank' rel='noreferrer' className='flex items-center justify-center w-full h-full'>

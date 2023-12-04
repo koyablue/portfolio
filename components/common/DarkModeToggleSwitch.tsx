@@ -30,8 +30,7 @@ const DarkModeToggleSwitch = () => {
         items-center
         justify-between
         w-full h-7
-        bg-slate-700
-        border border-clrBlack
+        border border-slate-400
         rounded-full
         px-2
         peer
@@ -44,7 +43,7 @@ const DarkModeToggleSwitch = () => {
         after:left-[4px]
         after:bg-white
         after:border
-        after:border-clrBlack
+        after:border-slate-400
         after:rounded-full
         after:h-6
         after:w-6
@@ -53,8 +52,8 @@ const DarkModeToggleSwitch = () => {
         dark:after:bg-slate-100
         "
       >
-        <FiSun className='dark:text-clrOrange' />
-        <FiMoon className='text-clrOrange' />
+        <FiSun className='dark:text-sky-400' />
+        <FiMoon className='text-sky-400' />
       </div>
     </label>
   )
