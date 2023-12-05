@@ -121,19 +121,19 @@ const Header = () => {
   // TODO: to top icon => BsCodeSquare
 
   //         ${shouldHeaderOutstand ? 'bg-slate-200 dark:bg-clrDarkNavy dark:border-b dark:border-none' : 'border-none'}
+  //       bg-gradient-to-br from-sky-200 via-fuchsia-50 to-blue-50
   return (
     <header
-      className='
+      className={`
       flex items-center justify-between
       w-full h-[64px] space-x-11 px-8
       sticky
       top-0 left-0 right-0
-      bg-gradient-to-r from-sky-50 to-blue-50
-      dark:bg-clrDarkNavy
+      ${shouldHeaderOutstand ? 'backdrop-blur-lg' : ''}
       duration-200
       md:justify-start
       z-50
-      '
+      `}
     >
       <div className='text-4xl duration-200 text-slate-900 hover:text-sky-400'>
         <a href={GITHUB_URL}><BsGithub /></a>

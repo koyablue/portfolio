@@ -20,8 +20,11 @@ body {
   @apply font-cabin text-slate-900 dark:text-clrWhiteOpa;
   /* @apply bg-gradient-to-r from-sky-100 to-cyan-100; */
   /* @apply bg-gradient-to-r from-sky-50 to-blue-50; */
-  @apply bg-gradient-to-br from-sky-50 to-sky-50;
-  @apply dark:bg-clrDarkNavy;
+  /* @apply bg-gradient-to-br from-sky-50 to-sky-50; */
+  /* @apply bg-gradient-to-br from-sky-50 to-blue-200; */
+  @apply bg-gradient-to-br from-sky-200 via-fuchsia-50 to-blue-50;
+  /* @apply dark:bg-gradient-to-br dark:from-slate-900 dark:via-sky-900 dark:to-sky-900; */
+  @apply dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-sky-900;
 
 }
 

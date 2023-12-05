@@ -45,7 +45,7 @@ export default function Top() {
 
           {/* profile photo */}
           <section className=''>
-            <div className="relative rounded-full p-1 bg-gradient-to-r from-sky-300 to-indigo-300 w-[120px] h-[120px] md:w-[220px] md:h-[220px]">
+            <div className="relative rounded-full p-1 bg-gradient-to-r from-sky-300 dark:from-sky-400 to-indigo-300 dark:to-pink-400 w-[120px] h-[120px] md:w-[220px] md:h-[220px]">
               <div className="relative overflow-hidden rounded-full w-full h-full">
                 <Image
                   src='/images/profile/me_monotone.png'
