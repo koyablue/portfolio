@@ -18,7 +18,7 @@ const Description = () => {
        text-sm
        bg-clip-content
        bg-indigo-400/10
-       md:rounded
+       md:rounded-3xl
        md:text-lg
        md:p-4
        dark:bg-slate-800
@@ -34,7 +34,7 @@ const Description = () => {
             I am a Web developer with 3 and a half years experience who loves creating applications.
           </p>
           <p>
-            Skilled in TypeScript, React, Next.js, HTML, CSS, PHP, Laravel and MySQL.
+            Skilled in TypeScript, React, Next.js, PHP, Laravel and MySQL.
           </p>
           <p>
             Please contact me if you are interested!

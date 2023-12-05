@@ -33,7 +33,7 @@ const TimelineItem = (props: Props) => {
    * ex) getMonthName(4) returns 'April'
    *
    * @param {number} monthNum
-   * @return {*} string
+   * @return {string} ex) 'April'
    */
   const getMonthName = (monthNum: number): string => {
     const date = new Date()
@@ -46,18 +46,18 @@ const TimelineItem = (props: Props) => {
 
   return (
     <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border rounded border-slate-400 dark:bg-slate-800 dark:border-slate-800'>
-      <div className='absolute w-3 h-3 bg-slate-300 mt-1.5 -left-1.5 border rounded-sm border-slate-300 dark:bg-clrWhite dark:border-clrWhite'></div>
-      <time className='mb-1 text-sm font-semibold leading-none text-clrBlack dark:text-clrWhiteOpa'>
+      <div className='absolute w-3 h-3 bg-indigo-400 mt-1.5 -left-1.5 border rounded-sm border-indigo-400 dark:bg-clrWhite dark:border-clrWhite'></div>
+      <time className='mb-1 text-sm font-semibold leading-none dark:text-clrWhiteOpa'>
         {getMonthName(experience.fromMonth)}&nbsp;{experience.fromYear}&nbsp;-&nbsp;
         {experience.toMonth && getMonthName(experience.toMonth)}&nbsp;{experience.toYear || ''}
       </time>
-      <p className='text-lg font-semibold text-clrOrange mb-2'>
+      <p className='text-lg font-semibold text-indigo-400 mb-2'>
         {experience.title}
       </p>
       <div className='flex items-center justify-start gap-2 flex-wrap mb-2.5'>
         {experience.techStack.map(techName =>
           <div key={techName} className='max-w-[90px]'>
-            <Tag className='text-clrOrange border-clrOrange dark:text-clrOrange'>{techName}</Tag>
+            <Tag className='text-indigo-400'>{techName}</Tag>
           </div>
         )}
       </div>

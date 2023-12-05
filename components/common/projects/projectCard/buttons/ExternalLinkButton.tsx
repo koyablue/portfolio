@@ -8,8 +8,8 @@ type Props = {
 
 const ExternalLinkButton = ({ href }: Props) => {
   return (
-    <LinkButton label='Visit' href={href}>
-      {href ? <TbExternalLink className='text-lg' /> : <TbExternalLinkOff className='text-lg' />}
+    <LinkButton href={href}>
+      {href ? <TbExternalLink className='text-xl' /> : <TbExternalLinkOff className='text-xl' />}
     </LinkButton>
   )
 }

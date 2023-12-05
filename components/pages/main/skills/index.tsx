@@ -25,15 +25,14 @@ const Skills = () => {
             key={skill.id}
             className={`flex flex-col items-center justify-center gap-0.5
             w-24 h-24
-            bg-clrWhite
             text-[35px]
-            border-[1.5px] border-slate-400
+            border border-slate-400
             rounded
             dark:bg-slate-800
             dark:border-slate-800`}
           >
             {skill.icon}
-            <p className='text-[13px] font-medium text-center text-clrBlack dark:text-clrWhiteOpa'>{skill.name}</p>
+            <p className='text-[13px] font-medium text-center dark:text-clrWhiteOpa'>{skill.name}</p>
           </div>
         )}
       </div>
