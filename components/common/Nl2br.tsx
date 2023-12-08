@@ -11,7 +11,7 @@ type Props = {
  * "abc\ndef\ngh" -> <>abc<br />def<br />gh</>
  *
  * @param {Props} { text }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const Nl2br = ({ text }: Props) => {
   const textElements = text.split("\n").map((v, idx) => {

@@ -70,11 +70,9 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
       max-h-[500px]
       min-h-[280px]
       max-w-[100%]
-      text-clrBlack
       lg:w-[calc((100%_-_32px)_/_3)]
       dark:bg-slate-800
-      dark:border-clrThickNavy
-      dark:text-clrWhiteOpa`}
+      dark:border-clrThickNavy`}
     >
       <div className='flex flex-col gap-2.5 w-full h-full mb-4'>
         {/* TODO: project.image || noImage */}
@@ -94,10 +92,10 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         >
           <p>#{project.type}</p>
         </div> */}
-        <div className='font-semibold text-indigo-400'>
+        <div className='font-semibold text-indigo-400 dark:text-sky-500'>
           {techStack}
         </div>
-        <div className='break-words w-full text-sm dark:text-clrBlueGray'>
+        <div className='break-words w-full text-sm'>
           <Nl2br text={omitStr(project.description, 200)} />
         </div>
       </div>
