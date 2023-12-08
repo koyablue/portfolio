@@ -53,7 +53,7 @@ const DarkModeToggleSwitch = () => {
         "
       >
         <FiSun className='dark:text-sky-400' />
-        <FiMoon className='text-sky-400' />
+        <FiMoon className='text-indigo-400' />
       </div>
     </label>
   )

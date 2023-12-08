@@ -1,1 +1,1 @@
-export const colorThemeCookieName = 'colorTheme' as const
+export const colorThemeCookieName = 'akPfColorTheme' as const

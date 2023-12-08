@@ -63,14 +63,14 @@ export default function Top() {
               <div className='text-[35px] tracking-wide text-center text-slate-900 font-black md:text-[65px] dark:text-white'>
                 <span>Koya Aoyama</span>
               </div>
-              <div className='text-[25px] tracking-wide text-center font-semibold text-indigo-400 md:text-[40px]'>
+              <div className='text-[25px] tracking-wide text-center font-semibold text-indigo-400 md:text-[40px] dark:text-sky-500'>
                 <span>Fullstack developer</span>
               </div>
             </div>
             {/* links */}
             <ul className='flex items-center gap-6 pb-1 mb-2 md:mb-10'>
               <LinkListItem href={GITHUB_URL}>
-                <BsGithub className='text-slate-900' />
+                <BsGithub className='text-slate-900 dark:text-slate-200' />
               </LinkListItem>
               <LinkListItem href={LINKED_IN_URL}>
                 <BsLinkedin className='text-blue-400' />
@@ -87,7 +87,10 @@ export default function Top() {
                 cursor-pointer
                 duration-200
                 hover:opacity-80
-                dark:bg-slate-100'
+                dark:border-none
+                dark:bg-sky-400/10
+                dark:hover:bg-sky-400/20
+                dark:hover:opacity-100'
               >
                 <MailToATag name='aoyama.ko0920' domain='gmail' tld='com' className='flex items-center justify-center w-full h-full'>
                   <HiOutlineMail className='text-violet-400' />

@@ -9,7 +9,7 @@ type Props = {
  * top page link list item
  *
  * @param {Props} { href, children }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const LinkListItem = ({ href, children }: Props) => {
   return (
@@ -21,7 +21,10 @@ const LinkListItem = ({ href, children }: Props) => {
     cursor-pointer
     duration-200
     hover:opacity-80
-    dark:bg-slate-100'
+    dark:border-none
+    dark:bg-sky-400/10
+    dark:hover:bg-sky-400/20
+    dark:hover:opacity-100'
     >
       <a href={href} target='_blank' rel='noreferrer' className='flex items-center justify-center w-full h-full'>
         {children}

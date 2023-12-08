@@ -51,7 +51,7 @@ const PcNavMenuItem = ({ id = '', isVisible = true, onClick = () => {/* do nothi
         hover:bg-sky-400/10
         dark:text-clrWhiteOpa
         dark:hover:text-sky-400
-        dark:bg-sky-400/10
+        dark:hover:bg-sky-400/10
       `}
       onClick={onClickHandler}
     >
@@ -109,7 +109,7 @@ const Header = () => {
       setIsMobileMenuOpen(false)
       setShouldActive(undefined)
     }
-  }, [isWindowSizeWider])
+  }, [isWindowSizeWider, setIsMobileMenuOpen])
 
   // TODO: should separate header in its own file
   useEffect(() => {
@@ -135,7 +135,7 @@ const Header = () => {
       z-50
       `}
     >
-      <div className='text-4xl duration-200 text-slate-900 hover:text-sky-400'>
+      <div className='text-4xl duration-200 text-slate-900 dark:text-slate-400 hover:text-sky-400 dark:hover:text-sky-400'>
         <a href={GITHUB_URL}><BsGithub /></a>
       </div>
 
@@ -173,6 +173,8 @@ const Header = () => {
             hover:text-sky-400
             hover:border-sky-400
             hover:bg-sky-400/10
+            dark:text-slate-300
+            dark:hover:text-sky-400
             `
           }>
             <a href={RESUME_PDF_PATH} target='_blank' rel='noreferrer' className='flex items-center justify-center w-full h-full'>

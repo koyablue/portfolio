@@ -30,26 +30,13 @@ type Props = {
  * close when outside of the menu area is clicked
  *
  * @param {Props} { isOpen, setMobileMenuState }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => {
   const topPagePath = getPath('top')
   const { doesPathMatch: isTopPage } = usePathMatch(topPagePath)
 
   const mobileMenuRef = useRef<HTMLUListElement>(null)
-
-  /**
-   * Close the mobile menu when the outside of the mobile menu area is clicked
-   *
-   * @param {MouseEvent} e
-   */
-  const handleOutsideClick = (e: MouseEvent) => {
-    if (!isOpen) return
-    assertIsNode(e.target)
-    if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
-      setMobileMenuState(false)
-    }
-  }
 
   const MenuItemWrapper = ({ itemKey, isVisible }: { itemKey: MenuItemKey, isVisible: boolean }) => (
     <MenuItem
@@ -62,11 +49,24 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
   )
 
   useEffect(() => {
+    /**
+     * Close the mobile menu when the outside of the mobile menu area is clicked
+     *
+     * @param {MouseEvent} e
+     */
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (!isOpen) return
+      assertIsNode(e.target)
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
+        setMobileMenuState(false)
+      }
+    }
+
     document.addEventListener('mousedown', e => {handleOutsideClick(e)});
     return () => {
       document.removeEventListener('mousedown', e => {handleOutsideClick(e)});
     };
-  }, [])
+  }, [isOpen, setMobileMenuState])
 
   return (
     <div className='md:hidden'>
@@ -78,10 +78,10 @@ const MobileMenu = ({ isOpen, setMobileMenuState, toggleMobileMenu }: Props) => 
         flex flex-col items-center self-end
         py-8
         mt-5
-        bg-clrWhite
         border
-        border-clrBlack
-        opacity-0
+        border-slate-200
+        bg-sky-50
+        rounded-md
         sm:self-center left-[30px] right-[30px] drop-shadow-md
         ${isOpen ? 'visible' : 'invisible'}
         ${isOpen && isOpen !== undefined ? 'animate-slide-in-fwd-center' : ''}
