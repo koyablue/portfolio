@@ -7,7 +7,7 @@ type Props = {
 
 const Tag = ({ className, children }: Props) => {
   return (
-    <div className={`w-full text-center text-textDarkMain text-sm p-1 border border-clrBlack text-ellipsis overflow-hidden whitespace-nowrap ${className}`}>
+    <div className={`w-full text-center text-textDarkMain text-sm p-1 text-ellipsis overflow-hidden whitespace-nowrap ${className}`}>
       {/* <p>#{project.type}</p> */}
       {children}
     </div>

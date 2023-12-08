@@ -14,7 +14,7 @@ type Props = {
 /**
  *
  *
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const LayoutWrapper = ({ children }: Props) => {
   const isThemeSet = useAppSelector(selectIsThemeSet)

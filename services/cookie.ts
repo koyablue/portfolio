@@ -22,7 +22,7 @@ const setCookie = (name: string, value: string, options?: CookieAttributes) => {
  * Get cookie by given cookie name
  *
  * @param {string} name
- * @return {*}  {string}
+ * @return {string}
  */
 const getCookie = (name: string): string => Cookies.get(name) || ''
 

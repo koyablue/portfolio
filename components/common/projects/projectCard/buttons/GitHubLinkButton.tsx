@@ -9,8 +9,8 @@ type Props = {
 const GitHubLinkButton = ({ href }: Props) => {
   return (
 
-    <LinkButton label='GitHub' href={href}>
-      <SiGithub className='text-lg' />
+    <LinkButton href={href}>
+      <SiGithub className='text-xl' />
     </LinkButton>
   )
 }

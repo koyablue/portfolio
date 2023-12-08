@@ -10,7 +10,7 @@ type Props = {
  * A timeline　of experiences
  *
  * @param {Props} { experiences }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const Timeline = ({ experiences }: Props) => {
   // https://flowbite.com/docs/components/timeline/

@@ -17,11 +17,11 @@ const ScrollPointDiv = ({ id }: { id: string }) => (
  * TODO: need to set paddings left and right so that the layout doesn't go crazy in large screen.
  * TODO: already have padding but need more space
  *
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
-const Home = () => {
+export default function Home() {
   return (
-    <>
+    <div className='w-full'>
       <Top />
       <ScrollPointDiv id={'aboutMe'} />
       <Description />
@@ -31,12 +31,10 @@ const Home = () => {
       <Projects />
       <ScrollPointDiv id={'experiences'} />
       <Experiences />
-    </>
+    </div>
   )
 }
 
 Home.getLayout = (page: ReactElement) => (
   <MainLayout>{page}</MainLayout>
-)
-
-export default Home
+);

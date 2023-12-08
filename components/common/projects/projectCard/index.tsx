@@ -19,7 +19,7 @@ import { HiCode } from 'react-icons/hi'
  * Returns<Image /> or no-image element
  *
  * @param {{ images: Project['images']; alt: string }} { images, alt }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const ProjectImage = ({ images, alt }: { images: Project['images']; alt: string }) => {
   const noImage = (
@@ -61,7 +61,6 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
     <div className={`
       relative
       flex flex-col items-center
-      bg-clrWhite
       border
       border-slate-400
       rounded
@@ -84,7 +83,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         <div className='relative h-40'>
           <ProjectImage images={project.images} alt={`${project.title} image`} />
         </div>
-        <p className='font-bold text-clrOrange text-xl text-center mb-2'>
+        <p className='font-bold text-xl text-center mb-2'>
           {project.title}
         </p>
         {/* <div className='
@@ -95,7 +94,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         >
           <p>#{project.type}</p>
         </div> */}
-        <div className='font-semibold'>
+        <div className='font-semibold text-indigo-400'>
           {techStack}
         </div>
         <div className='break-words w-full text-sm dark:text-clrBlueGray'>
@@ -109,14 +108,19 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
         </div>
         <div className='w-1/3 h-8'>
           {/* TODO: if no id then disable */}
-          <Button
-            shadowStyle={`${disableDetailButton ? '' : 'hover:shadow-[3.5px_3.5px_0_0_#eb4431] dark:hover:shadow-[3.5px_3.5px_0_0_rgb(226,232,240)]'}`}
+          {/* <Button
+            shadowStyle={
+              `${disableDetailButton
+                ? ''
+                : 'hover:shadow-[3.5px_3.5px_0_0_#eb4431] dark:hover:shadow-[3.5px_3.5px_0_0_rgb(226,232,240)]'}`
+            }
             className={`
               dark:active:shadow-none
               border-clrOrange
               ${disableDetailButton ? 'border-gray-300' : 'dark:border-slate-200'}
               ${disableDetailButton &&
-                'bg-gray-200 text-gray-500 cursor-not-allowed shadow-none active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
+                'bg-gray-200 text-gray-500 cursor-not-allowed shadow-none
+                active:opacity-100 hover:shadow-none dark:bg-gray-300 dark:text-gray-400 dark:border-gray-300'}
             `}
           >
             <a
@@ -124,7 +128,8 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
               target='_blank'
               rel='noreferrer'
               className={`
-                block text-sm font-medium ${disableDetailButton ? 'text-gray-400 cursor-not-allowed' : 'text-clrOrange dark:text-slate-200'}
+                block text-sm font-medium
+                ${disableDetailButton ? 'text-gray-400 cursor-not-allowed' : 'text-clrOrange dark:text-slate-200'}
               `}
               onClick={e => {
                 if (!project.githubRepo) {
@@ -134,7 +139,7 @@ const ProjectCard = ({ project, disableDetailButton = false }: Props) => {
             >
               Details
             </a>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>

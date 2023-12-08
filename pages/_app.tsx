@@ -26,7 +26,7 @@ const cabin = Cabin({
   variable: '--font-cabin'
 })
 
-const App = ({ Component, pageProps, }: AppPropsWithLayout) => {
+export default function App ({ Component, pageProps, }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page)
 
@@ -50,6 +50,4 @@ const App = ({ Component, pageProps, }: AppPropsWithLayout) => {
       </Provider>
     </>
   )
-}
-
-export default App
+};
