@@ -35,7 +35,7 @@ const ProjectImage = ({ images, alt }: { images: Project['images']; alt: string 
       src={images[0]}
       alt={alt}
       fill
-      className='object-cover object-center border border-slate-300 rounded'
+      className='object-cover object-center rounded'
     />
   )
 }
