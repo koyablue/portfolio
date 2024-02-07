@@ -34,7 +34,7 @@ const LinkButton = ({ label = '', href = '', children }: LinkButtonProps) => {
         target='_blank'
         rel='noreferrer'
         className={`
-          flex gap-1
+          flex items-center justify-center
           font-medium
           ${!href && 'cursor-not-allowed pointer-events-none text-gray-400'}`
       }>

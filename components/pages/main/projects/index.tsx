@@ -1,19 +1,12 @@
-import Link from 'next/link'
-
 // components
 import MainWrapper from '../../../common/MainWrapper'
 import MainPageSectionTitle from '../common/MainPageSectionTitle'
 import ProjectCard from '../../../common/projects/projectCard'
-import Button from '../../../common/Button'
-
-// icons
-import { BiRightArrowAlt } from 'react-icons/bi'
 
 // custom hooks
 import { useGetProjects } from '../../../../hooks/data/useGetProjects'
 
 // services
-import { getPath } from '../../../../services/pathService'
 import { Project } from '../../../../types/project'
 
 const MockProjectCard = () => {

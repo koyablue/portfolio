@@ -10,7 +10,7 @@ const GitHubLinkButton = ({ href }: Props) => {
   return (
 
     <LinkButton href={href}>
-      <SiGithub className='text-xl' />
+      <SiGithub className='text-2xl' />
     </LinkButton>
   )
 }

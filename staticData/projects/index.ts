@@ -26,11 +26,11 @@ export const projects: ProjectRawData[] = [
   // },
   {
     title: 'Eventuner',
-    description: 'A user-friendly web app for easy event scheduling. Propose dates, invite participants, and quickly align schedules.',
+    description: 'A user-friendly web app for easy event scheduling. Used the latest features of Next.js. Zustand for global state management.',
     developerTypeId: 2,
     type: 1,
     shouldPrioritize: true,
-    techStack: ['TypeScript', 'Next.js (ver.14 with App router)', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Zod', 'React Server Components', 'Server Actions'],
+    techStack: ['TypeScript', 'Next.js (ver.14 with App router)', 'Tailwind CSS', 'Zustand', 'Supabase', 'PostgreSQL', 'Zod', 'React Server Components', 'Server Actions'],
     images: ['/images/projects/facebook_cover_photo_2.png'],
     url: 'https://eventuner.vercel.app',
     githubRepo: 'https://github.com/koyablue/eventuner',
