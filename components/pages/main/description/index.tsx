@@ -1,5 +1,11 @@
 import GitHubCalendar from 'react-github-calendar';
 import { useColorTheme } from '../../../../hooks/useColorTheme';
+import { DEV_TO_URL, ZENN_URL } from '../../../../constants';
+import { ReactNode } from 'react';
+
+const P = ({ children }: { children?: ReactNode }) => <p className='dark:text-slate-100'>{children}</p>;
+
+const A = ({ href, children }: { href: string; children?: ReactNode }) => <a href={href} target='_blank' rel='noreferrer' className='text-indigo-400 dark:text-sky-500 underline'>{children}</a>
 
 /**
  * Self introduction section of main page.
@@ -27,19 +33,37 @@ const Description = () => {
        dark:bg-slate-800
        dark:text-clrWhiteOpa'
       >
-        <div className='p-8 leading-loose'>
+        <div className='p-8 leading-relaxed'>
           <div className='mb-6'>
             <p className='text-4xl dark:text-slate-100'>Hi 👋</p>
             <p className='text-4xl dark:text-slate-100'>I&apos;m <span className='text-5xl text-indigo-400 dark:text-sky-500'>Koya Aoyama</span> 🧑🏻‍💻</p>
           </div>
 
-          <p className='dark:text-slate-100'>
-            I am a Web developer with 3 and a half years experience who loves creating applications.
-          </p>
-          <p className='dark:text-slate-100'>
-            Skilled in TypeScript, React, Next.js, PHP, Laravel and MySQL.
-          </p>
-          <p className='dark:text-slate-100'>
+          <P>
+            {/* eslint-disable-next-line max-len */}
+            Software engineer with 3.5 years of experience who loves learning new skills and creating applications.
+          </P>
+          <P>
+            {/* eslint-disable-next-line max-len */}
+            Regularly writes articles on <A href={DEV_TO_URL}>dev.to</A> and <A href={ZENN_URL}>Zenn</A> to share knowledge.
+          </P>
+          <P>
+            Goal-oriented and passionate about development, with several personal projects.
+          </P>
+          <br />
+          <P>
+          <b>Skills and Experience:&nbsp;</b>
+          <br />
+            TypeScript, React, Next.js, Redux, Zustand,
+            <br />
+            Node.js, Express, Jest, React Testing Library,
+            <br />
+            Linux, PHP, Laravel, MySQL, PostgreSQL, Supabase, REST APIs,
+            <br />
+            Git, GitHub, GitHub Actions etc.
+          </P>
+          <br />
+          <p className='dark:text-slate-100 font-bold'>
             Please contact me if you are interested!
           </p>
         </div>
