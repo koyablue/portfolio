@@ -6,6 +6,7 @@ import Top from '../components/pages/main/top'
 import Description from '../components/pages/main/description'
 import Skills from '../components/pages/main/skills'
 import Projects from '../components/pages/main/projects'
+import Articles from '../components/pages/main/articles/Articles';
 import Experiences from '../components/pages/main/experiences'
 
 const ScrollPointDiv = ({ id }: { id: string }) => (
@@ -29,6 +30,8 @@ export default function Home() {
       <Skills />
       <ScrollPointDiv id={'projects'} />
       <Projects />
+      <ScrollPointDiv id={'articles'} />
+      <Articles />
       <ScrollPointDiv id={'experiences'} />
       <Experiences />
     </div>
