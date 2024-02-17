@@ -21,7 +21,7 @@ type Props = {
  * An item for the experience timeline.
  *
  * @param {Props} props
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const TimelineItem = (props: Props) => {
   const { experience, children } = props
@@ -47,6 +47,9 @@ const TimelineItem = (props: Props) => {
   return (
     <li className='mb-10 ml-4 p-3 bg-clrPaleBlue border rounded border-slate-400 dark:bg-sky-400/10 dark:border-none'>
       <div className='absolute w-3 h-3 bg-indigo-400 mt-1.5 -left-1.5 border rounded-sm border-indigo-400 dark:bg-clrWhite dark:border-clrWhite'></div>
+      {experience.companyName
+        && <p className='text-sm font-bold'>{experience.companyName}{experience.location && <>&nbsp;&nbsp;|&nbsp;&nbsp;{experience.location}</>}</p>
+      }
       <time className='mb-1 text-sm font-semibold leading-none dark:text-clrWhiteOpa'>
         {getMonthName(experience.fromMonth)}&nbsp;{experience.fromYear}&nbsp;-&nbsp;
         {experience.toMonth && getMonthName(experience.toMonth)}&nbsp;{experience.toYear || ''}
