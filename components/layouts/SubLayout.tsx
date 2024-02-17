@@ -12,7 +12,7 @@ type Props = {
  * Layout for the pages other than the top page.
  *
  * @param {Props} { children }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const SubLayout = ({ children }: Props) => {
   return (

@@ -13,7 +13,7 @@ type Props = {
  * div with common padding
  *
  * @param {Props} { className, children }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const MainWrapper = ({ className = '', children }: Props) => {
 	const { styleJoin } = useStyleJoin()

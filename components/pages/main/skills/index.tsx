@@ -9,7 +9,7 @@ import { useGetSkills } from '../../../../hooks/data/useGetSkills'
 /**
  * main page Skills & Experiences section
  *
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const Skills = () => {
   const { getAllSkills } = useGetSkills()

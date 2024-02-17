@@ -32,7 +32,7 @@ type Props = {
  * Common button component
  *
  * @param {Props} { buttonColor, shadowColor, children }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const Button = (props: Props) => {
   const {

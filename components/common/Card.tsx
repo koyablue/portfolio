@@ -12,7 +12,7 @@ type Props = {
  * common card component
  *
  * @param {Props} { className, children }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const Card = ({ className = '', children }: Props) => {
 	const { styleJoin } = useStyleJoin()

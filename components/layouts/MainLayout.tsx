@@ -11,7 +11,7 @@ type Props = {
 /**
  * Layout for the top page.
  *
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const MainLayout = ({ children }: Props) => {
   return (

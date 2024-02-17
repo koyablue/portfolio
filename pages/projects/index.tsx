@@ -14,7 +14,7 @@ import { Project, ProjectTypeId } from '../../types/project'
 /**
  * Project list page
  *
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const Projects = () => {
   const [selectedProjectTypeId, setSelectedProjectTypeId] = useState<ProjectTypeId | 0>(0)

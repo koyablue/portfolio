@@ -19,7 +19,7 @@ type Props = {
  * build email address string manually to protect it from spam.
  *
  * @param {Props} { name, domain, tld, className = '', children }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const MailToATag = ({ name, domain, tld, className = '', children }: Props) => {
 	const { styleJoin } = useStyleJoin()

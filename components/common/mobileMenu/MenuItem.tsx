@@ -13,7 +13,7 @@ type Props = {
  * mobile menu item
  *
  * @param {Props} { href, label }
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const MenuItem = ({ id = '', isVisible = true, toggleMobileMenu = () => {/* do nothing */}, children }: Props) => {
   const { scrollToId } = useScrollToId()

@@ -24,7 +24,7 @@ type Props = {
 /**
  *
  *
- * @return {*} JSX.Element
+ * @return {JSX.Element}
  */
 const ProjectTypeDropdown = (props: Props) => {
   const { onSelectedAction } = props
